@@ -72,6 +72,7 @@
       width: 19.5rem;
       height: 40px;
       color: white;
+      cursor: pointer;
     }
     .input_button_code {
       border: none;
@@ -80,6 +81,7 @@
       width: 6rem;
       height: 30px;
       color: white;
+      cursor: pointer;
     }
   </style>
 

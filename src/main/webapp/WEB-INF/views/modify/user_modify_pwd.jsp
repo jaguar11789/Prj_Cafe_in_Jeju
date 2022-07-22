@@ -33,7 +33,7 @@
          <div class="sidebar"></div>
       </div>
       <div class="col-6 text-center">
-         <a class="blog-header-logo text-#888888" href="./main">
+         <a class="blog-header-logo text-#888888" href="../list/main">
          <img src="../resources/img/logo2.png" alt="" /></a>
       </div>
       <div class="col-3 d-flex justify-content-end align-items-center">
@@ -101,67 +101,24 @@
    a{
       text-decoration: none;
    }
-   .btn-6:hover:before, .btn-6:hover:after{
-	   width:100%;
-	   transition:1ms ease all;
-   }
-  
-   .btn-6{
-      left: 67%;
-	}
-   .btn-6 {
-      width: 60px;
-	   height: 40px;
-	   line-height: 42px;
-	   padding: 0;
-	   border: none;
-	   background: #ffa600;
-      background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
-   }
-   .btn-6:hover {
-	   color: #ffa600;
-	   background: transparent;
-	   box-shadow:none;
-   }
-   .btn-6:before,
-   .btn-6:after{
-      content:'';
-      position:absolute;
-      top:0;
-      right:0;
-      height:2px;
-      width:0;
-      background: #ffa600;
-      box-shadow:
-      -1px -1px 5px 0px #fff,
-      7px 7px 20px 0px rgb(255, 255, 255),
-      4px 4px 5px 0px rgb(255, 255, 255);
-      transition:1ms ease all;
-   }
-   .custom-btn {
-	   width: 160px;
-	   height: 50px;
-	   color: rgb(0, 0, 0);
-	   border-radius: 5px;
-	   padding: 10px 25px;
-	   font-family: 'Lato', sans-serif;
-	   font-weight: 500;
-	   background: transparent;
-	   cursor: pointer;
-	   transition: all 0.3s ease;
-	   position: relative;
-	   display: inline-block;
-	   box-shadow:inset 2px 2px 2px 0px rgb(255, 255, 255),
-	   7px 7px 20px 0px rgb(255, 255, 255),
-	   4px 4px 5px 0px rgb(255, 255, 255);
-	   outline: none;
-   }
-   .btn-6:after{
-	   right:inherit;
-	   top:inherit;
-	   left:0;
-	   bottom:0;
-   }
+   a input {
+	background-color: #ffa600;
+	border: none;
+	border: none;
+    background-color: #ffa600;
+    border-radius: 4px;
+    color: white;
+}
+a .confirm {
+	background-color: #ffa600;
+	border: none;
+	border: none;
+	background-color: #ffa600;
+	border-radius: 4px;
+	color: white;
+	height: 30px;
+	width: 60px;
+}
 </style>
 <body>
     <div id="grid">
@@ -185,7 +142,7 @@
             비밀번호를 입력하세요.</div><br><br>
             <span id="userpwd_modify" style="color: #444444;">비밀번호 확인</span> 
             <input type="text" placeholder="비밀번호를 입력해주세요." size="30"> 
-            <a href="./userpwd_modify"><input type="button" name="user_email" value="확인"></a>
+            <a href="./userpwd_modify"><input type="button" class="confirm" name="user_email" value="확인"></a>
             <hr>
         </div>
     </div>

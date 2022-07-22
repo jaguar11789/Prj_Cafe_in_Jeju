@@ -11,12 +11,12 @@ body {
 /* !헤더영역 */
 header.header {
   width: 100vw;
-  height: 30vh;
+  height: 20vh;
   position: fixed;
-  top: -11vh;
   z-index: 2;
   /* *로고,화찰표 이미지 중앙에 가게 하려고 */
   text-align: center;
+  margin: 0;
 }
 .bi {
   cursor: pointer;
@@ -27,6 +27,9 @@ header.header {
   margin: none;
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
+}
+div.logo {
+  display: none;
 }
 span.logo {
   position: fixed;

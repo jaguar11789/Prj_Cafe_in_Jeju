@@ -57,6 +57,7 @@
       height: 40px;
       color: white;
       text-decoration: none;
+      cursor: pointer;
     }
    
 

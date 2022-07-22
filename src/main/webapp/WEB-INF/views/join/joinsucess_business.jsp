@@ -69,6 +69,7 @@
       height: 40px;
       color: white;
       text-decoration: none;
+      cursor: pointer;
     }
    
     .input_button_use2 {
@@ -80,6 +81,7 @@
       height: 40px;
       color: white;
       text-decoration: none;
+      cursor: pointer;
     }
 
   </style>

@@ -86,7 +86,7 @@
       padding: 1px;
       display: inline-block;
       text-align: left;
-      width: 160px;
+      width: 200px;
       margin-left: 30px;
    }
    ul {
@@ -103,66 +103,14 @@
    a{
       text-decoration: none;
    }
-   .btn-6:hover:before, .btn-6:hover:after{
-	   width:100%;
-	   transition:1ms ease all;
-   }
-  
-   .btn-6{
-      left: 67%;
-	}
-   .btn-6 {
-      width: 60px;
-	   height: 40px;
-	   line-height: 42px;
-	   padding: 0;
-	   border: none;
-	   background: #ffa600;
-      background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
-   }
-   .btn-6:hover {
-	   color: #ffa600;
-	   background: transparent;
-	   box-shadow:none;
-   }
-   .btn-6:before,
-   .btn-6:after{
-      content:'';
-      position:absolute;
-      top:0;
-      right:0;
-      height:2px;
-      width:0;
-      background: #ffa600;
-      box-shadow:
-      -1px -1px 5px 0px #fff,
-      7px 7px 20px 0px rgb(255, 255, 255),
-      4px 4px 5px 0px rgb(255, 255, 255);
-      transition:1ms ease all;
-   }
-   .custom-btn {
-	   width: 160px;
-	   height: 50px;
-	   color: rgb(0, 0, 0);
-	   border-radius: 5px;
-	   padding: 10px 25px;
-	   font-family: 'Lato', sans-serif;
-	   font-weight: 500;
-	   background: transparent;
-	   cursor: pointer;
-	   transition: all 0.3s ease;
-	   position: relative;
-	   display: inline-block;
-	   box-shadow:inset 2px 2px 2px 0px rgb(255, 255, 255),
-	   7px 7px 20px 0px rgb(255, 255, 255),
-	   4px 4px 5px 0px rgb(255, 255, 255);
-	   outline: none;
-   }
-   .btn-6:after{
-	   right:inherit;
-	   top:inherit;
-	   left:0;
-	   bottom:0;
+   .modify_confirm{
+   		width: 200px;
+      height: 35px;
+      border: none;
+      background-color: #ffa600;
+      border-radius: 4px;
+      color: white;
+      margin-left: 60%;
    }
 </style>
 
@@ -193,9 +141,8 @@
             <input type="text" placeholder="비밀번호를 확인 해주세요." size="30"> 
             <hr>
 
-            <button class="custom-btn btn-6">비밀번호 변경</button>
+            <button class="modify_confirm">비밀번호 변경</button>
         </div>
     </div>
-
     </body>
 </html>

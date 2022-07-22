@@ -33,7 +33,7 @@
 			<div class="sidebar"></div>
 		</div>
 		<div class="col-6 text-center">
-			<a class="blog-header-logo text-#888888" href="./main">
+			<a class="blog-header-logo text-#888888" href="../list/main">
 			<img src="..\resources\img\logo2.png" alt="" /></a>
 		</div>
 		<div class="col-3 d-flex justify-content-end align-items-center">
@@ -64,7 +64,7 @@
 	<!-- header 끝 -->
 	<hr />
 	<h3>사용자정보 페이지라구~</h3>
-	<a href="../modify/userinfo"></a>
+	<a href="../modify/user_modify_info">개인정보 변경</a>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
