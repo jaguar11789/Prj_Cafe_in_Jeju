@@ -1,0 +1,51 @@
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+body {
+  position: relative;
+}
+
+/* !헤더영역 */
+header.header {
+  width: 100vw;
+  height: 30vh;
+  position: fixed;
+  top: -11vh;
+  z-index: 2;
+  /* *로고,화찰표 이미지 중앙에 가게 하려고 */
+  text-align: center;
+}
+.bi {
+  cursor: pointer;
+}
+.logo {
+  height: 10vh;
+  z-index: 1;
+  margin: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+span.logo {
+  position: fixed;
+  right: 0px;
+  top: 0;
+  background: none;
+}
+
+/* !fullpage */
+h1 {
+  text-align: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+div.s1 {
+  background-image: url(../indeximg/test.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
