@@ -31,4 +31,16 @@ public class ModifyController {
 	public String usersec_modify() {
 		return "modify/usersec_modify";
 	}
+	@RequestMapping("user_modify_info")
+	public String user_modify_info() {
+		return "modify/user_modify_info";
+	}
+	@RequestMapping("user_modify_pwd")
+	public String user_modify_pwd() {
+		return "modify/user_modify_pwd";
+	}
+	@RequestMapping("user_modify_sec")
+	public String user_modify_sec() {
+		return "modify/user_modify_sec";
+	}
 }
