@@ -15,12 +15,20 @@ public class ModifyController {
 	public String check_pwd_modify() {
 		return "modify/check_pwd_modify";
 	}
-	@RequestMapping("user_modify")
-	public String user_modify() {
-		return "modify/user_modify";
+	@RequestMapping("userinfo_modify")
+	public String userinfo_modify() {
+		return "modify/userinfo_modify";
 	}
 	@RequestMapping("modify_cafe")
 	public String modify_cafe() {
 		return "modify/modify_cafe";
+	}
+	@RequestMapping("userpwd_modify")
+	public String userpwd_modify() {
+		return "modify/userpwd_modify";
+	}
+	@RequestMapping("usersec_modify")
+	public String usersec_modify() {
+		return "modify/usersec_modify";
 	}
 }

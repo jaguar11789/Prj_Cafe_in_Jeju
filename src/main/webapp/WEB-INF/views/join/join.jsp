@@ -74,6 +74,7 @@
       <!--회원가입 버튼 선택 사용자&사업자용 -->
       <div id="button_container">
         <div>
+        	
           <p class="p1"><button onclick="location.href='./user_join'" class="input_button_use">사용자로 회원가입</button></p>
           <p class="p2"><button onclick="location.href='./business_join'" class="input_button_use">사업자로 회원가입</button></p>
         </div>
