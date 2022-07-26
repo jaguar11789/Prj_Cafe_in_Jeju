@@ -5,5 +5,27 @@
 <!-- 컨트롤 시프트 x는 소문자를 대문자로 바꿔준다 -->
 
 <mapper namespace="com.tech.join.dao.JoinDao">
+
+	<select id="idUserCheck" resultType="Integer">
+		SELECT COUNT(USER_ID) FROM USER_INFO WHERE USER_ID= #{param1}
+	</select>
+	
+	<select id="idBusinessCheck" resultType="Integer">
+		SELECT COUNT(BUSINESS_ID) FROM BUSINESS_INFO WHERE BUSINESS_ID= #{param1}
+	</select>
+	
+	<select id="nicknameUserCheck" resultType="Integer">
+		SELECT COUNT(USER_NICKNAME) FROM USER_INFO WHERE USER_NICKNAME= #{param1}
+	</select>
+	
+	<select id="nicknameBusinessCheck" resultType="Integer">
+		SELECT COUNT(BUSINESS_NICKNAME) FROM BUSINESS_INFO WHERE BUSINESS_NICKNAME= #{param1}
+	</select>
+	
+	<insert id="sucessjoinuser">
+		INSERT INTO USER_INFO VALUES (#{param1},#{param2},#{param3},#{param5},#{param7},#{param6},#{param4},USER_NUM.NEXTVAL)
+	</insert>
+	
 	
 </mapper>
+	

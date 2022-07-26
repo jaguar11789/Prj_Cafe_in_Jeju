@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+String path=request.getContextPath();
+%>
 <!-- 사업자 회원가입 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +86,45 @@
       color: white;
       cursor: pointer;
     }
+    .id_ok{
+    	color: #6A82FB; display: none;
+    }
+    .id_already{
+    	color:red;
+    	display:none;
+    }
+    
   </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    function checkId(){
+        var id = $('#id').val(); //id값이 "id"인 입력란의 값을 저장
+        
+        if(id.length > 7)
+   		{
+        	$.ajax({
+                url:'<%=path %>/join/idCheck', //Controller에서 인식할 주소
+                type:'post', //POST 방식으로 전달
+                data:{id:id},
+                dataType:'text', // String
+                success:function(check){
+                    console.log(check);//f12 눌렀을때 콘솔에 뜸
+                    if(check == 'ok'){
+                    	$('.id_ok').css("display","inline-block");
+                        $('.id_already').css("display", "none"); 
+                    } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
+                        $('.id_already').css("display","inline-block");
+                        $('.id_ok').css("display", "none");
+                    }
+                },
+                error:function(){
+                    alert("");
+                }
+            });
+        }
+    };
+</script>
+
 
   <body>
     
@@ -97,9 +138,10 @@
       <div id="joinform">
         <!-- joinform의 input, label 태그 -->
         <div id="input_container">
-          <form action="">
             <label for="" class="input_label">아이디</label> <br>
-            <input type="text" class="input_value" value=" 아이디를 입력해주세요."> <br>
+            <input type="text" id="id" maxlength="20" class="input_value" placeholder=" 아이디를 입력해주세요.(7 ~ 20자)" oninput="checkId();" required> <br>
+            <span class="id_ok">사용 가능한 아이디입니다.</span>
+			<span class="id_already">중복된 아이디입니다.</span><br />
             <label for="" class="input_label">비밀번호</label> <br>
             <input type="text" class="input_value" value=" 비밀번호를 입력해주세요."> <br>
             <label for="" class="input_label">비밀번호확인</label> <br>

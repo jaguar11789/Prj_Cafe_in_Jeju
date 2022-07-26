@@ -10,9 +10,9 @@
 <meta name="author"
    content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
 <meta name="generator" content="Hugo 0.98.0" />
-<title>희원이 카페등록</title>
+<title>희원이 카페수정</title>
 <!-- CDN -->
-<link href="../resources/css/css1.css" rel="stylesheet" />
+<link rel="stylesheet" href="../resources/css/css1.css" />
 <link
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
    rel="stylesheet"
@@ -24,7 +24,6 @@
 <body>
    <!-- 위의 CDN링크에서 갖고 온다 -->
    <link href="../resources/css/carousel.css" rel="stylesheet" />
-   
    <!-- header부분 -->
    <header class="navbar navbar-white bg-white">
       <div class="col-3">
@@ -70,7 +69,7 @@
       <div class="container">
          <div class="middle">
       <header id="content_header">
-        <h5>내 카페 등록하기</h5>
+        <h5>내 카페 수정하기</h5>
         <br><br>
         <h6>가맹점 기본 정보</h6>
       </header>
@@ -81,7 +80,7 @@
             <span id="cafname">상호명</span>
             <input type="text" name="cafname" placeholder="상호명을 입력하세요" size="40px"><br>
          </label>
-         <hr width="800px"> 
+         <hr width="800px">
        </div>
        <div>
             <label class="cafelab">
@@ -137,9 +136,9 @@
         <hr width="800px">
         </div>
         <div>
-         <label class="cafelab">
-            &emsp;  <span id="cafpho"> 카페사진</span>
-         <input type="text" name="cafpho" placeholder="ex)instargram,facebook,blog" size="40px">
+        <label class="cafelab"> <!--파일로 등록한 사진이 여러장 등록 될 수 있게 구현-->
+         &emsp;  <span id="cafpho"> 카페사진</span>
+         <input type="text" name="cafpho" placeholder="ex)instargram,facebook,blog" size="40px" multiple>
          &emsp; <input type="file" id="file"> <label for="file">파일찾기</label> <br><br>
          &emsp;  <input type="image" src="" alt="" width="150" height="150">
         </label>
@@ -147,7 +146,7 @@
         </div>
         <div>
          <label class="cafelab">
-            <i class="bi bi-star-fill"></i><!--별모양 필수입력표시-->
+            <i class="bi bi-star-fill"></i> <!--별모양 필수입력표시-->
             <span id="opentime"> 이용상세설명</span>
        <textarea name="opentime" placeholder="ex)이용시간, 휴무일 등" cols="80" rows="3"></textarea><h id="hsub">최대 1000자만 입력 가능합니다</h>
        </label>
@@ -171,8 +170,8 @@
       </div>
       <div id="content_header">
          <br><br>
-         
-         <h6><i class="bi bi-star-fill"></i>사업자 정보</h6><!--별모양 필수입력표시, h6과 i에 준 효과가 각각 달라서 둘다 씀-->
+       
+        <h6><i class="bi bi-star-fill"></i>사업자 정보</h6><!--별모양 필수입력표시, h6과 i에 준 효과가 각각 달라서 둘다 씀-->
         <hr width="800px">
       </div>
          <div>
@@ -202,7 +201,7 @@
             위 개인정보 수집이용에 동의합니다.(필수)
          </div> <br><br>
          <div>
-      <input type="button" value="메뉴등록하러가기!" id="end" onclick="location.href='.\register_cafemenu.html';"> 
+      <input type="button" value="메뉴수정하러가기!" id="end" onclick="location.href='.\register_cafemenu.html';"> 
       </div></form>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>

@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/* 상단 메뉴바 */
+/* 상단 메뉴바 */
+input[id='menuicon'] {
+	display: none;
+	flex-basis: 10%;
+	right: 4rem;
+	position: relative;
+	top: 5px;
+}
+
+/* 메뉴바 아이콘 크기 */
+input[id='menuicon']+label {
+	display: block;
+	top: 0rem;
+	margin: 50px;
+	width: 30px;
+	height: 25px;
+	position: relative;
+	cursor: pointer;
+}
+/* 메뉴바 설정 */
+input[id='menuicon']+label span {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	border-radius: 30px;
+	background: orange;
+	transition: all 0.35s;
+}
+/* 첫번째 바부터 세번째 바 */
+input[id='menuicon']+label span:nth-child(1) {
+	top: 0;
+}
+
+input[id='menuicon']+label span:nth-child(2) {
+	top: 50%;
+	transform: translateY(-50%);
+}
+	/* ����ϰ� ����� �� �ִ� style top:calc(50% - 2.5px); margin-top:-2.5px;*/
+input[id='menuicon']+label span:nth-child(3) {
+	bottom: 0;
+}
+
+input[id='menuicon']:checked+label {
+	z-index: 2;
+}
+
+input[id='menuicon']:checked+label span {
+	background: orange;
+}
+
+input[id='menuicon']:checked+label span:nth-child(1) {
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
+}
+
+input[id='menuicon']:checked+label span:nth-child(2) {
+	opacity: 0;
+}
+
+input[id='menuicon']:checked+label span:nth-child(3) {
+	bottom: 50%;
+	transform: translateY(50%) rotate(-45deg);
+}
+/* 싸이드바 크기 형성 및 위치 */
+div[class='sidebar'] {
+	width: 310px;
+	height: 100%;
+	background: rgb(255, 245, 222);
+	position: fixed;
+	top: 0;
+	left: -310px;
+	z-index: 1;
+	transition: all 0.35s;
+}
+/* 숨어 있던 싸이드바가 나오게 하는 문장 */
+input[id='menuicon']:checked+label+div {
+	left: 0;
+}
+/* 싸이드바 안에 있는 로고 */
+.menu_logo {
+	margin-top: -80px;
+	margin-left: -30px;
+	list-style: none;
+}
+/* 싸이드바 안에 있는 지역 */
+.menu_local {
+	border-radius: 4px;
+	list-style: none;
+	text-align: center;
+	margin-right: 20%;
+	font-size: 20px;
+	color: orange;
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+.menu_local:hover {
+	margin-top: 5px;
+	background-color: rgb(254, 251, 238);
+	font: bold;
+}
+
+.category {
+	margin-top: 50%;
+}
+
+font {
+	color: orange;
+}
+
+a {
+	text-decoration: none;
+}
+/* hearder싸이즈 및 설정 */
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+	max-width: 2000px;
+	z-index: 9999;
+	position: fixed;
+	height: 3rem;
+	width: 100%;
+	background-color: aliceblue;
+	height: 70px;
+	top: 0;
+	padding-top: 0;
+	margin-top: 0px;
+}
+/* 상단 로고 */
+.navar_logo {
+	list-style: none;
+	margin-top: 1rem;
+	flex-basis: 50%;
+	display: flex;
+	justify-content: center;
+}
+/* 상단 유저 이미지 */
+.user {
+	list-style: none;
+	margin-top: 0;
+	margin-left: 5px;
+	flex-basis: 10%;
+	position: relative;
+}
+
+.img {
+	width: 30px;
+	height: 30px;
+	margin-top: 1rem;
+	position: center fixed;
+}
+/* 싸이드바 뒤에 들어가는 문장들은 적용해야 한다 */
+#myCarousel {
+	z-index: 0;
+}
+
+body {
+	margin: 0;
+	padding-top: 2%;
+}
