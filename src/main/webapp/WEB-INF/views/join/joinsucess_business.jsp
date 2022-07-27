@@ -43,6 +43,12 @@
     }
     .p2 {
       padding-bottom: 30px;
+      /* border-bottom: 3px solid lightgray; */
+      width: 500px;
+      text-align: center;
+    }
+    .p3 {
+      padding-bottom: 30px;
       border-bottom: 3px solid lightgray;
       width: 500px;
       text-align: center;
@@ -98,6 +104,7 @@
         <div>  
           <p class="p1">${business_id }사장님 환영합니다.</p>
           <p class="p2">회원가입이 되었습니다.</p>
+          <p class="p3">로그인 후 이용해주세요.</p>
         </div>
       </div>
       
