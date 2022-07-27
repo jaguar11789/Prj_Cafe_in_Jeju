@@ -72,7 +72,9 @@ public class JoinController {
 		JoinDao joindao = session.getMapper(JoinDao.class);
 		
 		joindao.sucessjoinuser(userid, userpwd1, userpwd2, username, usernickname, userpnum, useremail);
-		
-		return "redirect:joinsucess_user";
+	    model.addAttribute("user_id",userid);
+	      
+//      return "redirect:joinsucess_user";
+		return "join/joinsucess_user";
 	}
 }

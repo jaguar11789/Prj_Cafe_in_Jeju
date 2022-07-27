@@ -81,7 +81,7 @@
 
       <div id="pbox">
         <div>  
-          <p class="p1">${joinsucess_user.user_id }님 환영합니다.</p>
+          <p class="p1">${user_id }님 환영합니다.</p>
           <p class="p2">회원가입이 되었습니다.</p>
         </div>
       </div>
