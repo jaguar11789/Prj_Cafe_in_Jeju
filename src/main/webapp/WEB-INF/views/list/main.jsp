@@ -36,7 +36,7 @@
                   /></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>제주</font></a>
+                  <a href="./jeju_detail"><font>제주</font></a>
                 </li>
                 <li class="menu_local">
                   <a href="#"><font>애월</font></a>
@@ -126,7 +126,7 @@
           <br />
           <div class="cafe_commend">
             <span>
-              <a href="#"><img class="img1" src="../resources/mainimg/cafe.jpg" alt="" /></a>
+              <a href="../list/cafe_info_menu"><img class="img1" src="../resources/mainimg/cafe.jpg" alt="" /></a>
               <p class="cafe_name">카페명 : 스벅</p>
               <p>주소 : 대한민국</p>
             </span>

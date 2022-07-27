@@ -504,15 +504,15 @@ a{
 <script>
     $(document).ready(function(){
             $("#img1").click(function(){
-             	$("#mainimg").attr("src","img/cafe.jpg");
+             	$("#mainimg").attr("src","../resources/listimg/cafe.jpg");
             });
             
             $("#img2").click(function(){
-             	$("#mainimg").attr("src","img/PJH_cafe.jpg");
+             	$("#mainimg").attr("src","../resources/listimg/PJH_cafe.jpg");
             });
             
             $("#img3").click(function(){
-             	$("#mainimg").attr("src","img/PJH_cafe2.jpg");
+             	$("#mainimg").attr("src","../resources/listimg/PJH_cafe2.jpg");
             });
         });
 </script>
