@@ -106,7 +106,7 @@ String path=request.getContextPath();
     function checkId(){
         var id = $('#id').val(); //id값이 "id"인 입력란의 값을 저장
         
-        if(id.length > 7)
+        if(id.length > 5)
    		{
         	$.ajax({
                 url:'<%=path %>/join/idCheck', //Controller에서 인식할 주소
@@ -134,7 +134,7 @@ String path=request.getContextPath();
     function checkNick(){
         var nickname = $('#nickname').val(); //id값이 "id"인 입력란의 값을 저장
         
-        if(nickname.length > 7)
+        if(nickname.length > 3)
    		{
         	$.ajax({
                 url:'<%=path %>/join/checkNickname', //Controller에서 인식할 주소
@@ -185,7 +185,7 @@ String path=request.getContextPath();
         <a href="../list/main"><img src="../resources/img/logo2.png" width="200px" height="60px"></a>
       </div>
       
-      <form action="joinsucess" method="post">
+      <form action="userjoinsucess" method="post">
       <!-- display : flex 를 위한 div-->
       <div id="joinform">
         <!-- joinform의 input, label 태그 -->
@@ -197,7 +197,7 @@ String path=request.getContextPath();
 			
             
             <label for="" class="input_label">비밀번호</label> <br>
-            <input type="password" id="pwd1" name="userpwd1" class="input_value" placeholder=" 비밀번호를 입력해주세요." required> <br>
+            <input type="password" id="pwd1" name="userpwd" class="input_value" placeholder=" 비밀번호를 입력해주세요." required> <br>
             
             <label for="" class="input_label">비밀번호확인</label> <br>
             <input type="password" id="pwd2" name="userpwd2" class="input_value" placeholder=" 비밀번호를 입력해주세요." oninput="checkPwd();" required> <br>

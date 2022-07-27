@@ -43,6 +43,12 @@
     }
     .p2 {
       padding-bottom: 30px;
+      /* border-bottom: 3px solid lightgray; */
+      width: 500px;
+      text-align: center;
+    }
+    .p3 {
+      padding-bottom: 30px;
       border-bottom: 3px solid lightgray;
       width: 500px;
       text-align: center;
@@ -83,6 +89,7 @@
         <div>  
           <p class="p1">${user_id }님 환영합니다.</p>
           <p class="p2">회원가입이 되었습니다.</p>
+          <p class="p3">로그인 후 이용해주세요.</p>
         </div>
       </div>
       
@@ -90,7 +97,7 @@
       <div id="button_container">
         <!-- joinform의 input, label 태그 -->
           <div id="input_button">
-            <button onclick="location.href='../list/main'" class="input_button_use">이용하러 가기</button>
+            <button onclick="location.href='../login/login'" class="input_button_use">로그인</button>
           </div>
       </div>
 

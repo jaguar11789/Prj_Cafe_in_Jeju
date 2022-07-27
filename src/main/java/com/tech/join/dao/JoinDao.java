@@ -10,11 +10,12 @@ public interface JoinDao {
 	public int nicknameUserCheck(String nickname);
 	public int nicknameBusinessCheck(String nickname);
 	
-	public void sucessjoinuser(String userid, String userpwd1, String userpwd2, String username, 
+	public void sucessjoinuser(String userid, String userpwd, String username, 
 			String usernickname, String userpnum, String useremail);
 	
 	public UserInfoDto joinsucess_user(String userid);
 	public UserInfoDto sucessjoinuser(String userid);
-	public UserInfoDto joinsucess_user();
+	public void sucessjoinbusiness(String businessid, String businesspwd, String businessname, String businessnickname,
+			String businesspnum, String businessreginum, String businessemail);
 
 }
