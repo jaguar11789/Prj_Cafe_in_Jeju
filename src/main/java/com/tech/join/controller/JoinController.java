@@ -55,24 +55,44 @@ public class JoinController {
 		return "join/joinsucess_user";
 	}*/
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/joinsucess")
-	public String sucessjoinuser(HttpServletRequest request, Model model) {
-		
+	 @RequestMapping(method = RequestMethod.POST, value = "/userjoinsucess")
+	   public String sucessjoinuser(HttpServletRequest request, Model model) {
+	      
 
-		String userid = request.getParameter("userid");
-		String userpwd1 = request.getParameter("userpwd1");
-		String userpwd2 = request.getParameter("userpwd2");
-		String username = request.getParameter("username");
-		String usernickname = request.getParameter("usernickname");
-		String userpnum = request.getParameter("userpnum");
-		String useremail = request.getParameter("useremail");
+	      String userid = request.getParameter("userid");
+	      String userpwd = request.getParameter("userpwd");	     
+	      String username = request.getParameter("username");
+	      String usernickname = request.getParameter("usernickname");
+	      String userpnum = request.getParameter("userpnum");
+	      String useremail = request.getParameter("useremail");
 
-		
-		
-		JoinDao joindao = session.getMapper(JoinDao.class);
-		
-		joindao.sucessjoinuser(userid, userpwd1, userpwd2, username, usernickname, userpnum, useremail);
-		
-		return "redirect:joinsucess_user";
-	}
+	      JoinDao joindao = session.getMapper(JoinDao.class);
+	      joindao.sucessjoinuser(userid, userpwd, username, usernickname, userpnum, useremail);
+	      
+	      model.addAttribute("user_id",userid);
+	      
+//	      return "redirect:joinsucess_user";
+	      return "join/joinsucess_user";
+	   }
+	 
+	 @RequestMapping(method = RequestMethod.POST, value = "/businessjoinsucess")
+	 public String sucessjoinbusiness(HttpServletRequest request, Model model) {
+		 
+		 
+		 String businessid = request.getParameter("businessid");
+		 String businesspwd = request.getParameter("businesspwd");	     
+		 String businessname = request.getParameter("businessname");
+		 String businessnickname = request.getParameter("businessnickname");
+		 String businesspnum = request.getParameter("businesspnum");
+		 String businessreginum = request.getParameter("businessreginum");
+		 String businessemail = request.getParameter("businessemail");
+		 
+		 JoinDao joindao = session.getMapper(JoinDao.class);
+		 joindao.sucessjoinbusiness(businessid, businesspwd, businessname, businessnickname, businesspnum, businessreginum, businessemail);
+		 
+		 model.addAttribute("business_id",businessid);
+		 
+//	      return "redirect:joinsucess_user";
+		 return "join/joinsucess_business";
+	 }
 }

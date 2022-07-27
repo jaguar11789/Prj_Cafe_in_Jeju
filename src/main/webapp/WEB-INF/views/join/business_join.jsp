@@ -86,10 +86,10 @@ String path=request.getContextPath();
       color: white;
       cursor: pointer;
     }
-    .id_ok{
+    .id_ok, .nickname_ok, .pwd_ok{
     	color: #6A82FB; display: none;
     }
-    .id_already{
+    .id_already, .nickname_already, .pwd_no{
     	color:red;
     	display:none;
     }
@@ -100,7 +100,7 @@ String path=request.getContextPath();
     function checkId(){
         var id = $('#id').val(); //id값이 "id"인 입력란의 값을 저장
         
-        if(id.length > 7)
+        if(id.length > 5)
    		{
         	$.ajax({
                 url:'<%=path %>/join/idCheck', //Controller에서 인식할 주소
@@ -123,6 +123,50 @@ String path=request.getContextPath();
             });
         }
     };
+    
+    function checkNick(){
+        var nickname = $('#nickname').val(); //id값이 "id"인 입력란의 값을 저장
+        
+        if(nickname.length > 3)
+   		{
+        	$.ajax({
+                url:'<%=path %>/join/checkNickname', //Controller에서 인식할 주소
+                type:'post', //POST 방식으로 전달
+                data:{nickname:nickname},
+                dataType:'text', // String
+                success:function(check){
+                    console.log(check);//f12 눌렀을때 콘솔에 뜸
+                    if(check == 'ok'){
+                    	$('.nickname_ok').css("display","inline-block");
+                        $('.nickname_already').css("display", "none"); 
+                    } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
+                        $('.nickname_already').css("display","inline-block");
+                        $('.nickname_ok').css("display", "none");
+                    }
+                },
+                error:function(){
+                    alert("");
+                }
+            });
+        }
+    };
+    
+    $(function(){/*비밀번호 확인*/	
+    	$('#pwd2').blur(function(){	  
+    		if($('#pwd1').val() != $('#pwd2').val()){	    	
+    			if($('#pwd2').val() != ''){		    
+    				//alert("비밀번호가 일치하지 않습니다.");	    	    
+	    			$('#pwd2').val('');	          
+	    			$('#pwd2').focus();
+	    			$('.pwd_no').css("display","inline-block");
+	                $('.pwd_ok').css("display", "none");      
+    			} 
+    			} else{
+    				$('.pwd_ok').css("display","inline-block");
+                    $('.pwd_no').css("display", "none"); 
+    		}	
+    	})  	   	
+    });
 </script>
 
 
@@ -134,37 +178,56 @@ String path=request.getContextPath();
         <a href="../list/main"><img src="../resources/img/logo2.png" width="200px" height="60px"></a>
       </div>
       
+      <form action="businessjoinsucess" method="post">
       <!-- display : flex 를 위한 div-->
       <div id="joinform">
         <!-- joinform의 input, label 태그 -->
         <div id="input_container">
             <label for="" class="input_label">아이디</label> <br>
-            <input type="text" id="id" maxlength="20" class="input_value" placeholder=" 아이디를 입력해주세요.(7 ~ 20자)" oninput="checkId();" required> <br>
+            <input type="text" id="id" name="businessid" maxlength="20" class="input_value" placeholder=" 아이디를 입력해주세요.(7 ~ 20자)" oninput="checkId();" required> <br>
             <span class="id_ok">사용 가능한 아이디입니다.</span>
 			<span class="id_already">중복된 아이디입니다.</span><br />
+			
+			
             <label for="" class="input_label">비밀번호</label> <br>
-            <input type="text" class="input_value" value=" 비밀번호를 입력해주세요."> <br>
+            <input type="password" id="pwd1" name="businesspwd" class="input_value" placeholder=" 비밀번호를 입력해주세요." required> <br>
+            
             <label for="" class="input_label">비밀번호확인</label> <br>
-            <input type="text" class="input_value" value=" 비밀번호를 입력해주세요."> <br>
+            <input type="password" id="pwd2" class="input_value" placeholder=" 비밀번호를 입력해주세요." oninput="checkPwd();" required> <br>
+            <span class="pwd_ok">비밀번호가 일치합니다.</span>
+			<span class="pwd_no">비밀번호가 일치하지 않습니다.</span><br />
+            
             <label for="" class="input_label">이름</label> <br>
-            <input type="text" class="input_value" value=" 이름을 입력해주세요."> <br>
+            <input type="text" name="businessname" class="input_value" placeholder=" 이름을 입력해주세요."> <br>
+            
+            
             <label for="" class="input_label">닉네임</label> <br>
-            <input type="text" class="input_value" value=" 닉네임을 입력해주세요."> <br>
+            <input type="text" id="nickname" name="businessnickname" maxlength="10" class="input_value" placeholder=" 닉네임을 입력해주세요." oninput="checkNick();" required> <br>
+            <span class="nickname_ok">사용 가능한 닉네임입니다.</span>
+			<span class="nickname_already">중복된 닉네임입니다.</span><br />
+            
+            
             <label for="" class="input_label">휴대폰</label> <br>
-            <input type="text" class="input_value" value=" 휴대폰번호를 입력해주세요."> <br>
+            <input type="text" name="businesspnum" class="input_value" placeholder=" 휴대폰번호를 입력해주세요."> <br>
+            
+            
             <label for="" class="input_label">사업자 등록번호</label> <br>
-            <input type="text" class="input_value" value=" 사업자등록번호를 입력해주세요."> <br>
+            <input type="text" class="input_value" name="businessreginum" placeholder=" 사업자등록번호를 입력해주세요."> <br>
+            
+            
             <label for="" class="input_label">이메일</label> <br>
-            <input type="text" class="input_value" value=" 이메일을 입력해주세요."> <br>
-            <input type="text" class="input_value_code" value=" 인증번호를 입력해주세요."> 
+            <input type="text" class="input_value" name="businessemail" placeholder=" 이메일을 입력해주세요."> <br>
+            <input type="text" class="input_value_code" placeholder=" 인증번호를 입력해주세요."> 
+            
+            
             <input type="button" class="input_button_code" value="인증번호 받기"> <br>
-            <button class="input_button_join">가입하기</button>
+            <input type="submit" class="input_button_join" value="가입하기">
             <!-- <input type="submit" class="input_button_join" value="가입하기"> -->
-          </form>
+          
          </div>
 
       </div>
-
+	</form>
   </div>
     
 

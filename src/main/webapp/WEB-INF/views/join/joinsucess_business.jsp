@@ -96,7 +96,7 @@
 
       <div id="pbox">
         <div>  
-          <p class="p1">XXX사장님 환영합니다.</p>
+          <p class="p1">${business_id }사장님 환영합니다.</p>
           <p class="p2">회원가입이 되었습니다.</p>
         </div>
       </div>
