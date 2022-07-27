@@ -15,12 +15,4 @@ public class WriteController {
 	public String write_review() {
 		return "write/write_review";
 	}
-	@RequestMapping("/register_cafemenu")
-	public String register_cafemenu() {
-		return "write/register_cafemenu";
-	}
-	@RequestMapping("/register_cafechange")
-	public String register_cafechange() {
-		return "write/register_cafechange";
-	}
 }

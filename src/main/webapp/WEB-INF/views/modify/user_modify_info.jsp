@@ -134,9 +134,12 @@ a .confirm {
 				<b style="color: #444444;">내 정보관리</b>
 			</h4>
 			<hr>
-			<li><a href="user_modify_info.html" style="color: #444444;"><b>개인정보 변경</b></a><br></li>
-			<li><a href="user_modify_pwd.html" style="color: #444444;">비밀번호 변경</a><br></li>
-			<li><a href="user_modify_sec.html" style="color: #444444;">회원탈퇴</a></li>
+			<li><a href="user_modify_info.html" style="color: #444444;"><b>개인정보
+						변경</b></a><br></li>
+			<li><a href="user_modify_pwd.html" style="color: #444444;">비밀번호
+					변경</a><br></li>
+			<li><a href="user_modify_sec.html" style="color: #444444;">회원탈퇴</a>
+			</li>
 		</ul>
 		<div class="gridinfo">
 			<h3>
@@ -149,8 +152,8 @@ a .confirm {
 				비밀번호를 입력하세요.
 			</div>
 			<br>
-			<br> <span id="userpwd_modify" style="color: #444444;">비밀번호 확인</span> 
-			<input type="password" placeholder="비밀번호를 입력해주세요." size="30">
+			<br> <span id="userpwd_modify" style="color: #444444;">비밀번호
+				확인</span> <input type="text" placeholder="비밀번호를 입력해주세요." size="30">
 			<a href="./userinfo_modify"><input type="button" name="user_email" class="confirm" value="확인"></a>
 			<hr>
 		</div>
