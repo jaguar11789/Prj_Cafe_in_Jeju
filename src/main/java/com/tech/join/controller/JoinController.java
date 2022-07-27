@@ -66,18 +66,6 @@ public class JoinController {
 	      String userpnum = request.getParameter("userpnum");
 	      String useremail = request.getParameter("useremail");
 
-<<<<<<< HEAD
-		
-		
-		JoinDao joindao = session.getMapper(JoinDao.class);
-		
-		joindao.sucessjoinuser(userid, userpwd1, userpwd2, username, usernickname, userpnum, useremail);
-	    model.addAttribute("user_id",userid);
-	      
-//      return "redirect:joinsucess_user";
-		return "join/joinsucess_user";
-	}
-=======
 	      JoinDao joindao = session.getMapper(JoinDao.class);
 	      joindao.sucessjoinuser(userid, userpwd, username, usernickname, userpnum, useremail);
 	      
@@ -107,5 +95,7 @@ public class JoinController {
 //	      return "redirect:joinsucess_user";
 		 return "join/joinsucess_business";
 	 }
->>>>>>> b1cf1581fe6e39ba27d71b3082a26c84b28058b6
+
+	 
+	 
 }
