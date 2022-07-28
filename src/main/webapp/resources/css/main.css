@@ -1,0 +1,112 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Verdana, sans-serif;
+}
+
+.mySlides {
+	display: none;
+}
+
+img {
+	vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+	min-width: 2000px;
+	min-height: 300px;
+	position: relative;
+}
+/* The dots/bullets/indicators */
+.dot {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active {
+	background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@
+-webkit-keyframes fade {from { opacity:0.4;
+	
+}
+
+to {
+	opacity: 1;
+}
+
+}
+@
+keyframes fade {from { opacity:0.4;
+	
+}
+
+to {
+	opacity: 1;
+}
+
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+	.text {
+		font-size: 11px;
+	}
+}
+
+.user_commend {
+	display: inline;
+	justify-content: center;
+	font: bold;
+	font-size: 2rem;
+	margin: 0 0 0 13vw;
+	font-family: 'Jua', cursive;
+}
+
+.cafe_commend {
+	display: flex;
+	justify-content: center;
+}
+
+.all_cafe {
+	display: inline;
+	justify-content: center;
+	margin: 0 0 0 13vw;
+	font-family: 'Jua', cursive;
+	font: bold;
+	font-size: 2rem;
+}
+
+.teg {
+	display: flex;
+	justify-content: center;
+	margin-right: 70vw;
+}
+
+.img1 {
+	display: flex;
+	align-items: baseline;
+	flex-direction: column;
+	justify-content: center;
+	width: 17vw;
+	height: auto;
+	margin: 1rem;
+	margin: 0 1rem 1rem 0;
+}

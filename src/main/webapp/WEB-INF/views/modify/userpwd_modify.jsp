@@ -134,11 +134,11 @@
             <hr>
             
             <span id="userpwd_modify" style="color: #444444;">변경할 비밀번호 입력</span> 
-            <input type="text" placeholder="변경할 비밀번호를 입력해주세요." size="30"> 
+            <input type="password" placeholder="변경할 비밀번호를 입력해주세요." size="30"> 
             
             <hr>
             <span id="userpwd_modify_confirm" style="color: #444444;">변경할 비밀번호 확인</span> 
-            <input type="text" placeholder="비밀번호를 확인 해주세요." size="30"> 
+            <input type="password" placeholder="비밀번호를 확인 해주세요." size="30"> 
             <hr>
 
             <button class="modify_confirm">비밀번호 변경</button>

@@ -1,0 +1,30 @@
+@charset "UTF-8";
+body {
+    margin: 0;
+}
+/* 테두리 기준 */
+.slidwhow {
+    background: #000;
+    height: 302px;
+    min-width: 1042px;
+    overflow: hidden;
+    position: relative;
+}
+.slideshow_slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slideshow_slides a {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slideshow_nav a .prev {
+    position: absolute;
+
+    background: url() no-repeat;
+}
+.slideshow_nav a .prev {
+    background-position: 0 20px;
+}

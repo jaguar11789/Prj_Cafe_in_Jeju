@@ -2,277 +2,73 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="../resources/css/jeju_local_detail.css">
-    </head>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author"
+	content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+<meta name="generator" content="Hugo 0.98.0" />
+<title>Bootstrap demo</title>
+<!-- CDN -->
+<link rel="stylesheet" href="../resources/css/css.css" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+	crossorigin="anonymous" />
+</head>
 
-    <body>
-        <header>
-            <link
-                href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap"
-                rel="stylesheet"
-            />
-            <!-- Custom styles for this template -->
-            <!-- /      <link href="blog.css" rel="stylesheet" /> -->
-            <link rel="stylesheet" href="../resources/css/header.css" />
-            <div class="container">
-                <div class="menu">
-                    <input type="checkbox" id="menuicon" />
-                    <label for="menuicon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </label>
-                    <div class="sidebar">
-                        <div class="category">
-                            <ul>
-                                <li class="menu_logo">
-                                    <a href="./main"
-                                        ><img src="../resources/img/logo2.png" alt=""
-                                    /></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>제주</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>애월</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>한림</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>한경</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>대정</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>안덕</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>중문</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>서귀포</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>남원</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>표선</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>성산</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>구좌</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>조천</font></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <ul class="navar_logo">
-                    <li><img class="logo" src="../resources/img/logo2.png" alt="" /></li>
-                </ul>
+<body>
+	<!-- 위의 CDN링크에서 갖고 온다 -->
+	<link href="../resources/css/carousel.css" rel="stylesheet" />
+	<!-- header부분 -->
+	<header class="navbar navbar-white bg-white">
+		<div class="col-3">
+			<input type="checkbox" id="menuicon" /> 
+				<label for="menuicon">
+					<span></span> <span></span> <span></span>
+				</label>
+			<div class="sidebar"></div>
+		</div>
+		<div class="col-6 text-center">
+			<a class="blog-header-logo text-#888888" href="./main">
+			<img src="..\resources\img\logo2.png" alt="" /></a>
+		</div>
+		<div class="col-3 d-flex justify-content-end align-items-center">
+			<form action="#">
+				<input type="text" id="search1"> <a class="link-secondary" href="#" id="search1" aria-label="Search">
+			</form>
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+				fill="none" stroke="currentColor" stroke-linecap="round"
+				stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
+				viewBox="0 0 24 24">
+            <title>Search</title>
+            	<circle cx="10.5" cy="10.5" r="7.5" />
+            	<path d="M21 21l-5.2-5.2" />
+          	</svg>
+			</a>
+			<a class="btn btn-sm btn-outline-secondary" href="../login/login"
+				style="background-color: cyan">로그인</a> &nbsp; <a class="btn btn-sm btn-outline-secondary" href="../join/join">회원가입
+				</a>
+			<nav class="navbar bg-light">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="../mypage/user_mypage"> 
+						<img src="../resources//img/user.png" alt="" width="40" height="40" class="d-inline-block align-text-top" />
+					</a>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!-- header 끝 -->
+	<hr />
+	<h3>제주 페이지라구~</h3>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous">
+	</script>
 
-                <ul class="user">
-                    <li class="">
-                        <a href="login"
-                            ><img class="img" src="../resources/img/user.png" alt=""
-                        /></a>
-                    </li>
-                </ul>
-            </div>
-        </header>
-    <!-- https://kutar37.tistory.com/entry/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%EC%87%BC-%EA%B5%AC%ED%98%84-cssjavascriptjquery -->
-    <!-- 슬라이드 사진 -->
-    <div class="event">
-      <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn1 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
-                </button>
-                <button type="button" class="btn2 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >애월</font>
-                </button>
-                <button type="button" class="btn3 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >한림</font>
-                </button>
-                <button type="button" class="btn4 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >한경</font>
-                </button>
-                <button type="button" class="btn5 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >대정</font>
-                </button>
-                <button type="button" class="btn6 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >안덕</font>
-                </button>
-                <button type="button" class="btn7 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >중문</font>
-                </button>
-                <button type="button" class="btn8 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >서귀포</font>
-                </button>
-                <button type="button" class="btn9 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >남원</font>
-                </button>
-                <button type="button" class="btn10 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >표선</font>
-                </button>
-                <button type="button" class="btn11 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >성산</font>
-                </button>
-                <button type="button" class="btn12 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >구좌</font>
-                </button>
-                <button type="button" class="btn13 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >조천</font>
-                </button>
-            </div>
-      <div class="slideshow-container">
-        <div class="mySlides fade">
-          <img src="../resources/img/coffee4.jpg" style="width: 100%" />
-        </div>
-
-        <div class="mySlides fade">
-          <img src="../resources/img/coffee4.jpg" style="width: 100%" />
-        </div>
-
-        <div class="mySlides fade">
-          <img src="../resources/img/coffee4.jpg" style="width: 100%" />
-        </div>
-        
-        <div class="dot3" style="text-align: center">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <!-- 지역별 버튼 -->
-            
-      
-      </div>
-      
-      
-            
-        </div>    
-    <!-- 카페설명 -->
-    <div class="container-goods">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-                <table>
-                    <tr>
-                        <td><a href="./cafe_info_menu"><img src="../resources/img/cafe.jpg" style="max-width: 100%; height: auto;" alt=""></a></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-md-4">
-                <table>
-                    <tr>
-                        <td style="font-size: 30px; font-weight: bolder;">카아페이르음</td>
-                    </tr>
-                    <tr>
-                        <td style="font-size: 25px;">카페주소:경기도 수원시 장안구 천천동 래미안 104동 ####호</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-        <div class="container-goods">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-                <table>
-                    <tr>
-                        <td><img src="../resources/img/cafe.jpg" style="max-width: 100%; height: auto;" alt=""></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-md-4">
-                <table>
-                    <tr>
-                        <td style="font-size: 30px; font-weight: bolder;">카아페이르음</td>
-                    </tr>
-                    <tr>
-                        <td style="font-size: 25px;">카페주소:경기도 수원시 장안구 천천동 래미안 104동 ####호</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-        <div class="container-goods">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-                <table>
-                    <tr>
-                        <td><img src="../resources/img/cafe.jpg" style="max-width: 100%; height: auto;" alt=""></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-md-4">
-                <table>
-                    <tr>
-                        <td style="font-size: 30px; font-weight: bolder;">카아페이르음</td>
-                    </tr>
-                    <tr>
-                        <td style="font-size: 25px;">카페주소:경기도 수원시 장안구 천천동 래미안 104동 ####호</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-        <div class="container-goods">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-                <table>
-                    <tr>
-                        <td><img src="../resources/img/cafe.jpg" style="max-width: 100%; height: auto;" alt=""></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-md-4">
-                <table>
-                    <tr>
-                        <td style="font-size: 30px; font-weight: bolder;">카아페이르음</td>
-                    </tr>
-                    <tr>
-                        <td style="font-size: 25px;">카페주소:경기도 수원시 장안구 천천동 래미안 104동 ####호</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-    </div>
-    <script>
-var slideIndex = 0
-      showSlides()
-
-      function showSlides() {
-        var i
-        var slides = document.getElementsByClassName('mySlides')
-        var dots = document.getElementsByClassName('dot')
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = 'none'
-        }
-        slideIndex++
-        if (slideIndex > slides.length) {
-          slideIndex = 1
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(' active', '')
-        }
-        slides[slideIndex - 1].style.display = 'block'
-        dots[slideIndex - 1].className += ' active'
-        setTimeout(showSlides, 5000) // Change image every 2 seconds
-      }
-    </script>
 </body>
-
 </html>

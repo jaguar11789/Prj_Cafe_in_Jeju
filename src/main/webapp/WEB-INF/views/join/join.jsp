@@ -60,7 +60,6 @@
       cursor: pointer;
     }
    
-   
 
   </style>
 

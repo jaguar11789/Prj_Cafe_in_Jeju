@@ -98,15 +98,14 @@
       <div id="logo">
         <a href="../list/main"><img src="../resources/img/logo2.png"></a>
       </div>
-      
       <!-- display : flex 를 위한 div-->
         <div id="joinform">
                 <!-- joinform의 input, label 태그 -->
                 <div id="input_container">
                     <label for="" class="input_label">아이디</label> <br>
-                    <input type="text" class="input_value" value=" 아이디를 입력해주세요."> <br>
+                    <input type="text" class="input_value" placeholder=" 아이디를 입력해주세요."> <br>
                     <label for="" class="input_label">비밀번호</label> <br>
-                    <input type="text" class="input_value" value=" 비밀번호를 입력해주세요."> <br>
+                    <input type="text" class="input_value" placeholder=" 비밀번호를 입력해주세요."> <br>
                     <input type="submit" class="input_button_login" value="로그인"> <br> <br>
                 </div>
         </div>

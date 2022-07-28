@@ -133,7 +133,7 @@
             <div align="center">고객님의 개인정보 보호를 위해 본인확인을 진행합니다.<div class="br"></div>
             비밀번호를 입력하세요.</div><br><br>
             <span id="userpwd_modify" style="color: #444444;">비밀번호 확인</span> 
-            <input type="text" placeholder="비밀번호를 입력해주세요." size="30"> 
+            <input type="password" placeholder="비밀번호를 입력해주세요." size="30"> 
             <hr>
 
             <a href="./usersec_modify_seccess"><button class="modify_confirm">회원탈퇴</button></a>
