@@ -426,7 +426,8 @@ a{
                         <h5>리뷰제목</h4>
                         <h5 style="color: #ffa600;">★★★★☆ 4.7</h5>
                         <h5>리뷰내용xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                        <img src="../resources/listimg/iceamericano.jpg" width="200px" height="200" alt="">
+                        <img src="resources/upload/${filename }" alt="text" />
+                        ${filename }
                     </td>
                 </tr>
             </table>

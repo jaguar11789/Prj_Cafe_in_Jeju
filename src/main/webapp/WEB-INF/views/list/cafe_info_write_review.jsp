@@ -297,6 +297,12 @@ textarea {
     resize: none;
 	border-color: #ffa600;
 }
+.reviewtitle {
+    /* width: 100%;
+    height: 6.25em;
+    resize: none; */
+	border-color: #ffa600;
+}
 
 /* 취소,확인 버튼 */
 .ok-cancel{
@@ -487,7 +493,7 @@ h2{
 				</div>
 				<hr />
 				<div class="col-md-12">
-					<form name="myform" id="myform" method="post" action="./save">
+					<form name="myform" id="myform" action="#" method="post" enctype="multipart/form-data">
 						<fieldset>
 							<!-- https://blogpack.tistory.com/993 참조-->
 							<legend>리뷰를 남겨주세요</legend>
@@ -499,25 +505,30 @@ h2{
 								<input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
 							</div>
 						</fieldset>
-					</form>
-					<textarea name="" id="" placeholder="리뷰를 작성해 주세요." maxlength="2000"></textarea>
-					<br>
-					<img src="../resources/listimg/iceamericano.jpg" alt="" style="width: 200px; height: 200px;">
+				</form>
+				<form action="writereview" method="post" enctype="multipart/form-data">
+						<input type="text" name="reviewtitle" class="reviewtitle" placeholder="제목을 입력해주세요." />
+						<textarea name="reviewcontent" id="" placeholder="리뷰를 작성해 주세요." maxlength="2000"></textarea>
+						<br>
+						<input type="file" name="reviewphoto"/>
+					<!-- <img src="../resources/listimg/iceamericano.jpg" alt="" style="width: 200px; height: 200px;"> -->
 					<br>
 					<div>
 						<table>
 							<tr>
 								<td class="button">
-									<a href="cafe_info_menu"><button class="custom-btn btn-5" "><span>나중에 쓰기</span></button></a>
+									<a href="cafe_info_menu"><button class="custom-btn btn-5"><span>나중에 쓰기</span></button></a>
 						        </td>
 								
 								<div class="ok-cancel">
 										<button class="custom-btn btn-5"><span>취소</span></button>
-										<button class="custom-btn btn-5"><span>확인</span></button>
+										<input type="submit" class="custom-btn btn-5" value="확인"/>
 								</div>
+								
 							</tr>
 						</table>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>

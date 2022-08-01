@@ -5,5 +5,7 @@
 <!-- 컨트롤 시프트 x는 소문자를 대문자로 바꿔준다 -->
 
 <mapper namespace="com.tech.list.dao.ListDao">
-	
+	<insert id="writereview">
+     	INSERT INTO REVIEW VALUES (#{param1},'jaguar1178',5,#{param2},#{param3})
+   </insert>
 </mapper>

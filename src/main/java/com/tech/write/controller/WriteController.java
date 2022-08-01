@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,8 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.tech.join.dao.JoinDao;
+import com.tech.list.dao.ListDao;
 import com.tech.write.dao.WriteDao;
 
 @Controller
@@ -100,9 +103,13 @@ public class WriteController {
 
 		WriteDao writedao = session.getMapper(WriteDao.class);
 
-		/*writedao.registercafeinfo(cafename, cafecondent, caddr, ctnum, cpnum, cconvenience, cafesns, cafephoto,
-				cafedetail, ctag, cafeceoname, cbusnum, cafebuslicense, cafepermit);*/
+		/*
+		 * writedao.registercafeinfo(cafename, cafecondent, caddr, ctnum, cpnum,
+		 * cconvenience, cafesns, cafephoto, cafedetail, ctag, cafeceoname, cbusnum,
+		 * cafebuslicense, cafepermit);
+		 */
 
 		return "write/register_cafemenu";
 	}
+
 }
