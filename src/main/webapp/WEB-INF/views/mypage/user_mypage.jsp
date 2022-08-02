@@ -2,74 +2,134 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="" />
-<meta name="author"
-	content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
-<meta name="generator" content="Hugo 0.98.0" />
-<title>Bootstrap demo</title>
-<!-- CDN -->
-<link rel="stylesheet" href="../resources/css/css.css" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-	crossorigin="anonymous" />
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<!-- !jeader.css -->
+<link rel="stylesheet" href="../resources/css/header.css" />
+<!-- !사용자페이지css -->
+<link rel="stylesheet" href="../resources/css/mypage_user.css" />
 </head>
-
 <body>
-	<!-- 위의 CDN링크에서 갖고 온다 -->
-	<link href="../resources/css/carousel.css" rel="stylesheet" />
-	<!-- header부분 -->
-	<header class="navbar navbar-white bg-white">
-		<div class="col-3">
-			<input type="checkbox" id="menuicon" /> 
-				<label for="menuicon">
+	<!-- !header -->
+	<header>
+		<div class="container">
+			<div class="menu">
+				<input type="checkbox" id="menuicon" /> <label for="menuicon">
 					<span></span> <span></span> <span></span>
 				</label>
-			<div class="sidebar"></div>
-		</div>
-		<div class="col-6 text-center">
-			<a class="blog-header-logo text-#888888" href="../list/main">
-			<img src="..\resources\img\logo2.png" alt="" /></a>
-		</div>
-		<div class="col-3 d-flex justify-content-end align-items-center">
-			<form action="#">
-				<input type="text" id="search1"> <a class="link-secondary" href="#" id="search1" aria-label="Search">
-			</form>
-			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-				fill="none" stroke="currentColor" stroke-linecap="round"
-				stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
-				viewBox="0 0 24 24">
-            <title>Search</title>
-            	<circle cx="10.5" cy="10.5" r="7.5" />
-            	<path d="M21 21l-5.2-5.2" />
-          	</svg>
-			</a>
-			<a class="btn btn-sm btn-outline-secondary" href="../login/login"
-				style="background-color: cyan">로그인</a> &nbsp; <a class="btn btn-sm btn-outline-secondary" href="../join/join">회원가입
+				<div class="sidebar">
+					<div class="category">
+						<ul>
+							<li class="menu_logo"><a href="../list/main"><img
+									src="../resources/img/logo2.png" alt="" /></a></li>
+							<li class="menu_local"><a href="#"><font>제주</font></a></li>
+							<li class="menu_local"><a href="#"><font>애월</font></a></li>
+							<li class="menu_local"><a href="#"><font>한림</font></a></li>
+							<li class="menu_local"><a href="#"><font>한경</font></a></li>
+							<li class="menu_local"><a href="#"><font>대정</font></a></li>
+							<li class="menu_local"><a href="#"><font>안덕</font></a></li>
+							<li class="menu_local"><a href="#"><font>중문</font></a></li>
+							<li class="menu_local"><a href="#"><font>서귀포</font></a></li>
+							<li class="menu_local"><a href="#"><font>남원</font></a></li>
+							<li class="menu_local"><a href="#"><font>표선</font></a></li>
+							<li class="menu_local"><a href="#"><font>성산</font></a></li>
+							<li class="menu_local"><a href="#"><font>구좌</font></a></li>
+							<li class="menu_local"><a href="#"><font>조천</font></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<ul class="navar_logo">
+				<a href="../list/main">
+					<li><img class="logo" src="../resources/img/logo2.png" alt="" /></li>
 				</a>
-			<nav class="navbar bg-light">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="../mypage/user_mypage"> 
-						<img src="../resources//img/user.png" alt="" width="40" height="40" class="d-inline-block align-text-top" />
+			</ul>
+
+			<ul class="user">
+				<li class=""><a href="../mypage/user_mypage"><img
+						class="img" src="../resources/img/user.png" alt="" /></a></li>
+			</ul>
+		</div>
+		<hr />
+	</header>
+	<!-- !header end -->
+
+	<!-- 본문 가보자고! -->
+	<main>
+		<section class="borderline_bottom">
+			<h2>내정보</h2>
+			<div class="userprofile borderline_top">
+				<div class="userimg">
+					<img src="../resources/img/user.png" alt="userimg" class="profileimg" />
+				</div>
+				<div class="userinfo">
+					<ul>
+						<li>가라미(계정명)</li>
+						<a href="../modify/user_modify_info">
+							<li>개인정보 수정</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- !최근본 카페 영역 -->
+		<section class="cafelist borderline_bottom">
+			<h2>최근 본 카페</h2>
+<%-- 			<c:when test="${recentcafe }" var="recent"> --%>
+				<div class="recentCafe">
+					<div class="cafeimg">
+						<!-- !주소단에 카페이름 들어가 줘야함 -->
+						<!-- <a href="./list/cafe_info_detail?cafename"> -->
+						<a href="#"> <img src="../resources/img/cafe.jpg" alt="cafeimg"
+							class="recentcafeimg" />
+						</a>
+					</div>
+					<div class="cafeinfo">
+						<ul>
+							<!-- <a href="./list/cafe_info_detail?cafename"> -->
+							<a href="#">
+								<li>라미네(카페이름)</li>
+							</a>
+							<!-- <a href="./list/cafe_info_detail?cafename"> -->
+							<a href="#">
+								<li>경기도 용인시 처인구(카페주소)</li>
+							</a>
+						</ul>
+					</div>
+				</div>
+<%-- 			</c:when> --%>
+		</section>
+
+		<section class="cafelist borderline_bottom">
+			<h2>찜한 카페</h2>
+			<div class="likeCafe">
+				<div class="cafeimg">
+					<!-- !주소단에 카페이름 들어가 줘야함 -->
+					<!-- <a href="./list/cafe_info_detail?cafename"> -->
+					<a href="#"> <img src="../resources/img/cafe.jpg" alt="cafeimg"
+						class="recentcafeimg" />
 					</a>
 				</div>
-			</nav>
-		</div>
-	</header>
-	<!-- header 끝 -->
-	<hr />
-	<h3>사용자정보 페이지라구~</h3>
-	<a href="../modify/user_modify_info">개인정보 변경</a>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-		crossorigin="anonymous">
-	</script>
-
+				<div class="cafeinfo">
+					<ul>
+						<!-- <a href="./list/cafe_info_detail?cafename"> -->
+						<a href="#">
+							<li>라미네(카페이름)</li>
+						</a>
+						<!-- <a href="./list/cafe_info_detail?cafename"> -->
+						<a href="#">
+							<li>경기도 용인시 처인구(카페주소)</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
 </body>
 </html>
+
