@@ -10,9 +10,9 @@
 <meta name="author"
    content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
 <meta name="generator" content="Hugo 0.98.0" />
-<title>희원이 카페등록</title>
+<title>카페등록</title>
 <!-- CDN -->
-<link href="../resources/css/css1.css" rel="stylesheet" />
+<link rel="stylesheet" href="../resources/css/css1.css" />
 <link
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
    rel="stylesheet"
@@ -24,7 +24,6 @@
 <body>
    <!-- 위의 CDN링크에서 갖고 온다 -->
    <link href="../resources/css/carousel.css" rel="stylesheet" />
-   
    <!-- header부분 -->
    <header class="navbar navbar-white bg-white">
       <div class="col-3">
@@ -36,7 +35,7 @@
       </div>
       <div class="col-6 text-center">
          <a class="blog-header-logo text-#888888" href="../list/main">
-         <img src="../resources/img/logo2.png" alt="" /></a>
+         <img src="..\resources\img\logo2.png" alt="" /></a>
       </div>
       <div class="col-3 d-flex justify-content-end align-items-center">
          <form action="#">
@@ -66,199 +65,201 @@
    <!-- header 끝 -->
    <hr />
    <!-- !바디시작 -->
-   <form action="" id="content_form">
+   <form action="caferegistersucess" id="content_form" method="post" enctype="multipart/form-data">
       <div class="container">
-         <div class="middle">
+      <div class="middle">
       <header id="content_header">
         <h5>내 카페 등록하기</h5>
         <br><br>
         <h6>가맹점 기본 정보</h6>
       </header>
-        <div>
-        <hr width="800px">
-         <label class="cafelab">
+      <hr width="800px">
+      <div>
+         <div class="cafelab">
             <i class="bi bi-star-fill"></i><!--별모양 필수입력표시-->
             <span id="cafname">상호명</span>
-            <input type="text" name="cafname" placeholder="상호명을 입력하세요" size="40px"><br>
-         </label>
-         <hr width="800px"> 
-       </div>
+            <input type="text" name="cafename" placeholder="상호명을 입력하세요" size="40px"><br>
+         </div>
+      </div>
+      <hr width="800px"> 
        <div>
-            <label class="cafelab">
-               <i class="bi bi-star-fill"></i><!--별모양 필수입력표시-->
-           <span id="cafcondent">업체설명</span>
-        <textarea name="cafcondent" placeholder="최대 1000자만 입력 가능합니다" cols="80" rows="3"></textarea>
-        </label>
-        <hr width="800px">
+         <div class="cafelab">
+            <i class="bi bi-star-fill"></i><!--별모양 필수입력표시-->
+            <span id="cafcondent">업체설명</span>
+            <textarea name="cafecondent" placeholder="최대 1000자만 입력 가능합니다" cols="80" rows="3"></textarea>
+         </div>
       </div>
+      <hr width="800px">
       <div>
-            <label class="cafelab">
-               <i class="bi bi-star-fill"></i><!--별모양 필수입력표시-->
-          <span id="cafaddr">주소</span>
-           <input type="text" id="sample6_postcode" placeholder="우편번호"> 
-           &emsp; <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
-                <span>&emsp;</span>
-                &emsp;  <input type="hidden"><input type="text" id="sample6_address" placeholder="주소" size="25px">
-           <input type="text" id="sample6_detailAddress" placeholder=" 상세 주소를 입력해주세요." size="40px"><br>
-         </label>
-         <hr width="800px">
+         <div class="cafelab">
+            <i class="bi bi-star-fill"></i><!--별모양 필수입력표시-->
+            <span id="cafaddr">주소</span>
+            <input type="text" name=cafeaddr id="zipcode" placeholder="우편번호"> 
+            &emsp; <input type="button" onclick="addrsearch();" value="우편번호 찾기"><br><br><!--팝업창 스크립트연결-->
+            <span>&emsp;</span><!--위치조정을 위한 span-->
+            &emsp; <input type="text" name=cafeaddr id="address1" placeholder="주소" size="25px" readonly>
+            <input type="text" id="address2" name=cafeaddr placeholder=" 상세 주소를 입력해주세요." size="40px"><br>
+         </div>
       </div>
-         <div>
-           <label class="cafelab">
-            &emsp;  <span id="cafcnum">전화번호</span>
-        <input type="text" name="cafcnum" size="6px"> <input type="text" name="cafename" size="6px"> <input type="text" name="cafename" size="6px">
-          &emsp;&emsp;&emsp;  <span id="cafpnum">휴대폰번호 </span>
-        <input type="text" name="cafpnum" size="6px"> <input type="text" name="cafename" size="6px"> <input type="text" name="cafename" size="6px">
-      </label>
-        <hr width="800px">
+      <hr width="800px">
+      <div>
+         <div class="cafelab">
+            &emsp;  <span id="caftnum">전화번호</span>
+            <input type="text" name="cafetnum" size="6px"> <input type="text" name="cafetnum" size="6px"> <input type="text" name="cafetnum" size="6px">
+            &emsp;&emsp;&emsp;  <span id="cafpnum">휴대폰번호 </span>
+            <input type="text" name="cafepnum" size="6px"> <input type="text" name="cafepnum" size="6px"> <input type="text" name="cafepnum" size="6px">
+         </div>
       </div>
-        <div>
-         <label class="cafelab">
-            &emsp;  <span id="cafeconvenience"> 편의시설</span>
-         <h><input type="checkbox" name="cafeconvenience" value="smokarea">흡연구역</h>
-         <h><input type="checkbox" name="cafeconvenience" value="nokids">노키즈존</h>
-         <h><input type="checkbox" name="cafeconvenience" value="kids">키즈존</h>
-         <h><input type="checkbox" name="cafeconvenience" value="groupseat">단체석</h>
-         <h><input type="checkbox" name="cafeconvenience" value="parking">주차구역</h>
-         <h><input type="checkbox" name="cafeconvenience" value="pet">반려동물</h>
-         <h><input type="checkbox" name="cafeconvenience" value="inrestroom">실내화장실</h>
-         <h><input type="checkbox" name="cafeconvenience" value="outrestroom">야외화장실</h>
-         <h><input type="checkbox" name="cafeconvenience" value="wifi">와이파이</h>
-         <h><input type="checkbox" name="cafeconvenience" value="concentric">콘센트</h>
-         <h><input type="checkbox" name="cafeconvenience" value="elevator">승강기</h>
-      </label>
-         <hr width="800px">
-   </div>
-        <div>
-         <label class="cafelab">
+      <hr width="800px">
+      <div>
+         &emsp;  <span id="cafeconvenience"> 편의시설</span>
+         <div class="cafeche">
+            <input type="checkbox" name="cafeconvenience" value="smokarea" id="smokarea">
+            <label for="smokarea">흡연구역</label> 
+            <input type="checkbox" name="cafeconvenience" value="nokids" id="nokids">
+            <label for="nokids">노키즈존</label>
+            <input type="checkbox" name="cafeconvenience" value="groupseat" id="groupseat">
+            <label for="groupseat">단체석</label>
+            <input type="checkbox" name="cafeconvenience" value="kids" id="kids">
+            <label for="kids">키즈존</label>
+            <input type="checkbox" name="cafeconvenience" value="wifi" id="wifi">
+            <label for="wifi">와이파이</label><br><br>
+            <input type="checkbox" name="cafeconvenience" value="pet" id="pet">
+            <label for="pet">반려동물</label>
+            <input type="checkbox" name="cafeconvenience" value="parking" id="parking">
+            <label for="parking">주차구역</label>
+            <input type="checkbox" name="cafeconvenience" value="concentric" id="concentric">
+            <label for="concentric">콘센트</label>
+            <input type="checkbox" name="cafeconvenience" value="elevator" id="elevator">
+            <label for="elevator">승강기</label>
+            <input type="checkbox" name="cafeconvenience" value="outrestroom" id="outrestroom">
+            <label for="outrestroom">야외화장실</label>
+            <input type="checkbox" name="cafeconvenience" value="inrestroom" id="inrestroom">
+            <label for="inrestroom">실내화장실</label>
+         </div>
+      </div>
+      <hr width="800px">
+      <div>
+         <div class="cafelab">
             &emsp;  <span id="sns"> sns</span>
-         <input type="text" name="sns" placeholder="ex)instargram,facebook,blog" size="60px"><br>
-        </label>
-        <hr width="800px">
+            <input type="text" name="cafesns" placeholder="ex)instargram,facebook,blog" size="60px"><br>
         </div>
-        <div>
-         <label class="cafelab">
-            &emsp;  <span id="cafpho"> 카페사진</span>
-         <input type="text" name="cafpho" placeholder="ex)instargram,facebook,blog" size="40px">
-         &emsp; <input type="file" id="file"> <label for="file">파일찾기</label> <br><br>
-         &emsp;  <input type="image" src="" alt="" width="150" height="150">
-        </label>
-        <hr width="800px">
+      </div>
+      <hr width="800px">
+      <div>
+         <div class="cafelab">
+            &emsp; <span id="cafpho"> 카페사진</span>
+            <input type="text" name="cafephoto" placeholder="ex)instargram,facebook,blog" size="40px" readonly>
+            &emsp; <input multiple type="file" id="file" value=""> <label for="file">파일찾기</label> <br><br>
+            &emsp; <input type="image" src="" alt="" width="150" height="150">
         </div>
-        <div>
-         <label class="cafelab">
+      </div>
+      <hr width="800px">
+      <div>
+         <div class="cafelab">
             <i class="bi bi-star-fill"></i><!--별모양 필수입력표시-->
             <span id="opentime"> 이용상세설명</span>
-       <textarea name="opentime" placeholder="ex)이용시간, 휴무일 등" cols="80" rows="3"></textarea><h id="hsub">최대 1000자만 입력 가능합니다</h>
-       </label>
-       <hr width="800px">
+            <textarea name="cafedetail" placeholder="ex)이용시간, 휴무일 등" cols="80" rows="3"></textarea><h id="hsub">최대 1000자만 입력 가능합니다</h>
+         </div>
       </div>
-      <div>
-         <label class="cafelab">
-            &emsp;  <span id="tag"> #태그등록</span>
-            <h><input type="checkbox" name="tag" value="see">#오션뷰</h>
-            <h><input type="checkbox" name="tag" value="nokids">#포토존</h>
-            <h><input type="checkbox" name="tag" value="kids">#사진소품</h>
-            <h><input type="checkbox" name="tag" value="groupseat">#모던풍</h>
-            <h><input type="checkbox" name="tag" value="parking">#한라산뷰</h>
-            <h><input type="checkbox" name="tag" value="pet">#테마카페</h>
-            <h><input type="checkbox" name="tag" value="inrestroom">#시그니처</h>
-            <h><input type="checkbox" name="tag" value="outrestroom">#해외갬성</h>
-            <h><input type="checkbox" name="tag" value="wifi">#디저트</h>
-            <h><input type="checkbox" name="tag" value="concentric">#친환경</h>
-      </label>
       <hr width="800px">
-      </div>
+      <div>
+         &emsp;  <span id="tag"> #태그등록</span>
+         <div class="cafeche">
+            <input type="checkbox" name="cafetag" value="signature" id="signature">
+            <label for="signature">#시그니처</label>
+            
+            <input type="checkbox" name="cafetag" value="photo" id="photo">
+            <label for="photo">#포토존</label> 
+            
+            <input type="checkbox" name="cafetag" value="photost" id="photost">                          
+            <label for="photost">#사진소품</label>
+            
+            <input type="checkbox" name="cafetag" value="moden" id="moden">
+            <label for="moden">#모던풍</label>
+            
+            <input type="checkbox" name="cafetag" value="mountain" id="mountain"> 
+            <label for="mountain">#한라산뷰</label><br><br>
+            
+            <input type="checkbox" name="cafetag" value="thema" id="thema">
+            <label for="thema">#테마카페</label>
+            
+            <input type="checkbox" name="cafetag" value="see" id="see">
+            <label for="see">#오션뷰</label>
+            
+            <input type="checkbox" name="cafetag" value="fcountry" id="fcountry">
+            <label for="fcountry">#해외감성</label>
+            
+            <input type="checkbox" name="cafetag" value="dessert" id="dessert">
+            <label for="dessert">#디저트</label>
+            
+            <input type="checkbox" name="cafetag" value="eco" id="eco">
+            <label for="eco">#친환경</label>
+         </div>
+      </div> 
+      <hr width="800px">
       <div id="content_header">
          <br><br>
-         
          <h6><i class="bi bi-star-fill"></i>사업자 정보</h6><!--별모양 필수입력표시, h6과 i에 준 효과가 각각 달라서 둘다 씀-->
-        <hr width="800px">
       </div>
-         <div>
-         <label class="cafelab">
-         <span id="bus">사업자번호</span>
-         <input type="text" name="busnum" size="6px"> <input type="text" name="busnum" size="6px"> <input type="text" name="busnum" size="6px"><br>
-         <span id="bus">대표자</span>
-         <input type="text" name="ceoname" placeholder="대표자명 입력" size="40px"> <br>
-         <span id="bus">사업자등록증</span>
-         <input type="text" name="buslicense" placeholder="100mb 이하 등록가능" size="40px">
-          &emsp; <input type="file" id="file"> <label for="file">파일찾기</label><br>
-         <span id="bus">영업허가증</span>
-         <input type="text" name="buslicense" placeholder="100mb 이하 등록가능" size="40px">
-          &emsp; <input type="file" id="file"> <label for="file">파일찾기</label>
-         </label>
+      <hr width="800px">
+      <div>
+         <div class="cafelab">
+           <span id="bus">사업자번호</span>
+           <input type="text" name="cafebusnum" size="6px"> <input type="text" name="cafebusnum" size="6px"> <input type="text" name="cafebusnum" size="6px"><br>
+           <span id="bus">대표자</span>
+           <input type="text" name="cafeceoname" placeholder="대표자명 입력" size="40px"> <br>
+           <span id="bus">사업자등록증</span>
+           <input type="text" name="cafebuslicense" placeholder="100mb 이하 등록가능" size="40px">
+            &emsp; <input type="file" id="file"> <label for="file">파일찾기</label><br>
+           <span id="bus">영업허가증</span>
+           <input type="text" name="cafepermit" placeholder="100mb 이하 등록가능" size="40px">
+            &emsp; <input type="file" id="file"> <label for="file">파일찾기</label>
          </div>
+      </div>
+      <div class="u_agree">
          <div class="square">
             <b> 개인정보 수집 및 이용동의</b><br> 카페 인 제주 서비스
-            "사업자등록"의 제공을 위해 아래와 같이 개인정보를 <br>
-            수집 이용합니다 <br>
-            수집목적 :  카페 업체등록<br>
-            수집항목 : 이메일, 연락처<br>
-            보유 및 이용기간 :  파기 요청 전, 업체 페업 전까지<br>
-            위 사항에 동의하지 않을 수 있으나, 동의를 거부할 경우 
-            서비스 이용이 불가능합니다. <br><br>
-            <input type="checkbox" name="agree" value="agree"> 
-            위 개인정보 수집이용에 동의합니다.(필수)
-         </div> <br><br>
-         <div>
-      <input type="button" value="메뉴등록하러가기!" id="end" onclick="location.href='.\register_cafemenu.html';"> 
-      </div></form>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-    function sample6_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("sample6_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
+               "사업자등록"의 제공을 위해 아래와 같이 개인정보를 <br>
+               수집 이용합니다 <br>
+               수집목적 :  카페 업체등록<br>
+               수집항목 : 이메일, 연락처<br>
+               보유 및 이용기간 :  파기 요청 전, 업체 페업 전까지<br>
+               위 사항에 동의하지 않을 수 있으나, 동의를 거부할 경우 
+               서비스 이용이 불가능합니다. <br><br>
+            <input type="checkbox" name="agree" value="agree" id="agree"> 
+            <label for="agree">위 개인정보 수집이용에 동의합니다.(필수)</label>         
+         </div>
+      </div> 
+      <div class="end">
+         <input type="submit" value="메뉴등록하러가기!" id="end"> 
+      </div>
+   
+      <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+      <script>
+       function addrsearch(){
+         new daum.Postcode({
+            oncomplete: function(data){
+               console.log(data);
+               var roadAddr = data.roadAddress; //도로명 주소 변수
+               var jibunAddr = data.jibunAddress; //지번 주소 변수
+               document.getElementById('zipcode').value = data.zonecode;
+               if(roadAddr !==''){
+                  document.getElementById('address1').value = roadAddr;
+               }else if(jibunAddr !==''){
+                  document.getElementById('address1').value = jibunAddr;
+               }
             }
-        }).open();
-    }
-
-     
-</script>
-   <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous">
-   </script>
+         }).open();   
+      }
+      </script>
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+         crossorigin="anonymous">
+      </script>
+     </div>
     </div>
-   </div>
+   </form>
 </body>
 </html>

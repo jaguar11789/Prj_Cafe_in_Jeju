@@ -1,11 +1,31 @@
 package com.tech.list.controller;
 
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.tech.list.dao.ListDao;
 
 @Controller
 @RequestMapping("/list/*")
 public class ListController {
+
+	@Autowired
+	private SqlSession session;
 
 	@RequestMapping("/main")
 	public String main() {
@@ -103,15 +123,97 @@ public class ListController {
 		return "list/cafe_info_detail";
 	}
 
+	
+	
+	
+	
+	
 	@RequestMapping("/cafe_info_review")
 	public String cafe_info_review() {
 
+		
+		
+		
+		
 		return "list/cafe_info_review";
 	}
+	
+	
+	
+	
 
 	@RequestMapping("/cafe_info_write_review")
 	public String cafe_info_write_review() {
 
 		return "list/cafe_info_write_review";
+	}
+
+	/*@RequestMapping("/writereview")
+	public String writereview(HttpServletRequest request, Model model) {
+		System.out.println("======write()======");
+		try {
+			String attachPath = "resources\\upload\\";
+			String uploadPath = request.getSession().getServletContext().getRealPath("/");
+			System.out.println("uploadPath :" + uploadPath);
+			String path = uploadPath + attachPath;
+			
+			System.out.println("지나가유~!!!!");
+
+			MultipartRequest req = // MultipartRequest이거로 write_view로 보내서 받을 때도 MultipartRequest로 받아야 된다
+					new MultipartRequest(request, path, 1024 * 1024 * 20, "utf-8", new DefaultFileRenamePolicy());// 임포트확인
+
+			System.out.println("multipart지나가유~~!!!!!");
+//   MultipartRequest는 파일 이름이 같으면 변화를 줘서 저장을 하는 기능이 있다
+			String title = req.getParameter("reviewtitle");
+//   String id = req.getParameter("id");
+//			String score = req.getParameter("score");
+			String content = req.getParameter("reviewcontent");
+			String file = req.getFilesystemName("reviewphoto");
+
+			if (file == null) {
+				file = "";
+			}
+			ListDao listdao = session.getMapper(ListDao.class);
+			listdao.writereview(title, content ,file);
+			
+			System.out.println("받아옴~!!!!");
+
+		} catch (Exception e) {
+			e.getMessage();
+		}
+		return "redirect:cafe_info_review";
+	}*/
+
+	@RequestMapping("/writereview")
+	public String wrtiereivew(MultipartHttpServletRequest request, Model model) throws Exception {
+		
+		
+		
+//		String attachPath = "resources\\upload\\";
+//		String uploadPath = request.getSession().getServletContext().getRealPath("/");
+//		System.out.println("uploadPath :" + uploadPath);
+//		String path = uploadPath + attachPath;
+//		
+//		System.out.println("지나가유~!!!!");
+//		
+//		MultipartRequest req = // MultipartRequest이거로 write_view로 보내서 받을 때도 MultipartRequest로 받아야 된다
+//				new MultipartRequest(request, path, 1024 * 1024 * 20, "utf-8", new DefaultFileRenamePolicy());// 임포트확인
+		
+		String title = request.getParameter("reviewtitle");
+		String content = request.getParameter("reviewcontent");
+		MultipartFile file = request.getFile("reviewphoto");
+		
+		String filename = file.getOriginalFilename();
+		String root = "C:\\javabigspring\\springwork22\\Cafe_in_Jeju\\src\\main\\webapp\\resources\\upload" + "\\" +filename;
+		
+		file.transferTo(new File(root));// transferTo -> 파일 업로드
+		
+		ListDao listdao = session.getMapper(ListDao.class);
+		listdao.writereview(title, content, filename);
+		System.out.println("받음");
+		
+		model.addAttribute("filename", filename);
+		
+		return "list/cafe_info_review";
 	}
 }

@@ -5,5 +5,13 @@
 <!-- 컨트롤 시프트 x는 소문자를 대문자로 바꿔준다 -->
 
 <mapper namespace="com.tech.write.dao.WriteDao">
+
+
+	<insert id="registercafeinfo">
+		INSERT INTO CAFE_INFO VALUES(#{param1},
+		#{param2},#{param3},#{param4},#{param5},
+		#{param6},#{param7},#{param8},#{param9},
+		#{param10},#{param11},#{param12},#{param13},#{param14})
+	</insert>
 	
 </mapper>
