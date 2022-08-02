@@ -10,4 +10,8 @@ public interface ListDao {
 
 	public ArrayList<ReviewDto> cafereview();
 
+	public float total();
+
+	public void writereview(String title, String content, String filename, int starsocre);
+
 }

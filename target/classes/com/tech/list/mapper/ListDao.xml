@@ -6,10 +6,16 @@
 
 <mapper namespace="com.tech.list.dao.ListDao">
 	<insert id="writereview">
-     	INSERT INTO REVIEW VALUES (#{param1},'jaguar1178',5,#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE)
-   </insert>
-   
-   <select id="cafereview" resultType="com.tech.cafein.dto.ReviewDto">
-   		SELECT TITLE, CONTENT, IMG, RDATE FROM REVIEW ORDER BY 	REVIEWNUM DESC
-   </select>
+		INSERT INTO REVIEW VALUES
+		(#{param1},'jaguar1178',#{param4},#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE)
+	</insert>
+
+	<select id="cafereview"
+		resultType="com.tech.cafein.dto.ReviewDto">
+		SELECT TITLE, CONTENT, IMG, SCORE, RDATE FROM REVIEW ORDER BY REVIEWNUM DESC
+	</select>
+
+	<select id="total" resultType="Float">
+		SELECT ROUND(AVG(SCORE),1) FROM REVIEW
+	</select>
 </mapper>

@@ -427,47 +427,75 @@ a{
             <hr>
                <table class="table table-hover"  >
                      <c:forEach items="${review }" var="review">
-                  <tr>
-                     <td class="board_left">
-                        <table style="text-decoration: center">
-                           <tr>
-                              <td>
-                                 <img alt="" src="../resources/img/user.png" style="width: 50px; height: 50px;" >
-                              </td>
-                           </tr>
-                           <tr>
-                              <td>
-                                 닉네임2 
-                              </td>
-                           </tr>
-                        </table>
-                     </td>
-                     <td class="board_left">
-                        <table >
-                           <tr>
-                              <td colspan="1" style=" width: 500px">
-                                 ${review.rdate }
-                              </td >
-                           </tr>
-                           <tr>
-                              <td>
-                                 타이틀 : ${review.title }
-                              </td>
-                           </tr>
-                           <tr>
-                              <td>
-                                 별점 : ★★★★☆
-                              </td>
-                           </tr>
-                           <tr>
-                              <td>
-                                 내용 : ${review.content }
-                              </td>
-                           </tr>
-                        </table>
-                     </td>
-                     <td class="board_left"><img src="../resources/upload/${review.img }" alt="이미지없음" style="width: 200px; height: 200px;" /></td>
-                     </tr>
+                     <tr>
+                        <td class="board_left">
+                           <table style="text-decoration: center">
+                              <tr>
+                                 <td>
+                                    <img alt="" src="../resources/img/user.png" style="width: 50px; height: 50px;" >
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    닉네임2 
+                                 </td>
+                              </tr>
+                           </table>
+                        </td>
+                        <td class="board_left">
+                           <table >
+                              <tr>
+                                 <td colspan="1" style=" width: 500px">
+                                    ${review.rdate }
+                                 </td >
+                              </tr>
+                              <tr>
+                                 <td>
+                                    타이틀 : ${review.title }
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                 <c:set value="${review.score }" var="star"/>
+                                    <div style="color: #ffa600; font-size: 20px;">
+                                       <c:if test="${star eq 5.0}">★★★★★</c:if>
+                                <c:if test="${star eq 4.0}">★★★★☆</c:if>
+                                       <c:if test="${star eq 3}">★★★☆☆</c:if>
+                                       <c:if test="${star eq 2}">★★☆☆☆</c:if>
+                                       <c:if test="${star eq 1}">★☆☆☆☆</c:if>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    내용 : ${review.content }
+                                 </td>
+                              </tr>
+                           </table>
+                        </td>
+                        <td class="board_left">
+                           
+                           <c:set value="${review.img }" var="filename" />
+<c:set var="fileNm" value="${fn:toLowerCase(filename) }" />
+<c:forTokens var="token" items="${fileNm }" delims="." varStatus="status">
+   <c:if test="${status.last }">
+      <c:choose>
+         <c:when test="${token eq 'jpg' || token eq 'png' || token eq 'bmp' }">
+
+            <div>
+               <img src="../resources/upload/${review.img }" alt="이미지없음" style="width: 200px; height: 200px;" />
+            </div>
+         </c:when>
+      </c:choose>
+   </c:if>
+</c:forTokens>
+                           
+                           
+                           <!-- <img alt="q" src="../resources/upload/4.png"> -->
+                           <!-- <img alt="t" src="../resources/upload/8.png"> -->
+                        </td>
+                        
+                        </tr>
                   </c:forEach>
                <!-- <tr>
                   <td class="board_left">
