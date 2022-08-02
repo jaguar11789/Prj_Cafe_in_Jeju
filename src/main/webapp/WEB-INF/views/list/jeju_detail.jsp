@@ -2,73 +2,254 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="" />
-<meta name="author"
-	content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
-<meta name="generator" content="Hugo 0.98.0" />
-<title>Bootstrap demo</title>
-<!-- CDN -->
-<link rel="stylesheet" href="../resources/css/css.css" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-	crossorigin="anonymous" />
-</head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="../resources/css/jeju_local_detail.css">
+    </head>
 
-<body>
-	<!-- 위의 CDN링크에서 갖고 온다 -->
-	<link href="../resources/css/carousel.css" rel="stylesheet" />
-	<!-- header부분 -->
-	<header class="navbar navbar-white bg-white">
-		<div class="col-3">
-			<input type="checkbox" id="menuicon" /> 
-				<label for="menuicon">
-					<span></span> <span></span> <span></span>
-				</label>
-			<div class="sidebar"></div>
-		</div>
-		<div class="col-6 text-center">
-			<a class="blog-header-logo text-#888888" href="./main">
-			<img src="..\resources\img\logo2.png" alt="" /></a>
-		</div>
-		<div class="col-3 d-flex justify-content-end align-items-center">
-			<form action="#">
-				<input type="text" id="search1"> <a class="link-secondary" href="#" id="search1" aria-label="Search">
-			</form>
-			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-				fill="none" stroke="currentColor" stroke-linecap="round"
-				stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
-				viewBox="0 0 24 24">
-            <title>Search</title>
-            	<circle cx="10.5" cy="10.5" r="7.5" />
-            	<path d="M21 21l-5.2-5.2" />
-          	</svg>
-			</a>
-			<a class="btn btn-sm btn-outline-secondary" href="../login/login"
-				style="background-color: cyan">로그인</a> &nbsp; <a class="btn btn-sm btn-outline-secondary" href="../join/join">회원가입
-				</a>
-			<nav class="navbar bg-light">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="../mypage/user_mypage"> 
-						<img src="../resources//img/user.png" alt="" width="40" height="40" class="d-inline-block align-text-top" />
-					</a>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<!-- header 끝 -->
-	<hr />
-	<h3>제주 페이지라구~</h3>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-		crossorigin="anonymous">
-	</script>
+    <body>
+        <header>
+            <link
+                href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap"
+                rel="stylesheet"
+            />
+            <!-- Custom styles for this template -->
+            <!-- /      <link href="blog.css" rel="stylesheet" /> -->
+            <link rel="stylesheet" href="../resources/css/header.css" />
+            <div class="container">
+                <div class="menu">
+                    <input type="checkbox" id="menuicon" />
+                    <label for="menuicon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <div class="sidebar">
+                        <div class="category">
+                            <ul>
+                                <li class="menu_logo">
+                                    <a href="./main"
+                                        ><img src="../resources/img/logo2.png" alt=""
+                                    /></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>제주</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>애월</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>한림</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>한경</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>대정</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>안덕</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>중문</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>서귀포</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>남원</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>표선</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>성산</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>구좌</font></a>
+                                </li>
+                                <li class="menu_local">
+                                    <a href="#"><font>조천</font></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul class="navar_logo">
+                    <li><img class="logo" src="../resources/img/logo2.png" alt="" /></li>
+                </ul>
 
+                <ul class="user">
+                    <li class="">
+                        <a href="login"
+                            ><img class="img" src="../resources/img/user.png" alt=""
+                        /></a>
+                    </li>
+                </ul>
+            </div>
+            <hr />
+        </header>
+    
+    <!-- 슬라이드 사진 -->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- xmlns에는 들어갈 링크 넣기 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../resources/listimg/coffee4.jpg" style="width: 100%; height: auto;" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="../resources/listimg/coffee4.jpg" style="width: 100%; height: auto;" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="../resources/listimg/coffee4.jpg" style="width: 100%; height: auto;" alt="">
+            </div>
+            <!-- 지역별 버튼 -->
+            <!-- <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn1 btn-primary">
+                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
+                </button>
+                <button type="button" class="btn1 btn-primary">
+                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
+                </button>
+                <button type="button" class="btn1 btn-primary">
+                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
+                </button>
+                <button type="button" class="btn1 btn-primary">
+                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
+                </button>
+                <button type="button" class="btn1 btn-primary">
+                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
+                </button>
+                <button type="button" class="btn1 btn-primary">
+                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
+                </button>
+                <button type="button" class="btn1 btn-primary">
+                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
+                </button>
+            </div> -->
+        </div>
+        <!-- 사진을 좌우로 넘길 수 있게 -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>
+    <hr>
+    <!-- 카페설명 -->
+    <div class="container-goods">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <table>
+                    <tr>
+                        <td><a href="./cafe_info_menu"><img src="../resources/listimg/cafe.jpg" style="max-width: 100%; height: 300px;" alt=""></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <table>
+                    <tr>
+                        <td style="font-size: 25px; font-weight: bolder;"><a href="./cafe_info_menu">투썸 플레이스</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;">카페주소:서울시 금천구 벚꽃로 40, 105동 XXXX호</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="container-goods">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <table>
+                    <tr>
+                        <td><a href="./cafe_info_menu"><img src="../resources/listimg/cafe.jpg" style="max-width: 100%; height: 300px;" alt=""></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <table>
+                    <tr>
+                        <td style="font-size: 25px; font-weight: bolder;"><a href="./cafe_info_menu">카아페이르음</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;">카페주소:경기도 수원시 장안구 천천동 래미안 104동 ####호</td>
+                </table>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="container-goods">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <table>
+                    <tr>
+                        <td><img src="../resources/listimg/cafe.jpg" style="max-width: 100%; height: 300px;" alt=""></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <table>
+                    <tr>
+                        <td style="font-size: 25px; font-weight: bolder;">카아페이르음</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;">카페주소:경기도 수원시 장안구 천천동 래미안 104동 ####호</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="container-goods">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <table>
+                    <tr>
+                        <td><img src="../resources/listimg/cafe.jpg" style="max-width: 100%; height: 300px;" alt=""></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <table>
+                    <tr>
+                        <td style="font-size: 30px; font-weight: bolder;">카아페이르음</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 25px;">카페주소:경기도 수원시 장안구 천천동 래미안 104동 ####호</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

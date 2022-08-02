@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fullpage js</title>
+    <title>제주도 1등 카페추천, Cafe:in_Jeju</title>
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- fullpage cdn -->
     <link

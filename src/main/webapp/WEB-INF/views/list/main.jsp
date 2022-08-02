@@ -2,11 +2,11 @@
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>카페인제주: 나만의 카페 검색</title>
 
     <!-- 폰트 -->
 
@@ -36,43 +36,43 @@
                   /></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>제주</font></a>
+                  <a href="./jeju_detail"><font>제주</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>애월</font></a>
+                  <a href="./aewol_detail"><font>애월</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>한림</font></a>
+                  <a href="./hanlim_detail"><font>한림</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>한경</font></a>
+                  <a href="./hangyoung_detail"><font>한경</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>대정</font></a>
+                  <a href="./daejung_detail"><font>대정</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>안덕</font></a>
+                  <a href="./anduck_detail"><font>안덕</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>중문</font></a>
+                  <a href="./joongmoon_detail"><font>중문</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>서귀포</font></a>
+                  <a href="./seogipo_detail"><font>서귀포</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>남원</font></a>
+                  <a href="./namwon_detail"><font>남원</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>표선</font></a>
+                  <a href="./pyoseon_detail"><font>표선</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>성산</font></a>
+                  <a href="./sungsan_detail"><font>성산</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>구좌</font></a>
+                  <a href="./gujwa_detail"><font>구좌</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>조천</font></a>
+                  <a href="./jocheon_detail"><font>조천</font></a>
                 </li>
               </ul>
             </div>
@@ -167,23 +167,23 @@
           <br />
           <div class="cafe_commend">
             <span>
-              <a href="#"><img class="img1" src="../resources/mainimg/cafe.jpg" alt="" /></a>
-              <p class="cafe_name">카페명 : 스벅</p>
+              <a href="./cafe_info_menu"><img class="img1" src="../resources/mainimg/cafe.jpg" alt="" /></a>
+              <p class="cafe_name">투썸플레이스</p>
               <p>주소 : 대한민국</p>
             </span>
             <span>
               <a href="#"><img class="img1" src="../resources/mainimg/cafe.jpg" alt="" /></a>
-              <p class="cafe_name">카페명 : 스벅</p>
+              <p class="cafe_name">스타벅스</p>
               <p>주소</p>
             </span>
             <span>
               <a href="#"><img class="img1" src="../resources/mainimg/cafe.jpg" alt="" /></a>
-              <p class="cafe_name">카페명 : 스벅</p>
+              <p class="cafe_name">DESSERT 39</p>
               <p>주소</p>
             </span>
             <span>
               <a href="#"><img class="img1" src="../resources/mainimg/cafe.jpg" alt="" /></a>
-              <p class="cafe_name">카페명 : 스벅</p>
+              <p class="cafe_name">EDIYA</p>
               <p>주소</p>
             </span>
           </div>

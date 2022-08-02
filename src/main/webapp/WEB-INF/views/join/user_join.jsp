@@ -12,7 +12,7 @@ String path=request.getContextPath();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>사용자 회원가입</title>
   </head>
 
   <!-- css -->
@@ -221,8 +221,6 @@ String path=request.getContextPath();
             <label for="" class="input_label">이메일</label> <br>
             <input type="text" name="useremail" class="input_value" placeholder=" 이메일을 입력해주세요."> <br>
             
-            <input type="text" class="input_value_code" placeholder=" 인증번호를 입력해주세요."> 
-            <input type="button" class="input_button_code" value="인증번호 받기"> <br>
             
             
             <input type="submit" class="input_button_join" value="가입하기">

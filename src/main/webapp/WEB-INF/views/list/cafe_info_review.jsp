@@ -12,7 +12,7 @@
 <meta name="author"
    content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.98.0">
-<title>Bootstrap demo</title>
+<title>투썸 플레이스 - 리뷰</title>
 <!-- CDN -->
 <link
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -476,20 +476,20 @@ a{
                         <td class="board_left">
                            
                            <c:set value="${review.img }" var="filename" />
-<c:set var="fileNm" value="${fn:toLowerCase(filename) }" />
-<c:forTokens var="token" items="${fileNm }" delims="." varStatus="status">
-   <c:if test="${status.last }">
-      <c:choose>
-         <c:when test="${token eq 'jpg' || token eq 'png' || token eq 'bmp' }">
-
-            <div>
-               <img src="../resources/upload/${review.img }" alt="이미지없음" style="width: 200px; height: 200px;" />
-            </div>
-         </c:when>
-      </c:choose>
-   </c:if>
-</c:forTokens>
-                           
+							<c:set var="fileNm" value="${fn:toLowerCase(filename) }" />
+							<c:forTokens var="token" items="${fileNm }" delims="." varStatus="status">
+							   <c:if test="${status.last }">
+							      <c:choose>
+							         <c:when test="${token eq 'jpg' || token eq 'png' || token eq 'bmp' || token eq 'jfif' }">
+							
+							            <div>
+							               <img src="../resources/upload/${review.img }" alt="이미지없음" style="width: 200px; height: 200px;" />
+							            </div>
+							         </c:when>
+							      </c:choose>
+							   </c:if>
+							</c:forTokens>
+							                           
                            
                            <!-- <img alt="q" src="../resources/upload/4.png"> -->
                            <!-- <img alt="t" src="../resources/upload/8.png"> -->
@@ -639,15 +639,15 @@ a{
 <script>
     $(document).ready(function(){
             $("#img1").click(function(){
-                $("#mainimg").attr("src","../resources/img/cafe.jpg");
+                $("#mainimg").attr("src","../resources/listimg/cafe.jpg");
             });
             
             $("#img2").click(function(){
-                $("#mainimg").attr("src","../resources/img/PJH_cafe.jpg");
+                $("#mainimg").attr("src","../resources/listimg/PJH_cafe.jpg");
             });
             
             $("#img3").click(function(){
-                $("#mainimg").attr("src","../resources/img/PJH_cafe2.jpg");
+                $("#mainimg").attr("src","../resources/listimg/PJH_cafe2.jpg");
             });
         });
 </script>
