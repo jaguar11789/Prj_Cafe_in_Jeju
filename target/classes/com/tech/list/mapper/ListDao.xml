@@ -6,6 +6,10 @@
 
 <mapper namespace="com.tech.list.dao.ListDao">
 	<insert id="writereview">
-     	INSERT INTO REVIEW VALUES (#{param1},'jaguar1178',5,#{param2},#{param3})
+     	INSERT INTO REVIEW VALUES (#{param1},'jaguar1178',5,#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE)
    </insert>
+   
+   <select id="cafereview" resultType="com.tech.cafein.dto.ReviewDto">
+   		SELECT TITLE, CONTENT, IMG, RDATE FROM REVIEW ORDER BY 	REVIEWNUM DESC
+   </select>
 </mapper>

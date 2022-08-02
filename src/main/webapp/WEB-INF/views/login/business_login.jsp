@@ -128,11 +128,11 @@ String path = request.getContextPath();
                 <div id="input_container">
                  <!-- form - controller의 login_session 함수 실행  / onsubmit - return login_check() function 동작 -->
             <!-- return이 붙는 이유는 login_check함수에서 return하는 값에 따라 action을 취할지 말지 정해줌. return이 없으면 뭔짓거리를 하던 액션을함 -->
-                  <form action="login_user_session" method="post" onsubmit="return login_check();">
+                  <form action="login_business_session" method="post" onsubmit="return login_check();">
                     <label for="" class="input_label">아이디</label> <br>
                     <input type="text" id="id" name="id" class="input_value" placeholder=" 아이디를 입력해주세요."> <br>
                     <label for="" class="input_label">비밀번호</label> <br>
-                    <input type="text" id="pwd" name="pwd" class="input_value" placeholder=" 비밀번호를 입력해주세요."> <br>
+                    <input type="password" id="pwd" name="pwd" class="input_value" placeholder=" 비밀번호를 입력해주세요."> <br>
                     <input type="submit" id="submit_btn" class="input_button_login" value="LOGIN"> <br> <br>
                      <!-- span태그에 로그인 실행 결과를 나타내줌 -->
                      <span id="msg"></span>
@@ -145,21 +145,19 @@ String path = request.getContextPath();
             <a href="#" class="find_pw">비밀번호 찾기</a> 
             <a href="../join/join" class="do_join">회원가입</a>
          </div>
-         <div id="a_container2">
-         	<a href="../login/business_login" class="business_login">사업자이신가요? 사업자로그인 하러가기</a>
-         </div>
+         
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script>
 			function login_check() {
-				var user_id = $("#id").val();
-				var user_pwd = $("#pwd").val();
-				var alldata = { user_id : user_id , user_pwd : user_pwd };
+				var business_id = $("#id").val();
+				var business_pwd = $("#pwd").val();
+				var alldata = { business_id : business_id , business_pwd : business_pwd };
 				var checkbool = false; // ajax안에서는 return 불가
 				
 				$.ajax({
 					type:"post",
-					url:"<%=path %>/login/loginUserCheck",
+					url:"<%=path %>/login/loginBusinessCheck",
 					data: alldata,
 					dataType:"text",
 					async: false, //비동기식 기본값 true임. false로 강제로 동기식으로 전환해줌
