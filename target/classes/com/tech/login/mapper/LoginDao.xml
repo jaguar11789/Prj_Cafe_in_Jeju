@@ -5,5 +5,11 @@
 <!-- 컨트롤 시프트 x는 소문자를 대문자로 바꿔준다 -->
 
 <mapper namespace="com.tech.login.dao.LoginDao">
+	<select id="loginUserCheck" resultType="Integer">
+		SELECT COUNT(USER_ID) FROM USER_INFO WHERE USER_ID=#{param1} AND USER_PWD=#{param2}
+	</select>
 	
+	<select id="loginBusinessCheck" resultType="Integer">
+		SELECT COUNT(BUSINESS_ID) FROM BUSINESS_INFO WHERE BUSINESS_ID=#{param1} AND BUSINESS_PWD=#{param2}
+	</select>		
 </mapper>
