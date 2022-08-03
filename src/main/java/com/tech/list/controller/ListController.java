@@ -20,6 +20,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.tech.cafein.dto.ReviewDto;
 import com.tech.list.dao.ListDao;
+import com.tech.cafeinfo.vopage.SearchVO;
 
 @Controller
 @RequestMapping("/list/*")
@@ -125,17 +126,63 @@ public class ListController {
 	}
 
 	@RequestMapping("/cafe_info_review")
-	public String cafe_info_review(HttpServletRequest request, Model model) {
+	public String cafe_info_review(HttpServletRequest request, SearchVO searchVO, Model model) {
 
 		System.out.println("============cafe_info_review()===============");
 
 		ListDao listdao = session.getMapper(ListDao.class);
 
 		float total = listdao.total();
-		System.out.println(total + "eee");
+		float avgscore = total * 20;
 
+		int countreview = listdao.countreview();
+
+		float fivestar = listdao.fivestar();
+		float fourstar = listdao.fourstar();
+		float threestar = listdao.threestar();
+		float twostar = listdao.twostar();
+		float onestar = listdao.onestar();
+
+		float fivepercent = Math.round((fivestar / countreview) * 100);
+		float fourpercent = Math.round((fourstar / countreview) * 100);
+		float threepercent = Math.round((threestar / countreview) * 100);
+		float twopercent = Math.round((twostar / countreview) * 100);
+		float onepercent = Math.round((onestar / countreview) * 100);
+
+		model.addAttribute("avgscore", avgscore);
 		model.addAttribute("total", total);
-		model.addAttribute("review", listdao.cafereview());
+		
+		model.addAttribute("countreview", countreview);
+
+		model.addAttribute("fivepercent", fivepercent);
+		model.addAttribute("fourpercent", fourpercent);
+		model.addAttribute("threepercent", threepercent);
+		model.addAttribute("twopercent", twopercent);
+		model.addAttribute("onepercent", onepercent);
+		
+		/* paging */
+		// listservice에서 dtos로 받았지만 여기선 list로 받겠다
+
+		String strPage = request.getParameter("page");
+		System.out.println("page1>>>>>> : " + strPage);
+//		null 검사
+		if (strPage == null)
+			strPage = "1";
+		System.out.println("page2>>>>>> : " + strPage);
+		int page = Integer.parseInt(strPage);
+		searchVO.setPage(page);
+		
+		int total2 = listdao.selectBoardTotCount();
+		
+		searchVO.pageCalculate(total2);
+		
+		int rowStart = searchVO.getRowStart();
+		int rowEnd = searchVO.getRowEnd();
+		
+		model.addAttribute("review", listdao.cafereview(rowStart, rowEnd));
+
+		model.addAttribute("totRowcnt", total);
+		model.addAttribute("searchVo", searchVO);
 
 		return "list/cafe_info_review";
 	}

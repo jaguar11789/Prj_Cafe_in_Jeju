@@ -12,7 +12,7 @@
 <meta name="author"
    content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.98.0">
-<title>투썸 플레이스 - 리뷰</title>
+<title>Bootstrap demo</title>
 <!-- CDN -->
 <link
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -34,8 +34,16 @@
    color="#712cf9">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#712cf9">
+<script src="../resources/js/scriptjsp.js"></script>
 
-
+<!--별점 value값 받기  -->
+    <script>
+    function starValue(target){
+       alert("value"+target.value);
+       var starScore = target.value;
+       alert("starScore"+starScore);
+    }
+    </script>
 <style>
 /* header */
 input[id="menuicon"] {
@@ -253,17 +261,140 @@ a{
     color: black;
 }
 
-/* 별 */
 
-/*board  */
-.board{
-   border-collapse: collapse;
-   width: 600px;
-}
+/* 별점 평균 */
+.star {
+   width: 50%;
+    /* position: relative; */
+    font-size: 3rem;
+    color: green;
+  }
+  
+  .star input {
+      background-color : yellow;
+   width : 50%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+ .star span {
+    display : none;
+    width: 50%;
+    position: absolute;  
+    left: 0;
+    color: orange;
+    overflow: hidden;
+    pointer-events: none;
+     
+  }
+
+   .custarbg[data-v-6d7bbae6] {
+    display: block;
+    /* float: left; */
+    width: 76px;
+    height: 13px;
+    
+    background: url(//img1a.coupangcdn.com/image/fodium/desktop/widget-sdp-alsoviewedproducts-20160622.png) no-repeat;
+    
+    /* background-size : 200px; */
+    
+    background-position: -39px -43px;/*  */
+    text-indent: -9999px;/*  */
+   }
+   
+   .custar[data-v-6d7bbae6] {
+    display: block;
+    width: 76px;
+    height: 13px;
+    
+    background: url(//img1a.coupangcdn.com/image/fodium/desktop/widget-sdp-alsoviewedproducts-20160622.png) no-repeat;/*  */
+    
+    /* background-size : 200px; */
+    
+    background-position: -39px -58px;/*  */
+    text-indent: -9999px;/*  */
+   }
+
+   element.style {
+       width: 90%;
+   }
+  
+   /*board  */
+   .board{
+      border-collapse: collapse;
+      width: 600px;
+   }
+   
+   /*chart  */
+   .A {
+      background: black;
+   }
+   .B {
+      background: blue;
+   }
+   .C {
+      background: yellow;
+   }
+   .D {
+      background: orange;
+   }
+   
+   .A, .B, .C, .D{
+      display: block;
+      margin: 10px 0;
+      color: #FFF;
+      font-size: 20px;
+      line-height: 1em;
+      text-align: center;
+      border-radius: 15px;
+   } 
+   
+   
+   
+   
+   .chartarea {
+    display: grid;
+    grid-template-columns: max-content auto;
+    align-items: center;
+   }
+   .Qjdn7d {
+    font-family: Roboto,Arial,sans-serif;
+    line-height: 1rem;
+    font-size: .75rem;
+    letter-spacing: .025em;
+    font-weight: 400;
+    padding-right: 16px;
+   }
+   .RJfYGf:not(:disabled) {
+    background-color: #e8eaed;
+   }
+   .RJfYGf {
+    border-radius: 9999px;
+    background-color: #e8eaed; 
+    height: 10px;
+   }
+   element.style {
+    width: 53.8439%;
+   }
+   .wcB8se:not(:disabled) {
+    background-color: #ffa600;
+   }
+   .RutFAf {
+    height: 100%;
+    border-radius: inherit;
+   }
+   .wcB8se {
+    background-color: #ffa600;
+   }
 
 
 
 </style>
+
+
+
 </head>
 
 <body>
@@ -365,16 +496,16 @@ a{
                      </tr>
                   </table>
                </div>
-            </div>
-                    <div class="col-md-5">
+            </div>            
+            <div class="col-md-5">
                         <div class="card-body">
                             <table>
                      <tr>
-                                <td>
-                                    <h4 class="card-title">&nbsp;투썸플레이스 </h4>
+                        <td>
+                           <h4 class="card-title">&nbsp;투썸플레이스</h4>
                         </td>
                         <td>
-                                    <h4 class="card-title" style="color: orange;">&nbsp;4.7</h4>
+                           <h4 class="card-title" style="color: orange;">&nbsp;4.7</h4>
                         </td>
                      </tr>
                   </table>
@@ -420,11 +551,71 @@ a{
             </div>
                 <hr />
          </div>
-         <div class="row g-0" >
-                <h1 style="text-align: center; color: #ffa600;">★★★★☆ 4.7</h1>
-                <h2 style="text-align: center;">전체 리뷰 123</h2>
+         <div class="row g-0">
+            <div class="col-xs-6" style="text-align: center; color: #ffa600;">
+               <table>
+                  <tr>
+                     <td>
+                        <div
+                           style="font-size: 55px; width: 75px; object-fit: cover; color: black;">
+                           ${total } <span data-v-6d7bbae6 class="custarbg"> <span
+                              data-v-6d7bbae6 style="width: ${avgscore}%" class="custar">
+                           </span>
+                           </span>
+                           <div style="font-size: 12px;">전체 리뷰 ${countreview }</div>
+                        </div>
+                     </td>
+                     <td>
+                        <div class="chartarea" role="img" aria-label="별표 평점이" style="width: 700px; margin-left: 25px; color: black;">
+                           <div aria-hidden="true" class="Qjdn7b">
+                              5&nbsp;
+                           </div>
+                           <div aria-hidden="true" class="RJfYGf">
+                              <div class="RutFAf wcB8se" title="2" style="width: ${fivepercent}%">
+                              </div>
+                           </div>
+                           <div aria-hidden="true" class="Qjdn7b">
+                              4&nbsp;
+                           </div>
+                           <div aria-hidden="true" class="RJfYGf">
+                              <div class="RutFAf wcB8se" title="2" style="width: ${fourpercent}%">
+                              </div>
+                           </div>
+                           <div aria-hidden="true" class="Qjdn7b">
+                              3&nbsp;
+                           </div>
+                           <div aria-hidden="true" class="RJfYGf">
+                              <div class="RutFAf wcB8se" title="2" style="width: ${threepercent}%">
+                              </div>
+                           </div>
+                           <div aria-hidden="true" class="Qjdn7b">
+                              2&nbsp;
+                           </div>
+                           <div aria-hidden="true" class="RJfYGf">
+                              <div class="RutFAf wcB8se" title="2" style="width: ${twopercent}%">
+                              </div>
+                           </div>
+                           <div aria-hidden="true" class="Qjdn7b">
+                              1&nbsp;
+                           </div>
+                           <div aria-hidden="true" class="RJfYGf">
+                              <div class="RutFAf wcB8se" title="2" style="width: ${onepercent}%">
+                              </div>
+                           </div>
+                        </div> <!-- <div class="scorechart" style="width: 700px">
+                           <span class="A" data-val='20%'>A</span>
+                           <span class="B" data-val='40%'>A</span>
+                           <span class="C" data-val='60%'>A</span>
+                           <span class="D" data-val='80%'>A</span>
+                        </div> -->
+                     </td>
+                  </tr>
+               </table>
             </div>
-            <hr>
+         </div>
+         <hr>
+         
+         	<form action="cafe_info_review" method="post">
                <table class="table table-hover"  >
                      <c:forEach items="${review }" var="review">
                      <tr>
@@ -443,116 +634,92 @@ a{
                            </table>
                         </td>
                         <td class="board_left">
+                        
+                        
+                        
+                        
                            <table >
+                           
+                           
+                           
+                           <%-- <c:forEach items="${list }" var="review"> --%>
                               <tr>
-                                 <td colspan="1" style=" width: 500px">
-                                    ${review.rdate }
-                                 </td >
+                                 <td colspan="1" style=" width: 500px">${review.rdate }</td >
                               </tr>
                               <tr>
-                                 <td>
-                                    타이틀 : ${review.title }
-                                 </td>
+                              
+                              
+                              
+                              
+                                 <td>타이틀 : ${review.title }</td>
                               </tr>
                               <tr>
-                                 <td>
-                                 <c:set value="${review.score }" var="star"/>
+                                 <td><c:set value="${review.score }" var="star"/>
                                     <div style="color: #ffa600; font-size: 20px;">
-                                       <c:if test="${star eq 5.0}">★★★★★</c:if>
-                                <c:if test="${star eq 4.0}">★★★★☆</c:if>
-                                       <c:if test="${star eq 3}">★★★☆☆</c:if>
-                                       <c:if test="${star eq 2}">★★☆☆☆</c:if>
-                                       <c:if test="${star eq 1}">★☆☆☆☆</c:if>
-                                    </div>
-                                 </td>
+                                       	<c:if test="${star eq 5.0}">★★★★★</c:if>
+                                		<c:if test="${star eq 4.0}">★★★★☆</c:if>
+                                       	<c:if test="${star eq 3}">★★★☆☆</c:if>
+                                       	<c:if test="${star eq 2}">★★☆☆☆</c:if>
+                                       	<c:if test="${star eq 1}">★☆☆☆☆</c:if>
+                                    </div></td>
                               </tr>
                               <tr>
-                                 <td>
-                                    내용 : ${review.content }
-                                 </td>
+                                 <td>내용 : ${review.content }</td>
                               </tr>
+                           <%--  </c:forEach> --%>
+                              
+                              
                            </table>
+                           
+                           
+                           
+                           
                         </td>
                         <td class="board_left">
-                           
-                           <c:set value="${review.img }" var="filename" />
-							<c:set var="fileNm" value="${fn:toLowerCase(filename) }" />
-							<c:forTokens var="token" items="${fileNm }" delims="." varStatus="status">
-							   <c:if test="${status.last }">
-							      <c:choose>
-							         <c:when test="${token eq 'jpg' || token eq 'png' || token eq 'bmp' || token eq 'jfif' }">
-							
-							            <div>
-							               <img src="../resources/upload/${review.img }" alt="이미지없음" style="width: 200px; height: 200px;" />
-							            </div>
-							         </c:when>
-							      </c:choose>
-							   </c:if>
-							</c:forTokens>
-							                           
-                           
-                           <!-- <img alt="q" src="../resources/upload/4.png"> -->
-                           <!-- <img alt="t" src="../resources/upload/8.png"> -->
+                           <img src="../resources/upload/${review.img }" alt="이미지없음" style="width: 150px; height: 150px;" />
+
                         </td>
                         
                         </tr>
                   </c:forEach>
-               <!-- <tr>
-                  <td class="board_left">
-                     <table style="text-decoration: center">
-                        <tr>
-                           <td>
-                              <img alt="" src="../resources/img/user.png" style="width: 50px; height: 50px;" >
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              닉네임2
-                           </td>
-                        </tr>
-                     </table>
-                  </td>
-                  <td class="board_left">
-                     <table >
-                        <tr>
-                           <td colspan="1" style="width: 500px">
-                              2022-08-01
-                           </td >
-                        </tr>
-                        <tr>
-                           <td>
-                              제목 : title
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              별점 : ★★★★☆
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              내용 : 김치
-                           </td>
-                        </tr>
-                     </table>
-                  </td>
-                  <td class="board_left"><img alt="" src="../resources/img/cafe.jpg" style="width: 150px; height: 150px;"></td>
-               </tr>      -->    
-               
-                <%-- <tr>
-                    <td>
-                  <!-- https://www.youtube.com/watch?v=H-d0W0t7FKI&t=306s jquary이용해서 별점계산-->
-                        <h5>리뷰제목</h4>
-                        <h5 style="color: #ffa600;">★★★★☆ 4.7</h5>
-                        <h5>리뷰내용xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                        <c:set value="${content_view.filesrc }" var="filename"/>
-                  <c:set value="${fn:toLowerCase(filename) }" var="fileNm"/> <%//소문자화 %>
-                        <img src="${filename }" alt="이미지없음" />
-                        <br>
-                        파일명 : ${filename }
-                    </td>
-                </tr> --%>
+           
             </table>
+            
+            
+            
+            
+            
+            <div style="text-align: center;">
+	            <c:if test="${searchVo.totPage>1 }">
+
+					<c:if test="${searchVo.page>1 }">
+						<a href="cafe_info_review?page=1"><<</a>
+						<a href="cafe_info_review?page=${searchVo.page-1 }"><</a>
+					</c:if>
+		
+		
+					<c:forEach begin="${searchVo.pageStart }" end="${searchVo.pageEnd }" var="i">
+						<c:choose>		
+							<c:when test="${i eq searchVo.page }">
+								<span style="color: red; font-weight: bold;">${i }&nbsp;</span>
+							</c:when>
+							<c:otherwise>
+								<a href="cafe_info_review?page=${i }" style="text-decoration: none">${i }</a>&nbsp;
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+		
+		
+				<c:if test="${searchVo.totPage>searchVo.page }">
+						<a href="cafe_info_review?page=${searchVo.page+1 }">[다음]</a>
+						<a href="cafe_info_review?page=${searchVo.totPage }">[마지막]</a>
+				</c:if>
+			</c:if>
+		</div>
+		
+		
+		
+      </form>
       </div>
       <!-- 사이드 컨테이너 -->
       <div id="side-container" class="card mb-1" >

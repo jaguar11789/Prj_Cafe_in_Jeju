@@ -12,10 +12,39 @@
 
 	<select id="cafereview"
 		resultType="com.tech.cafein.dto.ReviewDto">
-		SELECT TITLE, CONTENT, IMG, SCORE, RDATE FROM REVIEW ORDER BY REVIEWNUM DESC
+		SELECT TITLE, CONTENT, IMG, SCORE, RDATE FROM (SELECT
+		ROWNUM NUM,N.* FROM(SELECT * FROM REVIEW
+		ORDER BY RDATE DESC) N) WHERE NUM BETWEEN #{param1} AND #{param2} ORDER BY
+		REVIEWNUM DESC
 	</select>
 
 	<select id="total" resultType="Float">
-		SELECT ROUND(AVG(SCORE),1) FROM REVIEW
+		SELECT ROUND(AVG(SCORE),1) FROM
+		REVIEW
+	</select>
+
+	<select id="countreview" resultType="Integer">
+		SELECT COUNT(*) FROM REVIEW
+	</select>
+
+	<select id="fivestar" resultType="Float">
+		SELECT COUNT(*) FROM REVIEW WHERE SCORE=5
+	</select>
+	<select id="fourstar" resultType="Float">
+		SELECT COUNT(*) FROM REVIEW WHERE SCORE=4
+	</select>
+	<select id="threestar" resultType="Float">
+		SELECT COUNT(*) FROM REVIEW WHERE SCORE=3
+	</select>
+	<select id="twostar" resultType="Float">
+		SELECT COUNT(*) FROM REVIEW WHERE SCORE=2
+	</select>
+	<select id="onestar" resultType="Float">
+		SELECT COUNT(*) FROM REVIEW WHERE SCORE=1
+	</select>
+
+	<select id="selectBoardTotCount" resultType="Integer">
+		SELECT COUNT(*) FROM
+		REVIEW
 	</select>
 </mapper>

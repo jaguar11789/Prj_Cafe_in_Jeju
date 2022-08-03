@@ -72,7 +72,7 @@ public class WriteController {
 		String cafebusnum[] = mtfRequest.getParameterValues("cafebusnum");
 		List<MultipartFile> cafebuslicense = mtfRequest.getFiles("cafebuslicense");
 		List<MultipartFile> cafepermit = mtfRequest.getFiles("cafepermit");
-
+		
 //		if (cafephoto == null) {
 //			cafephoto = "";
 //		}
@@ -97,17 +97,13 @@ public class WriteController {
 
 		String ctag = String.join(",", cafetag);
 		System.out.println("ctnum : " + ctag);
-
 		String cbusnum = String.join("-", cafebusnum);
 		System.out.println("ctnum : " + cbusnum);
 
 		WriteDao writedao = session.getMapper(WriteDao.class);
 
-		/*
-		 * writedao.registercafeinfo(cafename, cafecondent, caddr, ctnum, cpnum,
-		 * cconvenience, cafesns, cafephoto, cafedetail, ctag, cafeceoname, cbusnum,
-		 * cafebuslicense, cafepermit);
-		 */
+		writedao.registercafeinfo(cafename, cafecondent, caddr, ctnum, cpnum, cconvenience, cafesns, cafephoto,
+				cafedetail, ctag, cafeceoname, cbusnum, cafebuslicense, cafepermit);
 
 		return "write/register_cafemenu";
 	}

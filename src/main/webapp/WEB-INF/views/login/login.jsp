@@ -132,7 +132,7 @@ String path = request.getContextPath();
                     <label for="" class="input_label">아이디</label> <br>
                     <input type="text" id="id" name="id" class="input_value" placeholder=" 아이디를 입력해주세요."> <br>
                     <label for="" class="input_label">비밀번호</label> <br>
-                    <input type="text" id="pwd" name="pwd" class="input_value" placeholder=" 비밀번호를 입력해주세요."> <br>
+                    <input type="password" id="pwd" name="pwd" class="input_value" placeholder=" 비밀번호를 입력해주세요."> <br>
                     <input type="submit" id="submit_btn" class="input_button_login" value="LOGIN"> <br> <br>
                      <!-- span태그에 로그인 실행 결과를 나타내줌 -->
                      <span id="msg"></span>

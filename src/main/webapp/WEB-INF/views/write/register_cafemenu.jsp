@@ -116,7 +116,7 @@
         추가 된 사진 네임 나오기 
      -->
          <div>
-      <input type="button" value="카페 등록 완료 !" id="end" onclick="location.href='.\register_cafemenu.html';"> 
+      <input type="button" value="카페 등록 완료 !" id="end" onclick="location.href='../list/main';"> 
       </div></form>
    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

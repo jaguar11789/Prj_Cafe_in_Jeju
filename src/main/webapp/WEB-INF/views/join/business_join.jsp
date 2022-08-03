@@ -193,7 +193,7 @@ String path=request.getContextPath();
             <input type="password" id="pwd1" name="businesspwd" class="input_value" placeholder=" 비밀번호를 입력해주세요." required> <br>
             
             <label for="" class="input_label">비밀번호확인</label> <br>
-            <input type="password" id="pwd2" class="input_value" placeholder=" 비밀번호를 입력해주세요." oninput="checkPwd();" required> <br>
+            <input type="password" id="pwd2" class="input_value" placeholder=" 비밀 번호를 입력해주세요." oninput="checkPwd();" required> <br>
             <span class="pwd_ok">비밀번호가 일치합니다.</span>
 			<span class="pwd_no">비밀번호가 일치하지 않습니다.</span><br />
             
