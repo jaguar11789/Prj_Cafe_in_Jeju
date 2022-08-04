@@ -89,7 +89,7 @@
           <!-- login이 되었을때 logout으로 표시 전환 -> logout 되었을대 login표시 전환 -->
           <!-- id가 null이 아닐때 -> login상태 -->
             <c:choose>
-          		<c:when test="${id ne null }">
+          		<c:when test="${id ne null || busi_num ne null}">
 		            <button class="login">
 		              <a href="../main/logout">logout</a>
 		            </button>
@@ -102,7 +102,7 @@
           </c:choose>
           <!-- id가 null이 아닐때 -> login 상태 join창은 사라지도록 함 -->
           <c:choose>
-          		<c:when test="${id ne null }">
+          		<c:when test="${id ne null || busi_num ne null }">
           			
           		</c:when>
           		<c:otherwise>
@@ -121,6 +121,9 @@
           	<c:choose>
           		<c:when test="${id ne null }">
           			<a href="../mypage/user_mypage"><img class="img" src="../resources/img/user.png" alt="" /></a>
+          		</c:when>
+          		<c:when test="${busi_num ne null }">
+          			<a href="../mypage/business_mypage"><img class="img" src="../resources/img/user.png" alt="" /></a>
           		</c:when>
           		<c:otherwise>
 	          		 

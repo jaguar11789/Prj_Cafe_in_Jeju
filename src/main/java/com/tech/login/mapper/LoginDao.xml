@@ -12,4 +12,8 @@
 	<select id="loginBusinessCheck" resultType="Integer">
 		SELECT COUNT(BUSINESS_ID) FROM BUSINESS_INFO WHERE BUSINESS_ID=#{param1} AND BUSINESS_PWD=#{param2}
 	</select>		
+	
+	<select id="getBusinessInfo" resultType="com.tech.cafein.dto.BusinessInfoDto">
+		SELECT BUSINESS_NUM FROM BUSINESS_INFO WHERE BUSINESS_ID=#{param1} AND BUSINESS_PWD=#{param2}
+	</select>	
 </mapper>
