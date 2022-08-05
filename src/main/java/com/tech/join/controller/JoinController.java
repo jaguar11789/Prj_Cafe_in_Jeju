@@ -1,6 +1,7 @@
 package com.tech.join.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.crypto.Data;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,9 +66,12 @@ public class JoinController {
 	      String usernickname = request.getParameter("usernickname");
 	      String userpnum = request.getParameter("userpnum");
 	      String useremail = request.getParameter("useremail");
-
+	      //Data userbirth = transFormat.parse(request.getParameter("userbirth"));	      
+	      String userbirth = request.getParameter("userbirth");
+	      String usersex = request.getParameter("usersex");
+	      
 	      JoinDao joindao = session.getMapper(JoinDao.class);
-	      joindao.sucessjoinuser(userid, userpwd, username, usernickname, userpnum, useremail);
+	      joindao.sucessjoinuser(userid, userpwd, username, usernickname, userpnum, useremail, userbirth, usersex);
 	      
 	      model.addAttribute("user_id",userid);
 	      

@@ -453,6 +453,10 @@ a{
 									<a href="cafe_info_review"><button id="cafe_review"
 											class="custom-btn btn-5"><span>리뷰</span></button></a>
 								</td>
+								<td class="button">
+                            <a href="cafe_info_board"><button id="cafe_board"
+                                  class="custom-btn btn-5"><span>자유게시판</span></button></a>
+                         </td>
 
 								<div class="right-button">
                                     <a href="cafe_info_write_review" id="cafe_write_review"><button  class="custom-btn btn-5"><span>리뷰작성</span></button></a>

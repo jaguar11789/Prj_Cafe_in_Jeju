@@ -7,7 +7,7 @@
 <mapper namespace="com.tech.list.dao.ListDao">
 	<insert id="writereview">
 		INSERT INTO REVIEW VALUES
-		(#{param1},'jaguar1178',#{param4},#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE)
+		(#{param1},'jaguar1178',#{param4},#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE,CAFE_NUM)
 	</insert>
 
 	<select id="cafereview"

@@ -236,7 +236,7 @@ background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%
   /* 버튼 css효과 반응속도 */
   transition:1ms ease all;
 }
-#cafe_review{
+#cafe_board{
     color: #ffa600;
 }
 
@@ -595,75 +595,14 @@ a{
                   </table>
                </div>
             </div>
-                <hr />
+                <hr/>
          </div>
-         <div class="row g-0">
-            <div class="col-xs-6" style="text-align: center; color: #ffa600;">
-               <table>
-                  <tr>
-                     <td>
-                        <div
-                           style="font-size: 55px; width: 75px; object-fit: cover; color: black;">
-                           ${total } <span data-v-6d7bbae6 class="custarbg"> <span
-                              data-v-6d7bbae6 style="width: ${avgscore}%" class="custar">
-                           </span>
-                           </span>
-                           <div style="font-size: 12px;">전체 리뷰 ${countreview }</div>
-                        </div>
-                     </td>
-                     <td>
-                        <div class="chartarea" role="img" aria-label="별표 평점이" style="width: 700px; margin-left: 25px; color: black;">
-                           <div aria-hidden="true" class="Qjdn7b">
-                              5&nbsp;
-                           </div>
-                           <div aria-hidden="true" class="RJfYGf">
-                              <div class="RutFAf wcB8se" title="2" style="width: ${fivepercent}%">
-                              </div>
-                           </div>
-                           <div aria-hidden="true" class="Qjdn7b">
-                              4&nbsp;
-                           </div>
-                           <div aria-hidden="true" class="RJfYGf">
-                              <div class="RutFAf wcB8se" title="2" style="width: ${fourpercent}%">
-                              </div>
-                           </div>
-                           <div aria-hidden="true" class="Qjdn7b">
-                              3&nbsp;
-                           </div>
-                           <div aria-hidden="true" class="RJfYGf">
-                              <div class="RutFAf wcB8se" title="2" style="width: ${threepercent}%">
-                              </div>
-                           </div>
-                           <div aria-hidden="true" class="Qjdn7b">
-                              2&nbsp;
-                           </div>
-                           <div aria-hidden="true" class="RJfYGf">
-                              <div class="RutFAf wcB8se" title="2" style="width: ${twopercent}%">
-                              </div>
-                           </div>
-                           <div aria-hidden="true" class="Qjdn7b">
-                              1&nbsp;
-                           </div>
-                           <div aria-hidden="true" class="RJfYGf">
-                              <div class="RutFAf wcB8se" title="2" style="width: ${onepercent}%">
-                              </div>
-                           </div>
-                        </div> <!-- <div class="scorechart" style="width: 700px">
-                           <span class="A" data-val='20%'>A</span>
-                           <span class="B" data-val='40%'>A</span>
-                           <span class="C" data-val='60%'>A</span>
-                           <span class="D" data-val='80%'>A</span>
-                        </div> -->
-                     </td>
-                  </tr>
-               </table>
-            </div>
-         </div>
+         
          <hr>
          
          	<form action="cafe_info_review" method="post">
                <table class="table table-hover"  >
-                     <c:forEach items="${review }" var="review">
+                     
                      <tr>
                         <td class="board_left">
                            <table style="text-decoration: center">
@@ -692,14 +631,7 @@ a{
                                  <td>타이틀 : ${review.title }</td>
                               </tr>
                               <tr>
-                                 <td><c:set value="${review.score }" var="star"/>
-                                    <div style="color: #ffa600; font-size: 20px;">
-                                       	<c:if test="${star eq 5.0}">★★★★★</c:if>
-                                		<c:if test="${star eq 4.0}">★★★★☆</c:if>
-                                       	<c:if test="${star eq 3}">★★★☆☆</c:if>
-                                       	<c:if test="${star eq 2}">★★☆☆☆</c:if>
-                                       	<c:if test="${star eq 1}">★☆☆☆☆</c:if>
-                                    </div></td>
+                                 <td>ㄷㅉㅈ</td>
                               </tr>
                               <tr>
                                  <td>내용 : ${review.content }</td>
@@ -713,13 +645,10 @@ a{
                            
                            
                         </td>
-                        <td class="board_left">
-                           <img src="../resources/upload/${review.img }" alt="이미지없음" style="width: 150px; height: 150px;" />
-
-                        </td>
+                        <td>123</td>
                         
                         </tr>
-                  </c:forEach>
+                  
            
             </table>
             
@@ -731,8 +660,8 @@ a{
 	            <c:if test="${searchVo.totPage>1 }">
 
 					<c:if test="${searchVo.page>1 }">
-						<a href="cafe_info_review?page=1"><<</a>
-						<a href="cafe_info_review?page=${searchVo.page-1 }"><</a>
+						<a href="cafe_info_board?page=1"><<</a>
+						<a href="cafe_info_board?page=${searchVo.page-1 }"><</a>
 					</c:if>
 		
 		
@@ -742,15 +671,15 @@ a{
 								<span style="color: red; font-weight: bold;">${i }&nbsp;</span>
 							</c:when>
 							<c:otherwise>
-								<a href="cafe_info_review?page=${i }" style="text-decoration: none">${i }</a>&nbsp;
+								<a href="cafe_info_board?page=${i }" style="text-decoration: none">${i }</a>&nbsp;
 							</c:otherwise>
 						</c:choose>
 					</c:forEach>
 		
 		
 				<c:if test="${searchVo.totPage>searchVo.page }">
-						<a href="cafe_info_review?page=${searchVo.page+1 }">[다음]</a>
-						<a href="cafe_info_review?page=${searchVo.totPage }">[마지막]</a>
+						<a href="cafe_info_board?page=${searchVo.page+1 }">[다음]</a>
+						<a href="cafe_info_board?page=${searchVo.totPage }">[마지막]</a>
 				</c:if>
 			</c:if>
 		</div>

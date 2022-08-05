@@ -63,7 +63,7 @@ public class LoginController {
 
 		return "redirect:../list/main";
 	}
-	 
+	
 	
 	@RequestMapping("/main/logout")
 	public String logout(HttpServletRequest request, HttpSession session) {

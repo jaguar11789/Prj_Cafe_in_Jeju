@@ -125,6 +125,12 @@ public class ListController {
 		return "list/cafe_info_detail";
 	}
 
+	@RequestMapping("/cafe_info_board")
+	public String cafe_info_board() {
+
+		return "list/cafe_info_board";
+	}
+
 	@RequestMapping("/cafe_info_review")
 	public String cafe_info_review(HttpServletRequest request, SearchVO searchVO, Model model) {
 
@@ -151,7 +157,7 @@ public class ListController {
 
 		model.addAttribute("avgscore", avgscore);
 		model.addAttribute("total", total);
-		
+
 		model.addAttribute("countreview", countreview);
 
 		model.addAttribute("fivepercent", fivepercent);
@@ -159,7 +165,7 @@ public class ListController {
 		model.addAttribute("threepercent", threepercent);
 		model.addAttribute("twopercent", twopercent);
 		model.addAttribute("onepercent", onepercent);
-		
+
 		/* paging */
 		// listservice에서 dtos로 받았지만 여기선 list로 받겠다
 
@@ -171,14 +177,14 @@ public class ListController {
 		System.out.println("page2>>>>>> : " + strPage);
 		int page = Integer.parseInt(strPage);
 		searchVO.setPage(page);
-		
+
 		int total2 = listdao.selectBoardTotCount();
-		
+
 		searchVO.pageCalculate(total2);
-		
+
 		int rowStart = searchVO.getRowStart();
 		int rowEnd = searchVO.getRowEnd();
-		
+
 		model.addAttribute("review", listdao.cafereview(rowStart, rowEnd));
 
 		model.addAttribute("totRowcnt", total);

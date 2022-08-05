@@ -23,7 +23,7 @@
 	</select>
 	
 	<insert id="sucessjoinuser">
-		INSERT INTO USER_INFO VALUES (#{param1},#{param2},1,#{param4},#{param6},#{param5},#{param3},USER_NUM.NEXTVAL)
+		INSERT INTO USER_INFO VALUES (#{param1},#{param2},1,#{param4},#{param6},#{param5},#{param3},USER_NUM.NEXTVAL,#{param7},#{param8})
 	</insert>
 	
 	<insert id="sucessjoinbusiness">

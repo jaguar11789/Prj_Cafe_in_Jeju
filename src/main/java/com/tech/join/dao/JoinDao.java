@@ -11,7 +11,7 @@ public interface JoinDao {
 	public int nicknameBusinessCheck(String nickname);
 	
 	public void sucessjoinuser(String userid, String userpwd, String username, 
-			String usernickname, String userpnum, String useremail);
+			String usernickname, String userpnum, String useremail, String userbirth, String usersex);
 	
 	public UserInfoDto joinsucess_user(String userid);
 	public UserInfoDto sucessjoinuser(String userid);

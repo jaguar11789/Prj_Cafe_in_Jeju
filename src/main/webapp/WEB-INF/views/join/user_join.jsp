@@ -194,8 +194,7 @@ String path=request.getContextPath();
             <input type="text" id="id" maxlength="20" name="userid" class="input_value" placeholder=" 아이디를 입력해주세요.(7 ~ 20자)" oninput="checkId();" required> <br>
             <span class="id_ok">사용 가능한 아이디입니다.</span>
 			<span class="id_already">중복된 아이디입니다.</span><br />
-			
-            
+
             <label for="" class="input_label">비밀번호</label> <br>
             <input type="password" id="pwd1" name="userpwd" class="input_value" placeholder=" 비밀번호를 입력해주세요." required> <br>
             
@@ -207,22 +206,24 @@ String path=request.getContextPath();
             <label for="" class="input_label">이름</label> <br>
             <input type="text" name="username" class="input_value" placeholder=" 이름을 입력해주세요."> <br>
             
+            <label for="" class="input_label">생년월일</label> <br>
+            <input type="date" name="userbirth" class="input_value"> <br>
+            
+            <label for="" class="input_label">성별</label> <br>
+            <input type="radio" name="usersex" class="input_value1" value="여성">여성
+            <input type="radio" name="usersex" class="input_value1" value="남성">남성 <br>
             
             <label for="" class="input_label">닉네임</label> <br>
             <input type="text" id="nickname" name="usernickname" maxlength="10" class="input_value" placeholder=" 닉네임을 입력해주세요." oninput="checkNick();" required> <br>
             <span class="nickname_ok">사용 가능한 닉네임입니다.</span>
 			<span class="nickname_already">중복된 닉네임입니다.</span><br />
-            
-            
+
             <label for="" class="input_label">휴대폰</label> <br>
             <input type="text" name="userpnum" class="input_value" placeholder=" 휴대폰번호를 입력해주세요."> <br>
-            
-            
+
             <label for="" class="input_label">이메일</label> <br>
             <input type="text" name="useremail" class="input_value" placeholder=" 이메일을 입력해주세요."> <br>
-            
-            
-            
+
             <input type="submit" class="input_button_join" value="가입하기">
          </div>
 
@@ -231,6 +232,5 @@ String path=request.getContextPath();
 
   </div>
     
-
   </body>
 </html>
