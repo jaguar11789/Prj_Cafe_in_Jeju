@@ -676,23 +676,15 @@ a{
                            </table>
                         </td>
                         <td class="board_left">
-                        
-                        
-                        
-                        
+
                            <table >
-                           
-                           
-                           
+
                            <%-- <c:forEach items="${list }" var="review"> --%>
                               <tr>
                                  <td colspan="1" style=" width: 500px">${review.rdate }</td >
                               </tr>
                               <tr>
-                              
-                              
-                              
-                              
+
                                  <td>타이틀 : ${review.title }</td>
                               </tr>
                               <tr>
