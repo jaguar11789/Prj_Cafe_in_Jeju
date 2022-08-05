@@ -20,13 +20,13 @@ public class LoginController {
 	@RequestMapping("/login/login")
 	public String login() {
 		
-		return "login/login";
+		return "login";
 	}
 	
 	@RequestMapping("/login/business_login")
 	public String business_login() {
 		
-		return "login/business_login";
+		return "business_login";
 	}
 	
 	@RequestMapping("/login/login_user_session")
@@ -39,7 +39,7 @@ public class LoginController {
 		System.out.println("=========pass by login()=============");
 		//list main body밑에 c태그로 로그인 로그아웃시 상태변경
 		
-		return "redirect:../list/main";
+		return "redirect:../main";
 	}
 	
 	
@@ -61,7 +61,7 @@ public class LoginController {
 		
 		// list main body밑에 c태그로 로그인 로그아웃시 상태변경
 
-		return "redirect:../list/main";
+		return "redirect:../main";
 	}
 	 
 	

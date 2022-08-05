@@ -16,7 +16,8 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-	min-width: 2000px;
+	width100%;
+	min-width: 1300px;
 	min-height: 300px;
 	position: relative;
 }

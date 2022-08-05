@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- 화면의 기초가 되는 base -->
+	<definition name="baseLayout"
+		template="/WEB-INF/views/common/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/side.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+	
+	<!-- index에 사용되는 Layout -->
+	<definition name="baseLayout_index"
+		template="/WEB-INF/views/common/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="side"
+			value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+	<!-- login -->
+		<definition name="login" extends="baseLayout_index">
+		<put-attribute name="title" value="index_title" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/login/login.jsp" />
+	</definition>
+<!-- cafe_detail에 사용되는 Layout -->
+	<definition name="baseLayout_side"
+		template="/WEB-INF/views/common/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/side.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+	<!-- index -->
+	<definition name="index" extends="baseLayout_index">
+		<put-attribute name="title" value="index_title" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/index.jsp" />
+	</definition>
+	<!-- main -->
+	<definition name="main" extends="baseLayout">
+		<put-attribute name="title" value="main_title" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/main.jsp" />
+	</definition>
+	<!-- cafe_info_menu -->
+	<definition name="cafe_info_menu" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_menu.jsp" />
+	</definition>
+	<!-- register_cafe -->
+	<definition name="register_cafe" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/write/register_cafe.jsp" />
+	</definition>
+	<!-- register_cafechainge -->
+	<definition name="register_cafechange" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/write/register_cafechange.jsp" />
+	</definition>
+	<!-- register_cafemenu -->
+	<definition name="register_cafemenu" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/write/register_cafemenu.jsp" />
+	</definition>
+	<!-- business_mypage -->
+	<definition name="business_mypage" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/mypage/business_mypage.jsp" />
+	</definition>
+	<!-- user_mypage -->
+	<definition name="user_mypage" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/mypage/user_mypage.jsp" />
+	</definition>
+	<!-- business_modify -->
+	<definition name="business_modify" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/modify/business_modify.jsp" />
+	</definition>
+	<!-- check_pwd_modify -->
+	<definition name="check_pwd_modify" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/modify/check_pwd_modify.jsp" />
+	</definition>
+	<!-- modify_cafe -->
+	<definition name="modify_cafe" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/modify/modify_cafe.jsp" />
+	</definition>
+	<!-- user_modify_info -->
+	<definition name="user_modify_info" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/modify/user_modify_info.jsp" />
+	</definition>
+	<!-- user_modify_pwd -->
+	<definition name="user_modify_pwd" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/modify/user_modify_pwd.jsp" />
+	</definition>
+	<!-- user_modify_sec -->
+	<definition name="user_modify_sec" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/modify/user_modify_sec.jsp" />
+	</definition>
+	<!-- userinfo_modify -->
+	<definition name="userinfo_modify" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/modify/userinfo_modify.jsp" />
+	</definition>
+	<!-- userpwd_modify -->
+	<definition name="userpwd_modify" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/modify/userpwd_modify.jsp" />
+	</definition>
+	<!-- usersec_modify_seccess -->
+	<definition name="usersec_modify_seccess"
+		extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/modify/usersec_modify_seccess.jsp" />
+	</definition>
+	<!-- usersec_modify -->
+	<definition name="usersec_modify" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/modify/usersec_modify.jsp" />
+	</definition>
+	<!-- cafe_info_review -->
+	<definition name="cafe_info_review" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_review.jsp" />
+	</definition>
+	<!-- cafe_info_detail -->
+	<definition name="cafe_info_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_detail.jsp" />
+	</definition>
+	<!-- cafe_info_menu -->
+		<definition name="cafe_info_menu" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_menu.jsp" />
+	</definition>
+	<!-- cafe_info_write_review -->
+			<definition name="cafe_info_write_review" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_write_review.jsp" />
+	</definition>
+</tiles-definitions>

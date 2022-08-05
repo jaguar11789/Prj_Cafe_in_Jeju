@@ -32,97 +32,97 @@ public class ListController {
 	@RequestMapping("/main")
 	public String main() {
 
-		return "list/main";
+		return "main";
 	}
 
 	@RequestMapping("/jeju_detail")
 	public String jeju_detail() {
 
-		return "list/jeju_detail";
+		return "jeju_detail";
 	}
 
 	@RequestMapping("/jocheon_detail")
 	public String jocheon_detail() {
 
-		return "list/jocheon_detail";
+		return "jocheon_detail";
 	}
 
 	@RequestMapping("/joongmoon_detail")
 	public String joongmoon_detail() {
 
-		return "list/joongmoon_detail";
+		return "joongmoon_detail";
 	}
 
 	@RequestMapping("/namwon_detail")
 	public String namwon_detail() {
 
-		return "list/namwon_detail";
+		return "namwon_detail";
 	}
 
 	@RequestMapping("/sungsan_detail")
 	public String sungsan_detail() {
 
-		return "list/sungsan_detail";
+		return "sungsan_detail";
 	}
 
 	@RequestMapping("/gujwa_detail")
 	public String gujwa_detail() {
 
-		return "list/gujwa_detail";
+		return "gujwa_detail";
 	}
 
 	@RequestMapping("/aewol_detail")
 	public String aewol_detail() {
 
-		return "list/aewol_detail";
+		return "aewol_detail";
 	}
 
 	@RequestMapping("/hanlim_detail")
 	public String hanlim_detail() {
 
-		return "list/hanlim_detail";
+		return "hanlim_detail";
 	}
 
 	@RequestMapping("/hangyong_detail")
 	public String hangyong_detail() {
 
-		return "list/hangyong_detail";
+		return "hangyong_detail";
 	}
 
 	@RequestMapping("/daejung_detail")
 	public String daejung_detail() {
 
-		return "list/daejung_detail";
+		return "daejung_detail";
 	}
 
 	@RequestMapping("/anduck_detail")
 	public String anduck_detail() {
 
-		return "list/anduck_detail";
+		return "anduck_detail";
 	}
 
 	@RequestMapping("/seogipo_detail")
 	public String seogipo_detail() {
 
-		return "list/seogipo_detail";
+		return "seogipo_detail";
 	}
 
 	@RequestMapping("/pyoseon_detail")
 	public String pyoseon_detail() {
 
-		return "list/pyoseon_detail";
+		return "pyoseon_detail";
 	}
 
 	@RequestMapping("/cafe_info_menu")
 	public String cafe_info_menu() {
 
-		return "list/cafe_info_menu";
+		return "cafe_info_menu";
 	}
 
 	@RequestMapping("/cafe_info_detail")
 	public String cafe_info_detail() {
 
-		return "list/cafe_info_detail";
+		return "cafe_info_detail";
 	}
 
 	@RequestMapping("/cafe_info_review")
@@ -160,6 +160,8 @@ public class ListController {
 		model.addAttribute("twopercent", twopercent);
 		model.addAttribute("onepercent", onepercent);
 		
+		System.out.println(fivepercent+"2323");
+		
 		/* paging */
 		// listservice에서 dtos로 받았지만 여기선 list로 받겠다
 
@@ -184,13 +186,13 @@ public class ListController {
 		model.addAttribute("totRowcnt", total);
 		model.addAttribute("searchVo", searchVO);
 
-		return "list/cafe_info_review";
+		return "cafe_info_review";
 	}
 
 	@RequestMapping("/cafe_info_write_review")
 	public String cafe_info_write_review() {
 
-		return "list/cafe_info_write_review";
+		return "cafe_info_write_review";
 	}
 
 	/*

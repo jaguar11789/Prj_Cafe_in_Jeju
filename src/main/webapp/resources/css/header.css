@@ -7,6 +7,7 @@ input[id='menuicon'] {
   right: 4rem;
   position: relative;
   top: 5px;
+  
 }
 
 /* 메뉴바 아이콘 크기 */
@@ -18,6 +19,7 @@ input[id='menuicon'] + label {
   height: 25px;
   position: relative;
   cursor: pointer;
+  color: orenge;
 }
 /* 메뉴바 설정 */
 input[id='menuicon'] + label span {
@@ -32,13 +34,18 @@ input[id='menuicon'] + label span {
 /* 첫번째 바부터 세번째 바 */
 input[id='menuicon'] + label span:nth-child(1) {
   top: 0;
+  color: orange;
 }
 input[id='menuicon'] + label span:nth-child(2) {
   top: 50%;
   transform: translateY(-50%);
+    color: orange;
+  
 } /*     ϰ            ִ  style top:calc(50% - 2.5px); margin-top:-2.5px;*/
 input[id='menuicon'] + label span:nth-child(3) {
   bottom: 0;
+    color: orange;
+  
 }
 input[id='menuicon']:checked + label {
   z-index: 2;
@@ -103,7 +110,7 @@ a {
   text-decoration: none;
 }
 /* hearder싸이즈 및 설정 */
-.container {
+.container_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,7 +130,6 @@ a {
 .navar_logo {
   list-style: none;
   margin-top: 1rem;
-  margin-left: 15rem;
   flex-basis: 50%;
   display: flex;
   justify-content: center;
@@ -145,29 +151,26 @@ a {
 }
 .join_login {
   list-style: none;
-  margin-left: 10rem;
   margin-top: 1.5rem;
+  display: flex;
 }
-.join,
-.login
-.logout {
+.join_join,
+.login_login, .main_logout {
   list-style: none;
   display: inline;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
+  text-decoration: none;
 }
 .img {
   width: 30px;
   height: 30px;
-  margin-top: 1rem;
+  margin-right: 2rem;
   position: center fixed;
 }
 /* 싸이드바 뒤에 들어가는 문장들은 적용해야 한다 */
-#myCarousel {
-  z-index: 0;
-}
-
 body {
   margin: 0;
   padding-top: 2%;
+}
+.join_login li.login_logout_join {
+  min-width: 145px;
 }

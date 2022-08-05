@@ -24,25 +24,25 @@ public class JoinController {
 	@RequestMapping("/join")
 	public String join() {
 
-		return "join/join";
+		return "join";
 	}
 
 	@RequestMapping("/business_join")
 	public String business_join() {
 
-		return "join/business_join";
+		return "business_join";
 	}
 
 	@RequestMapping("/joinsucess_business")
 	public String joinsucess_business() {
 
-		return "join/joinsucess_business";
+		return "joinsucess_business";
 	}
 
 	@RequestMapping("/user_join")
 	public String user_join() {
 
-		return "join/user_join";
+		return "user_join";
 	}
 
 	/*@RequestMapping("/joinsucess_user")
@@ -72,7 +72,7 @@ public class JoinController {
 	      model.addAttribute("user_id",userid);
 	      
 //	      return "redirect:joinsucess_user";
-	      return "join/joinsucess_user";
+	      return "joinsucess_user";
 	   }
 	 
 	 @RequestMapping(method = RequestMethod.POST, value = "/businessjoinsucess")
@@ -93,6 +93,6 @@ public class JoinController {
 		 model.addAttribute("business_id",businessid);
 		 
 //	      return "redirect:joinsucess_user";
-		 return "join/joinsucess_business";
+		 return "joinsucess_business";
 	 }
 }

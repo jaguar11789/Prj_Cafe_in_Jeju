@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.cafein_info,.jejuincafe_addr,.header_name {
+  display: block;
+  justify-content: center;
+  align-content: center;
+}
+.cafein_info,
+.jejuincafe_addr,
+.header_name {
+  color: #808080;
+}
+.footer_img{
+	width: 150px;
+}
