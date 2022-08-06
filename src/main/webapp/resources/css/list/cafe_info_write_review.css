@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+.frame1 {
+	width: 90%;
+	margin-top: 100px;
+	text-align: center;
+}
+
+#buttongroup {
+	margin-left: 550px;
+	margin-top: 100px;
+	text-align: center;
+	background-color: yellow;
+}
+
+.right-button {
+	float: right;
+}
+
+button {
+	margin: 20px;
+}
+
+.custom-btn {
+	width: 130px;
+	height: 40px;
+	color: rgb(0, 0, 0);
+	border-radius: 5px;
+	padding: 10px 25px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 500;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.1s ease;
+	position: relative;
+	display: inline-block;
+	box-shadow: inset 2px 2px 2px 0px rgb(255, 255, 255), 7px 7px 20px 0px
+		rgb(255, 255, 255), 4px 4px 5px 0px rgb(255, 255, 255);
+	outline: none;
+}
+/* 5 */
+.btn-5 {
+	width: 90px;
+	height: 40px;
+	line-height: 42px;
+	padding: 0;
+	border: none;
+	background: #ffa600;
+	background: linear-gradient(0deg, rgb(255, 255, 255) 0%,
+		rgb(255, 255, 255) 100%);
+}
+
+.btn-5:hover {
+	color: #ffa600;
+	background: transparent;
+	box-shadow: none;
+}
+
+.btn-5:before, .btn-5:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 2px;
+	width: 0;
+	background: #ffa600;
+	box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px rgb(255, 255, 255),
+		4px 4px 5px 0px rgb(255, 255, 255);
+	/* 마우스 hover하고 되돌아가는 시간 */
+	transition: 1ms ease all;
+}
+
+.btn-5:after {
+	right: inherit;
+	top: inherit;
+	left: 0;
+	bottom: 0;
+}
+
+.btn-5:hover:before, .btn-5:hover:after {
+	width: 100%;
+	/* 버튼 css효과 반응속도 */
+	transition: 1ms ease all;
+}
+
+#cafe_write_review {
+	color: #ffa600;
+}
+
+/* 창 늘리고 줄일시 사라짐 */
+@media screen and (max-width: 1100px) {
+	#side-container {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1101px) {
+	#side-container {
+		max-width: 200px;
+		border: none;
+		background-color: #f6f6f6;
+	}
+}
+
+/* 메뉴 버튼  링크*/
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* 별점 */
+#myform {
+	display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+	border: 0; /* 필드셋 테두리 제거 */
+	text-align: left;
+}
+
+#myform input[type=radio] {
+	display: none; /* 라디오박스 감춤 */
+}
+
+#myform label {
+	font-size: 2em; /* 이모지 크기 */
+	color: transparent; /* 기존 이모지 컬러 제거 */
+	text-shadow: 0 0 0 #f0f0f0; /* 새 이모지 색상 부여 */
+}
+
+#myform label:hover {
+	text-shadow: 0 0 0 #ebcc93; /* 마우스 호버 */
+}
+
+#myform label:hover ~ label {
+	text-shadow: 0 0 0 #ebcc93; /* 마우스 호버 뒤에오는 이모지들 */
+}
+
+#myform {
+	display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+	direction: rtl; /* 이모지 순서 반전 */
+	border: 0; /* 필드셋 테두리 제거 */
+}
+
+#myform fieldset legend {
+	text-align: left;
+}
+
+#myform input[type=radio]:checked ~ label {
+	text-shadow: 0 0 0 #ffa600; /* 마우스 클릭 체크 */
+}
+/* 택스트박스 */
+textarea {
+	width: 100%;
+	height: 6.25em;
+	resize: none;
+	border-color: #ffa600;
+}
+
+.reviewtitle {
+	/* width: 100%;
+    height: 6.25em;
+    resize: none; */
+	border-color: #ffa600;
+}
+
+/* 취소,확인 버튼 */
+.ok-cancel {
+	float: right;
+}
+/* wwwwwwwwwwwwww */
+#starscore {
+	display: block;
+}
+
+h2 {
+	font-size: 15px;
+}
+
+.star-rating {
+	width: 304px;
+}
+
+.star-rating, .star-rating span {
+	display: inline-block;
+	height: 55px;
+	overflow: hidden;
+	background: url(img/star.png) no-repeat;
+}
+
+.star-rating span {
+	background-position: left bottom;
+	line-height: 0;
+	vertical-align: top;
+}

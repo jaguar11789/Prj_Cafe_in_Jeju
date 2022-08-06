@@ -20,13 +20,13 @@ public class LoginController {
 	@RequestMapping("/login/login")
 	public String login() {
 		
-		return "login/login";
+		return "login";
 	}
 	
 	@RequestMapping("/login/business_login")
 	public String business_login() {
 		
-		return "login/business_login";
+		return "business_login";
 	}
 	
 	@RequestMapping("/login/login_user_session")

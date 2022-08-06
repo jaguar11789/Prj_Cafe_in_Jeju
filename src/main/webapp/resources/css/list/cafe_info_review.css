@@ -1,0 +1,237 @@
+.frame1 {
+  width: 90%;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.right-button{
+   float: right;
+}
+button {
+  margin: 20px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgb(255, 255, 255),
+   7px 7px 20px 0px rgb(255, 255, 255),
+   4px 4px 5px 0px rgb(255, 255, 255);
+   outline: none;
+   
+}
+/* 5 */
+.btn-5 {
+  width: 80px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: #ffa600;
+background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+}
+.btn-5:hover {
+  color: #ffa600;
+  background: transparent;
+   box-shadow:none;
+}
+.btn-5:before,
+.btn-5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #ffa600;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px rgb(255, 255, 255),
+   4px 4px 5px 0px rgb(255, 255, 255);
+   /* 마우스 hover하고 되돌아가는 시간 */
+  transition:1ms ease all;
+  
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  /* 버튼 css효과 반응속도 */
+  transition:1ms ease all;
+}
+#cafe_review{
+    color: #ffa600;
+}
+
+/* 창 늘리고 줄일시 사라짐 */
+@media screen and (max-width: 1100px){
+   #side-container{
+      display: none;
+   }
+}
+@media screen and (min-width: 1101px){
+   #side-container{
+   	  align-self:flex-start;
+      max-width:200px;
+      border: none;
+      background-color: #f6f6f6;
+      
+   }
+}
+
+
+/* 메뉴 버튼  링크*/
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* 별점 평균 */
+.star {
+   width: 50%;
+    /* position: relative; */
+    font-size: 3rem;
+    color: green;
+  }
+  
+  .star input {
+      background-color : yellow;
+   width : 50%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+ .star span {
+    display : none;
+    width: 50%;
+    position: absolute;  
+    left: 0;
+    color: orange;
+    overflow: hidden;
+    pointer-events: none;
+     
+  }
+
+   .custarbg[data-v-6d7bbae6] {
+    display: block;
+    /* float: left; */
+    width: 76px;
+    height: 13px;
+    
+    background: url(//img1a.coupangcdn.com/image/fodium/desktop/widget-sdp-alsoviewedproducts-20160622.png) no-repeat;
+    
+    /* background-size : 200px; */
+    
+    background-position: -39px -43px;/*  */
+    text-indent: -9999px;/*  */
+   }
+   
+   .custar[data-v-6d7bbae6] {
+    display: block;
+    width: 76px;
+    height: 13px;
+    
+    background: url(//img1a.coupangcdn.com/image/fodium/desktop/widget-sdp-alsoviewedproducts-20160622.png) no-repeat;/*  */
+    
+    /* background-size : 200px; */
+    
+    background-position: -39px -58px;/*  */
+    text-indent: -9999px;/*  */
+   }
+
+   element.style {
+       width: 90%;
+   }
+  
+   /*board  */
+   .board{
+      border-collapse: collapse;
+      width: 600px;
+   }
+   
+   /*chart  */
+   .A {
+      background: black;
+   }
+   .B {
+      background: blue;
+   }
+   .C {
+      background: yellow;
+   }
+   .D {
+      background: orange;
+   }
+   
+   .A, .B, .C, .D{
+      display: block;
+      margin: 10px 0;
+      color: #FFF;
+      font-size: 20px;
+      line-height: 1em;
+      text-align: center;
+      border-radius: 15px;
+   } 
+   
+   
+   
+   
+   .chartarea {
+    display: grid;
+    grid-template-columns: max-content auto;
+    align-items: center;
+    width: 700px;
+     margin-left: 25px;
+      color: black;
+   }
+   .Qjdn7d {
+    font-family: Roboto,Arial,sans-serif;
+    line-height: 1rem;
+    font-size: .75rem;
+    letter-spacing: .025em;
+    font-weight: 400;
+    padding-right: 16px;
+   }
+   .RJfYGf:not(:disabled) {
+    background-color: #e8eaed;
+   }
+   .RJfYGf {
+   width:700px;
+    border-radius: 9999px;
+    background-color: #e8eaed; 
+    height: 10px;
+   }
+   element.style {
+    width: 53.8439%;
+   }
+   .wcB8se:not(:disabled) {
+    background-color: #ffa600;
+   }
+   .RutFAf {
+    height: 100%;
+    border-radius: inherit;
+   }
+   .wcB8se {
+    background-color: #ffa600;
+   }}
+   /* sidebar */
+   #side-container {
+
+}

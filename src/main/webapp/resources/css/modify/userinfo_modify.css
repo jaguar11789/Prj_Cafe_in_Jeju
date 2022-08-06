@@ -1,0 +1,68 @@
+@charset "UTF-8";
+#grid {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.gridmenu {
+	border: 1px solid pink;
+}
+
+.gridinfo {
+	margin-left: 30px;
+	width: 500px;
+}
+
+.gridinfo input {
+	
+}
+
+.gridinfo h3 { /*개인정보 변경*/
+	margin-left: 15px;
+}
+
+.gridinfo span { /*수정 내용*/
+	padding: 1px;
+	display: inline-block;
+	text-align: left;
+	width: 120px;
+	margin-left: 30px;
+}
+
+.info {
+	background-color: #ffa600;
+	width: 220px;
+	margin: 0;
+	padding: 40px;
+	min-height: 450px;
+}
+.info_change {
+	list-style: none;
+	padding: 2px;
+}
+
+a {
+	text-decoration: none;
+}
+.gridinfo .modi_btn {
+	background-color: #ffa600;
+	border: none;
+	border: none;
+	background-color: #ffa600;
+	border-radius: 4px;
+	color: white;
+	height: 30px;
+	width: 60px;
+}
+.modify_confirm{
+width: 200px;
+      height: 35px;
+      border: none;
+      background-color: #ffa600;
+      border-radius: 4px;
+      color: white;
+      margin-left: 60%;
+}
+}

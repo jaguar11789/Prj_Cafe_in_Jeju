@@ -7,56 +7,11 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>개인정보(사용자)</title>
-<!-- !jeader.css -->
-<link rel="stylesheet" href="../resources/css/header.css" />
+<title>Document</title>
 <!-- !사용자페이지css -->
-<link rel="stylesheet" href="../resources/css/mypage_user.css" />
+<link rel="stylesheet" href="../resources/css/mypage/mypage_user.css" />
 </head>
 <body>
-	<!-- !header -->
-	<header>
-		<div class="container">
-			<div class="menu">
-				<input type="checkbox" id="menuicon" /> <label for="menuicon">
-					<span></span> <span></span> <span></span>
-				</label>
-				<div class="sidebar">
-					<div class="category">
-						<ul>
-							<li class="menu_logo"><a href="../list/main"><img
-									src="../resources/img/logo2.png" alt="" /></a></li>
-							<li class="menu_local"><a href="#"><font>제주</font></a></li>
-							<li class="menu_local"><a href="#"><font>애월</font></a></li>
-							<li class="menu_local"><a href="#"><font>한림</font></a></li>
-							<li class="menu_local"><a href="#"><font>한경</font></a></li>
-							<li class="menu_local"><a href="#"><font>대정</font></a></li>
-							<li class="menu_local"><a href="#"><font>안덕</font></a></li>
-							<li class="menu_local"><a href="#"><font>중문</font></a></li>
-							<li class="menu_local"><a href="#"><font>서귀포</font></a></li>
-							<li class="menu_local"><a href="#"><font>남원</font></a></li>
-							<li class="menu_local"><a href="#"><font>표선</font></a></li>
-							<li class="menu_local"><a href="#"><font>성산</font></a></li>
-							<li class="menu_local"><a href="#"><font>구좌</font></a></li>
-							<li class="menu_local"><a href="#"><font>조천</font></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<ul class="navar_logo">
-				<a href="../list/main">
-					<li><img class="logo" src="../resources/img/logo2.png" alt="" /></li>
-				</a>
-			</ul>
-
-			<ul class="user">
-				<li class=""><a href="../mypage/user_mypage"><img
-						class="img" src="../resources/img/user.png" alt="" /></a></li>
-			</ul>
-		</div>
-		<hr />
-	</header>
-	<!-- !header end -->
 
 	<!-- 본문 가보자고! -->
 	<main>
