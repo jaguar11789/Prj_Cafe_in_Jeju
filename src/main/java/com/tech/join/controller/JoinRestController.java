@@ -12,6 +12,9 @@ public class JoinRestController {
 
 	@Autowired
 	private SqlSession session;
+	
+	@Autowired
+	private MailSendService mailService;
 
 	@PostMapping("/join/idCheck")
 	public String idCheck(String id) {
@@ -25,7 +28,7 @@ public class JoinRestController {
 
 		String check = "";
 
-		if (id1 + id2 != 1) {
+		if (id1 + id2 < 1) { // == 0 으로 했을때 데이터베이스로 안들어가는 오류때문에 부등호로 교체
 			check = "ok";
 		}
 		return check;
@@ -48,4 +51,13 @@ public class JoinRestController {
 		}
 		return check;
 	}
+	
+	//checkEmail 들어오면 실행 MailSendService.java에서 값들 리턴받아옴.
+		@PostMapping("/join/checkEmail")
+		public String checkEmail(String email) {
+			System.out.println("이메일 인증요청이 들어왔습니다!");
+			System.out.println("이메일 인증 이메일 : " + email);
+			
+			return mailService.joinEmail(email);
+		}
 }
