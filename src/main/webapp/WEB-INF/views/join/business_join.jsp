@@ -93,6 +93,12 @@ String path=request.getContextPath();
     	color:red;
     	display:none;
     }
+    #msg{
+    	margin-left: 60px;
+    	color: red;
+    	font-size: 13px;
+    	font-weight: bold;
+    }
     
   </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -204,6 +210,7 @@ String path=request.getContextPath();
     		return true;
 			
     	}else{
+    		$("#msg").html("인증번호를 다시 확인해주세요.");
     		return false;
 			
     		
@@ -267,7 +274,7 @@ String path=request.getContextPath();
             <span id="mail-check-warn"></span>
             
             <span id="code" style="display: none"></span>
-            
+            <span id="msg"></span> <br />
             
             <input type="submit" class="input_button_join" value="가입하기">
             <!-- <input type="submit" class="input_button_join" value="가입하기"> -->
