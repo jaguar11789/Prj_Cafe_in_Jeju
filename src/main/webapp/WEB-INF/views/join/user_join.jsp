@@ -11,8 +11,7 @@ String path=request.getContextPath();
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>사용자 회원가입</title>
+    <title>Document</title>
   </head>
 
   <!-- css -->
@@ -98,11 +97,20 @@ String path=request.getContextPath();
     	color:red;
     	display:none;
     }
+    #msg{
+    	margin-left: 60px;
+    	color: red;
+    	font-size: 13px;
+    	font-weight: bold;
+    }
 
   </style>
   
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="text/javascript">
+  
+
+  
     function checkId(){
         var id = $('#id').val(); //id값이 "id"인 입력란의 값을 저장
         
@@ -174,6 +182,50 @@ String path=request.getContextPath();
     		}	
     	})  	   	
     });
+   
+   function checkEmail(){   
+    	alert('신호');
+    	const email = $('#useremail').val(); //이메일 주소값 얻어오기
+    	console.log('완성된 이메일 : ' + email); //이메일 오는지 콘솔창으로 확인
+    	
+    	
+    	$.ajax({
+    		type:'post',
+    		url: '<%=path %>/join/checkEmail',
+    		data: {email:email},
+    		dataType: "text",
+    		async: false,
+    		success:function(data){
+    			console.log("data : " + data);
+    			
+    			$("#code").html(data);
+    			console.log("code : " + code);
+    			alert('인증번호가 전송되었습니다.');
+    			
+    		}
+    	}); // end ajax
+			
+    }; // end send email
+    
+    // 인증번호 비교 
+    
+    
+    function joinCheck() {
+		var emailcode = $("#input_value_code").val();
+		console.log($("#code").html());
+		
+		
+		if(emailcode == $("#code").html()){
+    		return true;
+			
+    	}else{
+    		$("#msg").html("인증번호를 다시 확인해주세요.");
+    		return false;
+			
+    		
+    	}
+		
+	}
     	
 </script>
 
@@ -185,7 +237,7 @@ String path=request.getContextPath();
         <a href="../list/main"><img src="../resources/img/logo2.png" width="200px" height="60px"></a>
       </div>
       
-      <form action="userjoinsucess" method="post">
+      <form action="userjoinsucess" method="post" onsubmit="return joinCheck();">
       <!-- display : flex 를 위한 div-->
       <div id="joinform">
         <!-- joinform의 input, label 태그 -->
@@ -222,8 +274,20 @@ String path=request.getContextPath();
             <input type="text" name="userpnum" class="input_value" placeholder=" 휴대폰번호를 입력해주세요."> <br>
 
             <label for="" class="input_label">이메일</label> <br>
+<<<<<<< HEAD
             <input type="text" name="useremail" class="input_value" placeholder=" 이메일을 입력해주세요."> <br>
 
+=======
+            <input type="text" name="useremail" id="useremail" class="input_value" placeholder=" 이메일을 입력해주세요."> <br>
+            
+            <input type="text" id="input_value_code" class="input_value_code" placeholder=" 인증번호 6자리를 입력해주세요."> 
+            <input type="button" id="mail-Check-Btn" class="input_button_code" value="본인인증" onclick="return checkEmail();"> <br />
+            <span id="mail-check-warn"></span>
+            
+            <span id="code" style="display: none"></span>
+            <span id="msg"></span> <br />
+            
+>>>>>>> 8d0330a86fa8223226c5641ca4aee40f8eac3c44
             <input type="submit" class="input_button_join" value="가입하기">
          </div>
 
