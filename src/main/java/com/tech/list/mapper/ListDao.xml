@@ -67,4 +67,12 @@
 	<select id="cafeboard" resultType="com.tech.cafein.dto.CafeBoardDto">
 		SELECT * FROM CAFE_BOARD ORDER BY CNUM DESC
 	</select>
+	
+	<update id="uphit">
+		UPDATE CAFE_BOARD SET CHIT=CHIT+1 WHERE CNUM=#{param1}
+	</update>
+	
+	<select id="cafeboardview" resultType="com.tech.cafein.dto.CafeBoardDto">
+		SELECT * FROM CAFE_BOARD WHERE CNUM=#{param1}
+	</select>
 </mapper>

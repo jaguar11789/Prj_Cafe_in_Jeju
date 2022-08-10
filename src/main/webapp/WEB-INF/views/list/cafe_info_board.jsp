@@ -496,7 +496,7 @@ a{
                      <c:forEach items="${board}" var="board">
                      <tr>
                      	<td>${board.cnum }</td>                     	
-                     	<td><a href="./cafe_info_boardview?=${board.cnum }">${board.ctitle }</a></td>                     	
+                     	<td><a href="./cafe_info_boardview?cnum=${board.cnum }">${board.ctitle }</a></td>                     	
                      	<td>${board.user_id }</td>                     	
                      	<td>${board.cdate }</td>                     	
                      	<td>${board.chit }</td>                     	

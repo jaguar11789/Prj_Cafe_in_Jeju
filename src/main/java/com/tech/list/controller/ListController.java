@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.tech.cafein.dto.CafeBoardDto;
 import com.tech.cafein.dto.ReviewDto;
 import com.tech.list.dao.ListDao;
 import com.tech.cafeinfo.vopage.SearchVO;
@@ -326,9 +327,18 @@ public class ListController {
 		return "redirect:cafe_info_board";
 	}
 	@RequestMapping("/cafe_info_boardview")
-	public String boardview() {
+	public String boardview(HttpServletRequest request, Model model) {
+		
+		String ccnum = request.getParameter("cnum");
+		
+		System.out.println(ccnum+"www");
+		ListDao listdao = session.getMapper(ListDao.class);
+		
+		listdao.uphit(ccnum);
+		
+		CafeBoardDto cafeboarddto = listdao.cafeboardview(ccnum);
+		model.addAttribute("cafeboardview", cafeboarddto);
 		
 		return "cafe_info_boardview";
 	}
-
 }

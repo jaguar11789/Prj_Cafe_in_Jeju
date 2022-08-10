@@ -38,4 +38,8 @@ public interface ListDao {
 
 	public void imgwrite(int cnum, String originFile, String changeFile);
 
+	public void uphit(String ccnum);
+
+	public CafeBoardDto cafeboardview(String ccnum);
+
 }
