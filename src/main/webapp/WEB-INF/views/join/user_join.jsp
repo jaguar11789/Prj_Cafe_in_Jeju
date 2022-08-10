@@ -262,8 +262,8 @@ String path=request.getContextPath();
             <input type="date" name="userbirth" class="input_value"> <br>
             
             <label for="" class="input_label">성별</label> <br>
-            <input type="radio" name="usersex" class="input_value1" value="여성">여성
-            <input type="radio" name="usersex" class="input_value1" value="남성">남성 <br>
+            <input type="radio" name="usersex" class="input_value1" value="남성">남성 
+            <input type="radio" name="usersex" class="input_value1" value="여성">여성<br>
             
             <label for="" class="input_label">닉네임</label> <br>
             <input type="text" id="nickname" name="usernickname" maxlength="10" class="input_value" placeholder=" 닉네임을 입력해주세요." oninput="checkNick();" required> <br>
@@ -274,10 +274,7 @@ String path=request.getContextPath();
             <input type="text" name="userpnum" class="input_value" placeholder=" 휴대폰번호를 입력해주세요."> <br>
 
             <label for="" class="input_label">이메일</label> <br>
-<<<<<<< HEAD
-            <input type="text" name="useremail" class="input_value" placeholder=" 이메일을 입력해주세요."> <br>
 
-=======
             <input type="text" name="useremail" id="useremail" class="input_value" placeholder=" 이메일을 입력해주세요."> <br>
             
             <input type="text" id="input_value_code" class="input_value_code" placeholder=" 인증번호 6자리를 입력해주세요."> 
@@ -287,7 +284,7 @@ String path=request.getContextPath();
             <span id="code" style="display: none"></span>
             <span id="msg"></span> <br />
             
->>>>>>> 8d0330a86fa8223226c5641ca4aee40f8eac3c44
+
             <input type="submit" class="input_button_join" value="가입하기">
          </div>
 

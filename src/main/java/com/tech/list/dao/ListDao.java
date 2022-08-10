@@ -2,6 +2,7 @@ package com.tech.list.dao;
 
 import java.util.ArrayList;
 
+import com.tech.cafein.dto.CafeBoardDto;
 import com.tech.cafein.dto.ReviewDto;
 
 public interface ListDao {
@@ -27,5 +28,14 @@ public interface ListDao {
 	public float onestar();
 
 	public int selectBoardTotCount();
+	
+	public ArrayList<CafeBoardDto> cafeboard();
+
+
+	public void writeboard(String ctitle, String ccontent, String cfile);
+
+	public int selCnum();
+
+	public void imgwrite(int cnum, String originFile, String changeFile);
 
 }

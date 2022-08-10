@@ -180,4 +180,58 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/list/cafe_info_write_review.jsp" />
 	</definition>
+	<!-- join -->
+	<definition name="join" extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/join.jsp" />
+	</definition>
+	<!-- user_join -->
+	<definition name="user_join" extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/user_join.jsp" />
+	</definition>
+	<!-- business_join -->
+	<definition name="business_join" extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/business_join.jsp" />
+	</definition>
+	<!-- business_join -->
+	<definition name="business_join" extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/business_join.jsp" />
+	</definition>
+	<!-- joinsuccess_business -->
+	<definition name="joinsucess_business" extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/joinsucess_business.jsp" />
+	</definition>
+	<!-- joinsuccess_user -->
+	<definition name="joinsucess_user" extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/joinsucess_user.jsp" />
+	</definition>
+	<!-- cafe_info_board -->
+	<definition name="cafe_info_board" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_board.jsp" />
+	</definition>
+	<!-- cafe_info_writeboard -->
+	<definition name="cafe_info_writeboard" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_writeboard.jsp" />
+	</definition>
+	<!-- cafe_info_boardview -->
+	<definition name="cafe_info_boardview" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_boardview.jsp" />
+	</definition>
 </tiles-definitions>

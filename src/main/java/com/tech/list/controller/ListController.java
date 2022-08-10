@@ -34,11 +34,11 @@ public class ListController {
 
 		return "main";
 	}
-	/*@RequestMapping("/main")
-	public String main2() {
-		
-		return "list/main";
-	}*/
+	/*
+	 * @RequestMapping("/main") public String main2() {
+	 * 
+	 * return "list/main"; }
+	 */
 
 	@RequestMapping("/jeju_detail")
 	public String jeju_detail() {
@@ -130,10 +130,20 @@ public class ListController {
 		return "cafe_info_detail";
 	}
 
-	@RequestMapping("/cafe_info_board")
-	public String cafe_info_board() {
+	@RequestMapping("/cafe_info_writeboard")
+	public String cafe_info_writeboard() {
 
-		return "list/cafe_info_board";
+		return "cafe_info_writeboard";
+	}
+
+	@RequestMapping("/cafe_info_board")
+	public String cafe_info_board(HttpServletRequest request, SearchVO searchVO, Model model) {
+
+		ListDao listdao = session.getMapper(ListDao.class);
+
+		model.addAttribute("board", listdao.cafeboard());
+
+		return "cafe_info_board";
 	}
 
 	@RequestMapping("/cafe_info_review")
@@ -171,9 +181,8 @@ public class ListController {
 		model.addAttribute("twopercent", twopercent);
 		model.addAttribute("onepercent", onepercent);
 
-		
-		System.out.println(fivepercent+"2323");
-	
+		System.out.println(fivepercent + "2323");
+
 		/* paging */
 		// listservice에서 dtos로 받았지만 여기선 list로 받겠다
 
@@ -277,6 +286,49 @@ public class ListController {
 		System.out.println("받음");
 
 		return "redirect:cafe_info_review";
+	}
+
+	@RequestMapping("/writeboard")
+	public String writeboard(MultipartHttpServletRequest mtfRequest, Model model) throws Exception {
+
+		String ctitle = mtfRequest.getParameter("ctitle");
+		String ccontent = mtfRequest.getParameter("ccontent");
+
+		System.out.println("=============ctitle = " + ctitle + "==============");
+		System.out.println("=============ccontent = " + ccontent + "==============");
+
+		ListDao listdao = session.getMapper(ListDao.class);
+		listdao.writeboard(ctitle, ccontent, "nullfile");
+
+		int cnum = listdao.selCnum();
+
+		String root = "C:\\javabigspring\\springwork22\\Cafe_in_Jeju\\src\\main\\webapp\\resources\\upload";
+		List<MultipartFile> fileList = mtfRequest.getFiles("cfile");
+
+		for (MultipartFile mf : fileList) {
+			String originFile = mf.getOriginalFilename();
+			System.out.println("빈 오리진 파일 확인:" + originFile);
+			long longtime = System.currentTimeMillis();
+			String changeFile = longtime + "_" + mf.getOriginalFilename();
+			String pathfile = root + "\\" + changeFile;
+			try {
+				if (!originFile.equals("")) { // >>>>>>>>>>>>>>>>>>>아무런 파일을 선택하지 않았을때 예외처리
+					mf.transferTo(new File(pathfile));// path장소 수정필요
+					System.out.println("다중 업로드 성공!!!");
+					listdao.imgwrite(cnum, originFile, changeFile);
+					System.out.println("rebrdimgtb write 성공!!!");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return "redirect:cafe_info_board";
+	}
+	@RequestMapping("/cafe_info_boardview")
+	public String boardview() {
+		
+		return "cafe_info_boardview";
 	}
 
 }

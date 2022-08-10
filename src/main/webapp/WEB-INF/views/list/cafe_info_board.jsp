@@ -398,131 +398,13 @@ a{
 </head>
 
 <body>
-    <header>
-      <link rel="stylesheet" href="../resources/css/header.css" />
-      <div class="container">
-        <div class="menu">
-          <input type="checkbox" id="menuicon" />
-          <label for="menuicon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-          <div class="sidebar">
-            <div class="category">
-              <ul>
-                <li class="menu_logo">
-                  <a href="../list/main"
-                    ><img src="../resources/img/logo2.png" alt=""
-                  /></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./jeju_detail"><font>제주</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./aewol_detail"><font>애월</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./hanlim_detail"><font>한림</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./hangyoung_detail"><font>한경</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./daejung_detail"><font>대정</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./anduck_detail"><font>안덕</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./joongmoon_detail"><font>중문</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./seogipo_detail"><font>서귀포</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./namwon_detail"><font>남원</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./pyoseon_detail"><font>표선</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./sungsan_detail"><font>성산</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./gujwa_detail"><font>구좌</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="./jocheon_detail"><font>조천</font></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <ul class="navar_logo">
-           <a href="../list/main">
-                <li><img class="logo" src="../resources/img/logo2.png" alt="" /></li>
-             </a>
-        </ul>
-		<ul class="join_login">
-          
-          <li>
-          <!-- login이 되었을때 logout으로 표시 전환 -> logout 되었을대 login표시 전환 -->
-          <!-- id가 null이 아닐때 -> login상태 -->
-            <c:choose>
-          		<c:when test="${id ne null || busi_num ne null}">
-		            <button class="login">
-		              <a href="../main/logout">logout</a>
-		            </button>
-          		</c:when>
-          		<c:otherwise>
-          			<button class="logout">
-		              <a href="../login/login">login</a>
-		            </button>
-          		</c:otherwise>
-          </c:choose>
-          <!-- id가 null이 아닐때 -> login 상태 join창은 사라지도록 함 -->
-          <c:choose>
-          		<c:when test="${id ne null || busi_num ne null }">
-          			
-          		</c:when>
-          		<c:otherwise>
-	          		<button class="join">
-		              <a href="../join/join">join</a>
-		            </button>
-          		</c:otherwise>
-          </c:choose>
-          	
-          </li>
-        </ul>
-        <ul class="user">
-        
-        <!-- login전에 유저 사진 x -->
-          <li class="">
-          	<c:choose>
-          		<c:when test="${id ne null }">
-          			<a href="../mypage/user_mypage"><img class="img" src="../resources/img/user.png" alt="" /></a>
-          		</c:when>
-          		<c:when test="${busi_num ne null }">
-          			<a href="../mypage/business_mypage"><img class="img" src="../resources/img/user.png" alt="" /></a>
-          		</c:when>
-          		<c:otherwise>
-	          		 
-          		</c:otherwise>
-          </c:choose>
-            
-          </li>
-          
-        </ul>
-      </div>
-      <hr />
-    </header>
+    
    <div class="row justify-content-md-center" > <!--카드 - 수평  -->
       <div class="card mb-3" style="max-width:900px; border: none; ">
          <div class="row g-0">
             <div class="col-md-7">
                <img id="mainimg" src="../resources/listimg/cafe.jpg" class="img-fluid rounded-start" alt="..." height="800px">
-               <hr />
+               
                <div class="col-md-12">
                   <table>
                      <tr>
@@ -584,7 +466,7 @@ a{
                         </td>
                         <td class="button">
                             <a href="cafe_info_board"><button id="cafe_board"
-                                  class="custom-btn btn-5"><span>자유게시판</span></button></a>
+                                  class="custom-btn btn-5"><span>Q&A</span></button></a>
                          </td>
 
                         <div class="right-button">
@@ -597,60 +479,38 @@ a{
             </div>
                 <hr/>
          </div>
-         
+        	<h5 style="text-align: center">Q&A</h5>
          <hr>
          
          	<form action="cafe_info_review" method="post">
-               <table class="table table-hover"  >
-                     
+               	<table class="table table-hover">
                      <tr>
-                        <td class="board_left">
-                           <table style="text-decoration: center">
-                              <tr>
-                                 <td>
-                                    <img alt="" src="../resources/img/user.png" style="width: 50px; height: 50px;" >
-                                 </td>
-                              </tr>
-                              <tr>
-                                 <td>
-                                    닉네임2 
-                                 </td>
-                              </tr>
-                           </table>
-                        </td>
-                        <td class="board_left">
-
-                           <table >
-
-                           <%-- <c:forEach items="${list }" var="review"> --%>
-                              <tr>
-                                 <td colspan="1" style=" width: 500px">${review.rdate }</td >
-                              </tr>
-                              <tr>
-
-                                 <td>타이틀 : ${review.title }</td>
-                              </tr>
-                              <tr>
-                                 <td>ㄷㅉㅈ</td>
-                              </tr>
-                              <tr>
-                                 <td>내용 : ${review.content }</td>
-                              </tr>
-                           <%--  </c:forEach> --%>
-                              
-                              
-                           </table>
-                           
-                           
-                           
-                           
-                        </td>
-                        <td>123</td>
-                        
-                        </tr>
+                     	<td>순번</td>
+                     	<td>제목</td>
+                     	<td>작성자</td>
+                     	<td>작성일</td>
+                     	<td>조회수</td>
+                     </tr>
+                     <c:forEach items="${board}" var="board">
+                     <tr>
+                     	<td>${board.cnum }</td>                     	
+                     	<td><a href="./cafe_info_boardview?=${board.cnum }">${board.ctitle }</a></td>                     	
+                     	<td>${board.user_id }</td>                     	
+                     	<td>${board.cdate }</td>                     	
+                     	<td>${board.chit }</td>                     	
+                     </tr>
+                     </c:forEach>
+                     <tr>
+                     	<td></td>
+                     	<td></td>
+                     	<td></td>
+                     	<td></td>
+                     	<td><a href="./cafe_info_writeboard">글쓰기</a></td>
+                     </tr>
+                    
                   
            
-            </table>
+           		</table>
             
             
             

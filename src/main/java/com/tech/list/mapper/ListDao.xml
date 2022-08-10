@@ -7,7 +7,7 @@
 <mapper namespace="com.tech.list.dao.ListDao">
 	<insert id="writereview">
 		INSERT INTO REVIEW VALUES
-		(#{param1},'jaguar1178',#{param4},#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE,CAFE_NUM)
+		(#{param1},USER_NUM.NEXTVAL,#{param4},#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE,CAFE_NUM_SEQ.NEXTVAL)
 	</insert>
 
 	<select id="cafereview"
@@ -46,5 +46,25 @@
 	<select id="selectBoardTotCount" resultType="Integer">
 		SELECT COUNT(*) FROM
 		REVIEW
+	</select>
+	
+	<select id="cafe_info_board">
+		SELECT CNUM,CTITLE,USER_ID,CDATE,CHIT FROM CAFE_BOARD
+	</select>
+	
+	<insert id="writeboard">
+		INSERT INTO CAFE_BOARD VALUES (CNUM_SEQ.NEXTVAL,#{param1},#{param2},'58년개띠',SYSDATE,1,#{param3},1)
+	</insert>
+	
+	<select id="selCnum" resultType="Integer">
+		SELECT MAX(CNUM) FROM CAFE_BOARD
+	</select>
+	
+	<insert id="imgwrite" >
+		INSERT INTO CAFE_BOARD_IMG VALUES(CAFE_BOARD_IMG_SEQ.NEXTVAL,#{param1},#{param2},#{param3})
+	</insert>
+	
+	<select id="cafeboard" resultType="com.tech.cafein.dto.CafeBoardDto">
+		SELECT * FROM CAFE_BOARD ORDER BY CNUM DESC
 	</select>
 </mapper>
