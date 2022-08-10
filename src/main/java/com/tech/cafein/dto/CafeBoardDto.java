@@ -12,9 +12,10 @@ public class CafeBoardDto {
 	private int chit;
 	private String cfile;
 	private int cafe_num;
+	private CafeBoardImgDto cafeboardimgdto;
 
-	private CafeBoardImgDto cafeBoardImgDto;
-
+	
+	
 	public int getCnum() {
 		return cnum;
 	}
@@ -79,19 +80,19 @@ public class CafeBoardDto {
 		this.cafe_num = cafe_num;
 	}
 
-	public CafeBoardImgDto getCafeBoardImgDto() {
-		return cafeBoardImgDto;
+	public CafeBoardImgDto getCafeboardimgdto() {
+		return cafeboardimgdto;
 	}
 
-	public void setCafeBoardImgDto(CafeBoardImgDto cafeBoardImgDto) {
-		this.cafeBoardImgDto = cafeBoardImgDto;
+	public void setCafeboardimgdto(CafeBoardImgDto cafeboardimgdto) {
+		this.cafeboardimgdto = cafeboardimgdto;
 	}
 
 	public CafeBoardDto() {
 	}
 
 	public CafeBoardDto(int cnum, String ctitle, String ccontent, String user_id, Date cdate, int chit, String cfile,
-			int cafe_num, CafeBoardImgDto cafeBoardImgDto) {
+			int cafe_num, CafeBoardImgDto cafeboardimgdto) {
 		super();
 		this.cnum = cnum;
 		this.ctitle = ctitle;
@@ -101,7 +102,9 @@ public class CafeBoardDto {
 		this.chit = chit;
 		this.cfile = cfile;
 		this.cafe_num = cafe_num;
-		this.cafeBoardImgDto = cafeBoardImgDto;
+		this.cafeboardimgdto = cafeboardimgdto;
 	}
+
+	
 
 }

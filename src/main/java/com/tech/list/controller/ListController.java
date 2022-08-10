@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.tech.cafein.dto.CafeBoardDto;
+import com.tech.cafein.dto.CafeBoardImgDto;
 import com.tech.cafein.dto.ReviewDto;
 import com.tech.list.dao.ListDao;
 import com.tech.cafeinfo.vopage.SearchVO;
@@ -140,9 +141,30 @@ public class ListController {
 	@RequestMapping("/cafe_info_board")
 	public String cafe_info_board(HttpServletRequest request, SearchVO searchVO, Model model) {
 
-		ListDao listdao = session.getMapper(ListDao.class);
+		String strPage = request.getParameter("page");
+		System.out.println("page1>>>>>> : " + strPage);
+//		null 검사
+		if (strPage == null)
+			strPage = "1";
+		System.out.println("page2>>>>>> : " + strPage);
+		int page = Integer.parseInt(strPage);
+		searchVO.setPage(page);
 
-		model.addAttribute("board", listdao.cafeboard());
+		ListDao listdao = session.getMapper(ListDao.class);
+		int total2 = listdao.selectboardpage();
+
+		System.out.println("전체 페이지 : " + total2);
+		
+		searchVO.pageCalculate(total2);
+
+		int rowStart = searchVO.getRowStart();
+		int rowEnd = searchVO.getRowEnd();
+
+		System.out.println("첫 : " + rowStart);
+		System.out.println("끝 : " + rowEnd);
+		
+		model.addAttribute("board", listdao.cafeboard(rowStart, rowEnd));
+		model.addAttribute("searchVo", searchVO);
 
 		return "cafe_info_board";
 	}
@@ -329,15 +351,19 @@ public class ListController {
 	@RequestMapping("/cafe_info_boardview")
 	public String boardview(HttpServletRequest request, Model model) {
 		
-		String ccnum = request.getParameter("cnum");
+		String cnum = request.getParameter("cnum");
 		
-		System.out.println(ccnum+"www");
 		ListDao listdao = session.getMapper(ListDao.class);
 		
-		listdao.uphit(ccnum);
+		listdao.uphit(cnum);
 		
-		CafeBoardDto cafeboarddto = listdao.cafeboardview(ccnum);
+		CafeBoardDto cafeboarddto = listdao.cafeboardview(cnum);
 		model.addAttribute("cafeboardview", cafeboarddto);
+		
+		ArrayList<CafeBoardDto> boarddto = listdao.boardimg(cnum);
+		
+		
+		model.addAttribute("boardimg", boarddto);
 		
 		return "cafe_info_boardview";
 	}

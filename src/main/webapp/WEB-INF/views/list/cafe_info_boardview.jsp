@@ -533,11 +533,11 @@ textarea {
          			<td colspan="2" style="padding: 20px 53px 20px 53px;">${cafeboardview.ccontent }
          			</td>
          		</tr>
-         		<tr>
-         			<td colspan="2">사진</td>
-         			
-         		</tr>
-         		
+         		<c:forEach items="${boardimg }" var="boardimg">
+	         		<tr>
+	         			<td colspan="2"><img src="../resources/upload/${boardimg.cafeboardimgdto.cborgfile }" width="150px" height="150px" alt="" />${boardimg.cafeboardimgdto.cborgfile }</td>
+	         		</tr>
+         		</c:forEach>
          	</table>
          		<div style="padding-left: 750px">
          			<a href="./cafe_info_board"><input type="button" value="목록" style="padding:0 10px 0 10px"/></a>&ensp;
