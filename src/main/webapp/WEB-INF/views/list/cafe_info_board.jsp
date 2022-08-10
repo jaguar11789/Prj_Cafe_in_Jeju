@@ -479,18 +479,20 @@ a{
             </div>
                 <hr/>
          </div>
-        	<h5 style="text-align: center">Q&A</h5>
-         <hr>
+        	<!-- <h5 style="text-align: center">Q&A</h5> -->
+         
          
          	<form action="cafe_info_review" method="post">
                	<table class="table table-hover">
-                     <tr>
-                     	<td>순번</td>
-                     	<td>제목</td>
-                     	<td>작성자</td>
-                     	<td>작성일</td>
-                     	<td>조회수</td>
-                     </tr>
+                     <thead>
+	                     <tr>
+	                     	<th>순번</th>
+	                     	<th>제목</th>
+	                     	<th>작성자</th>
+	                     	<th>작성일</th>
+	                     	<th>조회수</th>
+	                     </tr>
+                     </thead>
                      <c:forEach items="${board}" var="board">
                      <tr>
                      	<td>${board.cnum }</td>                     	

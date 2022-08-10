@@ -479,10 +479,9 @@ a{
             </div>
                 <hr/>
          </div>
-        	<h5 style="text-align: center">Q&A</h5>
-         <hr>
+        	
          
-         	<table class="table table-hover">
+         	<table class="table table-hover" >
          		<tr style="background-color: #d6d9dd; justify-content: baseline">
          			<td style="font-size: 20px; ">&emsp;&emsp;안녕하세요</td>
          			<td style="font-size: 15px; padding: 12px 20px 0 0; text-align: right;">조회수 5432</td>
@@ -492,12 +491,21 @@ a{
          			<td style="font-size: 15px; padding: 7px 20px 0 0; text-align: right;">2022-08-09</td>
          		</tr>
          		<tr>
-         			<td colspan="2" style="padding: 20px 53px 20px 53px;">뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬</td>
-
+         			<td colspan="2" style="padding: 20px 53px 20px 53px;">
+	         			뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬
+	         			뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬
+	         			뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜
+	         			쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬
+         			</td>
          		</tr>
+         		
+         		
          	</table>
-         	
-      </div>
+         		<div style="padding-left: 750px">
+         			<input type="button" value="목록" style="padding-right: 10px"/>
+         			<input type="button" value="수정"/>
+         	   </div>
+	      </div>
       <!-- 사이드 컨테이너 -->
       <div id="side-container" class="card mb-1" >
          <p>위치</p>
