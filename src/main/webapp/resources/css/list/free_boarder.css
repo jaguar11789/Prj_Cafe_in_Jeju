@@ -1,0 +1,42 @@
+.free_boarder_main_title {
+  	/* text-align: center; */
+  	width:160px;
+  	margin-left: auto;
+  	margin-right: auto;
+
+}
+.free_boarder_table {
+  width: 60rem;
+  height: 3rem;
+  /* table-layout: fixed; */
+  margin: auto;
+}
+.table_no {
+  width: 3rem;
+}
+.table_title {
+  width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin: auto;
+}
+.table_user {
+  width: 6rem;
+}
+.table_date {
+  width: 10rem;
+}
+.table_hit {
+  width: 1.5rem;
+}
+.boarder_sherch{
+	margin-top:1rem;
+	width:400px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+.write {
+	width:3rem;
+  margin-top: 1rem;
+  margin-left: 10rem: 
+}

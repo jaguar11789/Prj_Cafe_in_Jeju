@@ -9,6 +9,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
+import org.apache.tiles.request.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.tech.cafein.dto.Free_boarderDto;
 import com.tech.cafein.dto.ReviewDto;
 import com.tech.list.dao.ListDao;
 import com.tech.cafeinfo.vopage.SearchVO;
@@ -207,36 +209,6 @@ public class ListController {
 		return "cafe_info_write_review";
 	}
 
-	/*
-	 * @RequestMapping("/writereview") public String writereview(HttpServletRequest
-	 * request, Model model) { System.out.println("======write()======"); try {
-	 * String attachPath = "resources\\upload\\"; String uploadPath =
-	 * request.getSession().getServletContext().getRealPath("/");
-	 * System.out.println("uploadPath :" + uploadPath); String path = uploadPath +
-	 * attachPath;
-	 * 
-	 * System.out.println("지나가유~!!!!");
-	 * 
-	 * MultipartRequest req = // MultipartRequest이거로 write_view로 보내서 받을 때도
-	 * MultipartRequest로 받아야 된다 new MultipartRequest(request, path, 1024 * 1024 *
-	 * 20, "utf-8", new DefaultFileRenamePolicy());// 임포트확인
-	 * 
-	 * System.out.println("multipart지나가유~~!!!!!"); // MultipartRequest는 파일 이름이 같으면
-	 * 변화를 줘서 저장을 하는 기능이 있다 String title = req.getParameter("reviewtitle"); //
-	 * String id = req.getParameter("id"); // String score =
-	 * req.getParameter("score"); String content =
-	 * req.getParameter("reviewcontent"); String file =
-	 * req.getFilesystemName("reviewphoto");
-	 * 
-	 * if (file == null) { file = ""; } ListDao listdao =
-	 * session.getMapper(ListDao.class); listdao.writereview(title, content ,file);
-	 * 
-	 * System.out.println("받아옴~!!!!");
-	 * 
-	 * } catch (Exception e) { e.getMessage(); } return "redirect:cafe_info_review";
-	 * }
-	 */
-
 	@RequestMapping("/writereview")
 	public String wrtiereivew(MultipartHttpServletRequest request, Model model) throws Exception {
 
@@ -277,6 +249,71 @@ public class ListController {
 		System.out.println("받음");
 
 		return "redirect:cafe_info_review";
+	}
+	@RequestMapping("/free_boarder")
+	public String free_boarder(HttpServletRequest request,SearchVO searchVO, Model model) {
+		ListDao listdao = session.getMapper(ListDao.class);
+		  
+//		ArrayList<Free_boarderDto> dto = listdao.freeboarder();
+		model.addAttribute("free_boarder", listdao.freeboarder());
+	
+		System.out.println("ssss");
+		
+		return "free_boarder";	
+	}
+	@RequestMapping("/boarderwrite")
+	public String free_boarder_write(MultipartHttpServletRequest request, Model model) throws Exception {
+		
+		
+		String ftitle = request.getParameter("ftitle");
+		String fcontent = request.getParameter("fcontent");
+		
+		 System.out.println("=============ctitle = " + ftitle + "==============");
+	      System.out.println("=============ccontent = " + fcontent + "==============");		
+	      ListDao listdao = session.getMapper(ListDao.class);
+	      listdao.free_write(ftitle,fcontent,"nullfile");
+	      
+	      int fnum = listdao.selfnum();
+	      String root = "C:\\javabigspring\\teamproject\\Prj_Cafe_in_Jeju\\src\\main\\webapp\\resources\\upload";
+	      List<MultipartFile> fileList = request.getFiles("nullfile");
+	      
+	      for (MultipartFile mf : fileList) {
+		         String originFile = mf.getOriginalFilename();
+		         System.out.println("빈 오리진 파일 확인:" + originFile);
+		         long longtime = System.currentTimeMillis();
+		         String changeFile = longtime + "_" + mf.getOriginalFilename();
+		         String pathfile = root + "\\" + changeFile;
+		         try {
+		            if (!originFile.equals("")) { // >>>>>>>>>>>>>>>>>>>아무런 파일을 선택하지 않았을때 예외처리
+		               mf.transferTo(new File(pathfile));// path장소 수정필요
+		               System.out.println("다중 업로드 성공!!!");
+		               listdao.imgwrite(fnum, originFile, changeFile);
+		               System.out.println("rebrdimgtb write 성공!!!");
+
+		            }
+		         } catch (Exception e) {
+		            e.printStackTrace();
+		         }
+		      }
+	      
+		
+		return "redirect:free_boarder";
+	}
+	@RequestMapping("/free_boarder_content")
+	public String free_boarder_content() {
+		
+		return "free_boarder_content";
+		
+	}
+	@RequestMapping("/free_boarder_write")
+	public String free_boarder_write1() {
+		
+		return "free_boarder_write";
+	}
+
+	@RequestMapping("/free_boarder_update")
+	public String free_boarder_update() {
+		return "free_boarder_update";
 	}
 
 }

@@ -47,4 +47,17 @@
 		SELECT COUNT(*) FROM
 		REVIEW
 	</select>
+	<select id="freeboarder" resultType="com.tech.cafein.dto.Free_boarderDto"> 
+		SELECT * FROM FREEBOARDER ORDER BY FNUM DESC
+	</select>
+	<insert id="free_write">
+		INSERT INTO FREEBOARDER VALUES(FREE_SQC.NEXTVAL,'58년개띠',#{param1},#{param2},SYSDATE,1,#{param3})
+	</insert>
+	<select id="selfnum" resultType="Integer">
+		SELECT MAX(FNUM) FROM FREEBOARDER
+	</select>
+	<insert id="imgwrite">
+		INSERT INTO FREEBOARDER_IMG VALUES(FREEIMG_SQC.NEXTVAL,#{param1},#{param2},#{param3})
+		
+	</insert>
 </mapper>

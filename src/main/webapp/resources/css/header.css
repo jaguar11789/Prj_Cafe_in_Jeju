@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* 상단 메뉴바 */
 /* 상단 메뉴바 */
+
 input[id='menuicon'] {
   display: none;
   flex-basis: 10%;
@@ -151,7 +152,7 @@ a {
 }
 .join_login {
   list-style: none;
-  margin-top: 1.5rem;
+  margin-top: 0;
   display: flex;
 }
 .join_join,
@@ -159,6 +160,7 @@ a {
   list-style: none;
   display: inline;
   text-decoration: none;
+  display: contents;
 }
 .img {
   width: 30px;
