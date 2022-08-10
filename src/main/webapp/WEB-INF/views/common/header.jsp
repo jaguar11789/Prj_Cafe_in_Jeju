@@ -68,6 +68,9 @@
                 <li class="menu_local">
                   <a href="#"><font>조천</font></a>
                 </li>
+                <li class="menu_local">
+                  <a href="../list/free_boarder"><font>자유게시판</font></a>
+                </li>
               </ul>
             </div>
           </div>
@@ -120,7 +123,13 @@
             </li>
           </ul>
         </ul>
+        
       </div>
+
     </header>
+    <br />
+    <br />
+    <br />
+    <br />
   </body>
 </html>
