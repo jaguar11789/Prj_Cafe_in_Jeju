@@ -2,7 +2,6 @@ package com.tech.list.dao;
 
 import java.util.ArrayList;
 
-import com.tech.cafein.dto.Free_boarderDto;
 import com.tech.cafein.dto.ReviewDto;
 
 public interface ListDao {
@@ -28,13 +27,5 @@ public interface ListDao {
 	public float onestar();
 
 	public int selectBoardTotCount();
-
-	public ArrayList<Free_boarderDto> freeboarder();
-
-	public int selfnum();
-
-	public void free_write(String ftitle, String fcontent, String string);
-
-	public void imgwrite(int fnum, String originFile, String changeFile);
 
 }
