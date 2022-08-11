@@ -1,8 +1,6 @@
 package com.tech.list.controller;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,13 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.tech.cafein.dto.CafeBoardDto;
 import com.tech.cafein.dto.CafeBoardImgDto;
-import com.tech.cafein.dto.ReviewDto;
-import com.tech.list.dao.ListDao;
+import com.tech.cafein.dto.CafeReplyDto;
 import com.tech.cafeinfo.vopage.SearchVO;
+import com.tech.list.dao.ListDao;
 
 @Controller
 @RequestMapping("/list/*")
@@ -359,12 +355,20 @@ public class ListController {
 
 		listdao.uphit(cnum);
 
+		
 		CafeBoardDto cafeboarddto = listdao.cafeboardview(cnum);
 		model.addAttribute("cafeboardview", cafeboarddto);
-
-		ArrayList<CafeBoardDto> boarddto = listdao.boardimg(cnum);
-
+		
+		ArrayList<CafeBoardImgDto> boarddto = listdao.boardimg(cnum);
 		model.addAttribute("boardimg", boarddto);
+
+		// 댓글
+		//ArrayList<CafeBoardDto> cafereplydto = listdao.cafereplyview(cnum);
+		ArrayList<CafeReplyDto> cafereplydto = listdao.cafereplyview(cnum);
+		
+		System.out.println(cafereplydto+"sss");
+		
+		model.addAttribute("cafereply", cafereplydto);
 
 		return "cafe_info_boardview";
 	}
@@ -381,36 +385,33 @@ public class ListController {
 
 		return "redirect:cafe_info_board";
 	}
+
 	@RequestMapping("/cafe_info_boardmodify")
 	public String boardmodity(HttpServletRequest request, Model model) {
-		
+
 		String cnum = request.getParameter("cnum");
 		String user_id = request.getParameter("user_id");
-		
-		
-		System.out.println(cnum+"ㄱ");
-		System.out.println(user_id+"sdsd");
 
-		model.addAttribute("user_id",user_id);
-		model.addAttribute("cnum",cnum);
-		
+		System.out.println(cnum + "ㄱ");
+		System.out.println(user_id + "sdsd");
+
+		model.addAttribute("user_id", user_id);
+		model.addAttribute("cnum", cnum);
+
 		return "cafe_info_boardmodify";
 	}
-	
+
 	@RequestMapping(method = RequestMethod.POST, value = "/boardmodify")
 	public String boardviewmodity(HttpServletRequest request, Model model) {
-		
+
 		String mtitle = request.getParameter("mtitle");
 		String mcontent = request.getParameter("mcontent");
 		String cnum = request.getParameter("cnum");
-		
-		
-		
+
 		ListDao listdao = session.getMapper(ListDao.class);
-		listdao.boardmodify(mtitle, mcontent,cnum);
-		
-		
+		listdao.boardmodify(mtitle, mcontent, cnum);
+
 //		return "redirect:cafe_info_board";
-		return "redirect:cafe_info_boardview?cnum="+cnum;		
+		return "redirect:cafe_info_boardview?cnum=" + cnum;
 	}
 }

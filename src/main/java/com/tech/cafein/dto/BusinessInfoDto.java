@@ -1,5 +1,8 @@
 package com.tech.cafein.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class BusinessInfoDto {
 
 	private String business_id;
@@ -10,6 +13,8 @@ public class BusinessInfoDto {
 	private String business_pnum;
 	private String business_name;
 	private String business_reginum;
+	private String business_birth;
+	private String business_sex;
 	private String business_num;
 
 	public BusinessInfoDto() {
@@ -17,7 +22,7 @@ public class BusinessInfoDto {
 
 	public BusinessInfoDto(String business_id, String business_pwd, String business_shapwd, String business_nickname,
 			String business_email, String business_pnum, String business_name, String business_reginum,
-			String business_num) {
+			String business_birth, String business_sex, String business_num) {
 		super();
 		this.business_id = business_id;
 		this.business_pwd = business_pwd;
@@ -27,6 +32,8 @@ public class BusinessInfoDto {
 		this.business_pnum = business_pnum;
 		this.business_name = business_name;
 		this.business_reginum = business_reginum;
+		this.business_birth = business_birth;
+		this.business_sex = business_sex;
 		this.business_num = business_num;
 	}
 
@@ -92,6 +99,22 @@ public class BusinessInfoDto {
 
 	public void setBusiness_reginum(String business_reginum) {
 		this.business_reginum = business_reginum;
+	}
+
+	public String getBusiness_birth() {
+		return business_birth;
+	}
+
+	public void setBusiness_birth(String business_birth) {
+		this.business_birth = business_birth;
+	}
+
+	public String getBusiness_sex() {
+		return business_sex;
+	}
+
+	public void setBusiness_sex(String business_sex) {
+		this.business_sex = business_sex;
 	}
 
 	public String getBusiness_num() {

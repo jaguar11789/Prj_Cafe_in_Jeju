@@ -482,7 +482,7 @@ a{
         	<!-- <h5 style="text-align: center">Q&A</h5> -->
          
          
-         	<form action="cafe_info_review" method="post">
+         	<!-- <form action="cafe_info_review" method="post"> -->
                	<table class="table table-hover">
                      <thead>
 	                     <tr>
@@ -537,7 +537,7 @@ a{
 					</c:if>
 				</div>
 
-      </form>
+      <!-- </form> -->
       </div>
       <!-- 사이드 컨테이너 -->
       <div id="side-container" class="card mb-1" >

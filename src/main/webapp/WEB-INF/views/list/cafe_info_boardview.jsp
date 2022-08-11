@@ -535,22 +535,58 @@ textarea {
          		</tr>
          		<c:forEach items="${boardimg }" var="boardimg">
 	         		<tr>
-	         			<td colspan="2"><img src="../resources/upload/${boardimg.cafeboardimgdto.cborgfile }" width="150px" height="150px" alt="" />${boardimg.cafeboardimgdto.cborgfile }</td>
+	         			<td colspan="2"><img src="../resources/upload/${boardimg.cborgfile }" width="150px" height="150px" alt="" />${boardimg.cborgfile }</td>
 	         		</tr>
          		</c:forEach>
-         	</table>
+         	</table> 
          		<div style="padding-left: 750px">
          			<a href="./cafe_info_board"><input type="button" value="목록" style="padding:0 10px 0 10px"/></a>&ensp;
          			<a href="./cafe_info_boardmodify?cnum=${cafeboardview.cnum }&user_id=${cafeboardview.user_id }"><input type="button" value="수정" style="padding:0 10px 0 10px"/></a>
          			<a href="boarddelete?cnum=${cafeboardview.cnum}"><input type="button" value="삭제" style="padding:0 10px 0 10px"/></a>
-         	   </div>
+         	   </div> 
          	 <table>
 				<tr>
 					<td style="width: 80%;"><textarea cols="80" rows="3" style="height: 100%; width:100%;"></textarea></td>
 					<td style="background-color: #e39339; border: 100%;"><a href="" style="width: 100%; height: 100%;">입력</a></td>
-				</tr>
+				</tr> 
 				<tr>
-					<td></td>
+					<td>
+					<!-- 댓글 -->
+					<table class="table table-hover">
+						
+							<c:forEach items="${cafereply}" var="cafereply">
+
+								<tr>
+									<td class="board_left">
+										<table style="text-decoration: center">
+											<tr>
+												<td><img alt="" src="../resources/img/user.png"
+													style="width: 50px; height: 50px;"></td>
+											</tr>
+											<tr>
+												<td>아이디</td>
+											</tr>
+										</table>
+									</td>
+									<td class="board_left">
+										<table>
+
+
+											<tr>
+												<td colspan="1" style="width: 500px"></td>
+											</tr>
+											<tr>
+												<td>타이틀 : ${cafereply.rcontent} </td>
+												<%-- <td>타이틀 : ${cafereply}</td> --%>
+											</tr>
+										</table>
+									</td>
+								</tr>
+
+							</c:forEach>
+						
+						</table>
+					</td>
 				</tr>
 			</table>
 

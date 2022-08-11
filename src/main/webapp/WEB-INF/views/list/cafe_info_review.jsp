@@ -155,10 +155,8 @@
 					<table>
 						<tr>
 							<td>
-								<div
-									style="font-size: 55px; width: 75px; object-fit: cover; color: black;">
-									${total } <span data-v-6d7bbae6 class="custarbg"> <span
-										data-v-6d7bbae6 style="width: ${avgscore}%" class="custar">
+								<div style="font-size: 55px; width: 75px; object-fit: cover; color: black;">${total } 
+									<span data-v-6d7bbae6 class="custarbg"> <span data-v-6d7bbae6 style="width: ${avgscore}%" class="custar">
 									</span>
 									</span>
 									<div style="font-size: 12px;">전체 리뷰 ${countreview }</div>

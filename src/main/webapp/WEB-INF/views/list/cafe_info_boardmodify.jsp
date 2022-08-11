@@ -542,15 +542,7 @@ textarea {
          		<div style="padding-left: 750px">
          			<a href="./cafe_info_board"><input type="button" value="취소" style="padding:0 10px 0 10px"/></a>&ensp;
          	   </div>
-         	 <table>
-				<tr>
-					<td style="width: 80%;"><textarea cols="80" rows="3" style="height: 100%; width:100%;"></textarea></td>
-					<td style="background-color: #e39339; border: 100%;"><a href="" style="width: 100%; height: 100%;">입력</a></td>
-				</tr>
-				<tr>
-					<td></td>
-				</tr>
-			</table>
+         	
 
 	      </div>
       <!-- 사이드 컨테이너 -->

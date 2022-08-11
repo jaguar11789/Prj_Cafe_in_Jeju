@@ -7,28 +7,36 @@
 <mapper namespace="com.tech.join.dao.JoinDao">
 
 	<select id="idUserCheck" resultType="Integer">
-		SELECT COUNT(USER_ID) FROM USER_INFO WHERE USER_ID= #{param1}
+		SELECT COUNT(USER_ID) FROM
+		USER_INFO WHERE USER_ID= #{param1}
 	</select>
-	
+
 	<select id="idBusinessCheck" resultType="Integer">
-		SELECT COUNT(BUSINESS_ID) FROM BUSINESS_INFO WHERE BUSINESS_ID= #{param1}
+		SELECT
+		COUNT(BUSINESS_ID) FROM BUSINESS_INFO WHERE BUSINESS_ID= #{param1}
 	</select>
-	
+
 	<select id="nicknameUserCheck" resultType="Integer">
-		SELECT COUNT(USER_NICKNAME) FROM USER_INFO WHERE USER_NICKNAME= #{param1}
+		SELECT
+		COUNT(USER_NICKNAME) FROM USER_INFO WHERE USER_NICKNAME= #{param1}
 	</select>
-	
+
 	<select id="nicknameBusinessCheck" resultType="Integer">
-		SELECT COUNT(BUSINESS_NICKNAME) FROM BUSINESS_INFO WHERE BUSINESS_NICKNAME= #{param1}
+		SELECT
+		COUNT(BUSINESS_NICKNAME) FROM BUSINESS_INFO WHERE BUSINESS_NICKNAME=
+		#{param1}
 	</select>
-	
+
 	<insert id="sucessjoinuser">
-		INSERT INTO USER_INFO VALUES (#{param1},#{param2},1,#{param4},#{param6},#{param5},#{param3},USER_NUM.NEXTVAL,#{param7},#{param8})
+		INSERT INTO USER_INFO VALUES
+		(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},USER_NUM.NEXTVAL,#{param8},#{param9})
 	</insert>
-	
+
 	<insert id="sucessjoinbusiness">
-		INSERT INTO BUSINESS_INFO VALUES (#{param1},#{param2},1,#{param4},#{param6},#{param5},#{param3},#{param7},#{param8},#{param9},BUSINESS_NUM.NEXTVAL)
+		INSERT INTO BUSINESS_INFO VALUES
+		(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8},#{param9},#{param10},BUSINESS_NUM.NEXTVAL)
+
 	</insert>
-	
+
 </mapper>
 	

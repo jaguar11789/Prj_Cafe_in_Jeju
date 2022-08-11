@@ -13,9 +13,27 @@ public class CafeBoardDto {
 	private String cfile;
 	private int cafe_num;
 	private CafeBoardImgDto cafeboardimgdto;
+	private CafeReplyDto cafereplydto;
 
-	
-	
+	public CafeBoardDto() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public CafeBoardDto(int cnum, String ctitle, String ccontent, String user_id, Date cdate, int chit, String cfile,
+			int cafe_num, CafeBoardImgDto cafeboardimgdto, CafeReplyDto cafereplydto) {
+		super();
+		this.cnum = cnum;
+		this.ctitle = ctitle;
+		this.ccontent = ccontent;
+		this.user_id = user_id;
+		this.cdate = cdate;
+		this.chit = chit;
+		this.cfile = cfile;
+		this.cafe_num = cafe_num;
+		this.cafeboardimgdto = cafeboardimgdto;
+		this.cafereplydto = cafereplydto;
+	}
+
 	public int getCnum() {
 		return cnum;
 	}
@@ -88,21 +106,12 @@ public class CafeBoardDto {
 		this.cafeboardimgdto = cafeboardimgdto;
 	}
 
-	public CafeBoardDto() {
+	public CafeReplyDto getCafereplydto() {
+		return cafereplydto;
 	}
 
-	public CafeBoardDto(int cnum, String ctitle, String ccontent, String user_id, Date cdate, int chit, String cfile,
-			int cafe_num, CafeBoardImgDto cafeboardimgdto) {
-		super();
-		this.cnum = cnum;
-		this.ctitle = ctitle;
-		this.ccontent = ccontent;
-		this.user_id = user_id;
-		this.cdate = cdate;
-		this.chit = chit;
-		this.cfile = cfile;
-		this.cafe_num = cafe_num;
-		this.cafeboardimgdto = cafeboardimgdto;
+	public void setCafereplydto(CafeReplyDto cafereplydto) {
+		this.cafereplydto = cafereplydto;
 	}
 
 	

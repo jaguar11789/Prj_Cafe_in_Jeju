@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.tech.cafein.dto.CafeBoardDto;
 import com.tech.cafein.dto.CafeBoardImgDto;
+import com.tech.cafein.dto.CafeReplyDto;
 import com.tech.cafein.dto.ReviewDto;
 
 public interface ListDao {
@@ -42,7 +43,7 @@ public interface ListDao {
 
 	public CafeBoardDto cafeboardview(String cnum);
 
-	public ArrayList<CafeBoardDto> boardimg(String cnum);
+	public ArrayList<CafeBoardImgDto> boardimg(String cnum);
 
 	public int selectboardpage();
 
@@ -51,5 +52,7 @@ public interface ListDao {
 	public void boardimgdelete(String cnum);
 
 	public void boardmodify(String mtitle, String mcontent, String cnum);
+
+	public ArrayList<CafeReplyDto> cafereplyview(String cnum);
 
 }

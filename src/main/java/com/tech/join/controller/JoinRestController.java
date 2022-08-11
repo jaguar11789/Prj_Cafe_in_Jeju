@@ -2,6 +2,7 @@ package com.tech.join.controller;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -53,11 +54,11 @@ public class JoinRestController {
 	}
 	
 	//checkEmail 들어오면 실행 MailSendService.java에서 값들 리턴받아옴.
-		@PostMapping("/join/checkEmail")
-		public String checkEmail(String email) {
-			System.out.println("이메일 인증요청이 들어왔습니다!");
-			System.out.println("이메일 인증 이메일 : " + email);
-			
-			return mailService.joinEmail(email);
-		}
+	@PostMapping("/join/checkEmail")
+	public String checkEmail(String email) {
+		System.out.println("이메일 인증요청이 들어왔습니다!");
+		System.out.println("이메일 인증 이메일 : " + email);
+		
+		return mailService.joinEmail(email);
+	}
 }

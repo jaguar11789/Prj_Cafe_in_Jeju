@@ -86,7 +86,7 @@
 		SELECT * FROM CAFE_BOARD WHERE CNUM=#{param1} 
 	</select>
 	
-	<resultMap type="com.tech.cafein.dto.CafeBoardDto" id="board">
+<!-- 	<resultMap type="com.tech.cafein.dto.CafeBoardDto" id="board">
 		<result property="cnum" column="CNUM"/>
 		<result property="ctitle" column="CTITLE"/>
 		<result property="ccontent" column="CCONTENT"/>
@@ -108,7 +108,12 @@
 		SELECT * 
 		FROM CAFE_BOARD A, (SELECT * FROM CAFE_BOARD_IMG WHERE CNUM=#{param1}) B
 		WHERE A.CNUM=B.CNUM ORDER BY CBCHGFILE
-	</select>
+	</select> -->
+	
+	<select id="boardimg" resultType="com.tech.cafein.dto.CafeBoardImgDto">
+		SELECT * FROM 
+		CAFE_BOARD_IMG WHERE CNUM=#{param1}
+	</select> 
 	
 	<update id="boardimgdelete">
 		DELETE FROM CAFE_BOARD_IMG WHERE CNUM=#{param1}
@@ -122,5 +127,48 @@
 		CCONTENT=#{param2}
 		WHERE CNUM=#{param3}
 	</update>
+	
+	<select id="cafereplyview" resultType="com.tech.cafein.dto.CafeReplyDto">
+		SELECT * FROM CAFE_BOARD_REPLY WHERE CNUM=#{param1}
+	</select>
+	
+	
+	
+	
+	
+	<!-- <resultMap type="com.tech.cafein.dto.CafeBoardDto" id="boardreply">
+		<result property="cnum" column="CNUM"/>
+		<result property="ctitle" column="CTITLE"/>
+		<result property="ccontent" column="CCONTENT"/>
+		<result property="user_id" column="USER_ID"/>
+		<result property="cdate" column="CDATE"/>
+		<result property="chit" column="CHIT"/>
+		<result property="cfile" column="CFILE"/>
+		<result property="cafe_num" column="CAFE_NUM"/>
+		<collection property="cafereplydto" resultMap="cafereplydto" />
+	</resultMap>
+	
+	<resultMap type="com.tech.cafein.dto.CafeReplyDto" id="cafereplydto">
+		<result property="rnum" column="RNUM"/>
+		<result property="cnum" column="CNUM"/>
+		<result property="rcontent" column="RCONTENT"/>
+	</resultMap> -->
+	
+	<!-- <select id="cafereplyview" resultType="com.tech.cafein.dto.CafeBoardDto" resultMap="boardreply">
+		SELECT * 
+		FROM CAFE_BOARD A, (SELECT * FROM CAFE_BOARD_REPLY WHERE CNUM=#{param1}) B
+		WHERE A.CNUM=B.CNUM ORDER BY RNUM
+	</select> -->
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 </mapper>
