@@ -1,12 +1,15 @@
 package com.tech.login.dao;
 
 import com.tech.cafein.dto.BusinessInfoDto;
+import com.tech.cafein.dto.UserInfoDto;
 
 public interface LoginDao {
 
-	int loginUserCheck(String user_id, String user_pwd);
+	int loginUserCheck(String user_id);
 
-	int loginBusinessCheck(String business_id, String business_pwd);
-	
-	BusinessInfoDto getBusinessInfo(String business_id,String business_pwd);
+	int loginBusinessCheck(String business_id);
+
+	UserInfoDto getUserPwd(String user_id);
+
+	BusinessInfoDto getBusinessPwd(String business_id);
 }

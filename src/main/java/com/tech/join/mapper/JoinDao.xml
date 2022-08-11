@@ -23,11 +23,11 @@
 	</select>
 	
 	<insert id="sucessjoinuser">
-		INSERT INTO USER_INFO VALUES (#{param1},#{param2},1,#{param4},#{param6},#{param5},#{param3},USER_NUM.NEXTVAL,#{param7},#{param8})
+		INSERT INTO USER_INFO VALUES (#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},USER_NUM.NEXTVAL,#{param8},#{param9})
 	</insert>
 	
 	<insert id="sucessjoinbusiness">
-		INSERT INTO BUSINESS_INFO VALUES (#{param1},#{param2},1,#{param4},#{param6},#{param5},#{param3},#{param7},BUSINESS_NUM.NEXTVAL)
+		INSERT INTO BUSINESS_INFO VALUES (#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8},#{param9},#{param10},BUSINESS_NUM.NEXTVAL)
 	</insert>
 	
 </mapper>

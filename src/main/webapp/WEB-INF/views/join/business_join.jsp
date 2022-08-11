@@ -251,6 +251,12 @@ String path=request.getContextPath();
             <label for="" class="input_label">이름</label> <br>
             <input type="text" name="businessname" class="input_value" placeholder=" 이름을 입력해주세요."> <br>
             
+            <label for="" class="input_label">생년월일</label> <br>
+            <input type="date" name="businessbirth" class="input_value"> <br>
+            
+            <label for="" class="input_label">성별</label> <br>
+            <input type="radio" name="businesssex" class="input_value1" value="남성">남성 
+            <input type="radio" name="businesssex" class="input_value1" value="여성">여성<br>
             
             <label for="" class="input_label">닉네임</label> <br>
             <input type="text" id="nickname" name="businessnickname" maxlength="10" class="input_value" placeholder=" 닉네임을 입력해주세요." oninput="checkNick();" required> <br>

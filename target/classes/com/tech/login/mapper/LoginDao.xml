@@ -6,14 +6,18 @@
 
 <mapper namespace="com.tech.login.dao.LoginDao">
 	<select id="loginUserCheck" resultType="Integer">
-		SELECT COUNT(USER_ID) FROM USER_INFO WHERE USER_ID=#{param1} AND USER_PWD=#{param2}
+		SELECT COUNT(USER_ID) FROM USER_INFO WHERE USER_ID=#{param1}
 	</select>
 	
 	<select id="loginBusinessCheck" resultType="Integer">
-		SELECT COUNT(BUSINESS_ID) FROM BUSINESS_INFO WHERE BUSINESS_ID=#{param1} AND BUSINESS_PWD=#{param2}
+		SELECT COUNT(BUSINESS_ID) FROM BUSINESS_INFO WHERE BUSINESS_ID=#{param1}
 	</select>		
 	
-	<select id="getBusinessInfo" resultType="com.tech.cafein.dto.BusinessInfoDto">
-		SELECT BUSINESS_NUM FROM BUSINESS_INFO WHERE BUSINESS_ID=#{param1} AND BUSINESS_PWD=#{param2}
-	</select>	
+	<select id="getUserPwd" resultType="com.tech.cafein.dto.UserInfoDto">
+		SELECT USER_PWD, USER_SHAPWD FROM USER_INFO WHERE USER_ID=#{param1}
+	</select>
+	
+	<select id="getBusinessPwd" resultType="com.tech.cafein.dto.BusinessInfoDto">
+		SELECT BUSINESS_PWD, BUSINESS_SHAPWD FROM BUSINESS_INFO WHERE BUSINESS_ID=#{param1}
+	</select>
 </mapper>
