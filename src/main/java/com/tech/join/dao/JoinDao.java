@@ -16,6 +16,6 @@ public interface JoinDao {
 	public UserInfoDto joinsucess_user(String userid);
 	public UserInfoDto sucessjoinuser(String userid);
 	public void sucessjoinbusiness(String businessid, String businesspwd, String businessname, String businessnickname,
-			String businesspnum, String businessreginum, String businessemail);
+			String businesspnum, String businessreginum, String businessemail, String businessbirth, String businesssex);
 
 }

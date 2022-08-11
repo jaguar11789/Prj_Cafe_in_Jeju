@@ -234,4 +234,10 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/list/cafe_info_boardview.jsp" />
 	</definition>
+	<!-- cafe_info_boardview -->
+	<definition name="cafe_info_boardmodify" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_boardmodify.jsp" />
+	</definition>
 </tiles-definitions>

@@ -117,4 +117,10 @@
 		DELETE FROM CAFE_BOARD WHERE CNUM=#{param1}
 	</update>
 	
+	<update id="boardmodify">
+		UPDATE CAFE_BOARD SET CTITLE=#{param1},
+		CCONTENT=#{param2}
+		WHERE CNUM=#{param3}
+	</update>
+	
 </mapper>

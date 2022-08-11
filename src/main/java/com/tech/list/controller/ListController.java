@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -379,5 +380,37 @@ public class ListController {
 		listdao.boarddelete(cnum);
 
 		return "redirect:cafe_info_board";
+	}
+	@RequestMapping("/cafe_info_boardmodify")
+	public String boardmodity(HttpServletRequest request, Model model) {
+		
+		String cnum = request.getParameter("cnum");
+		String user_id = request.getParameter("user_id");
+		
+		
+		System.out.println(cnum+"ㄱ");
+		System.out.println(user_id+"sdsd");
+
+		model.addAttribute("user_id",user_id);
+		model.addAttribute("cnum",cnum);
+		
+		return "cafe_info_boardmodify";
+	}
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/boardmodify")
+	public String boardviewmodity(HttpServletRequest request, Model model) {
+		
+		String mtitle = request.getParameter("mtitle");
+		String mcontent = request.getParameter("mcontent");
+		String cnum = request.getParameter("cnum");
+		
+		
+		
+		ListDao listdao = session.getMapper(ListDao.class);
+		listdao.boardmodify(mtitle, mcontent,cnum);
+		
+		
+//		return "redirect:cafe_info_board";
+		return "redirect:cafe_info_boardview?cnum="+cnum;		
 	}
 }

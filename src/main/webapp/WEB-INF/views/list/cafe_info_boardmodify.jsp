@@ -496,8 +496,7 @@ textarea {
                            <a href="cafe_info_menu"><button id="menu" class="custom-btn btn-5"><span>메뉴</span></button></a>
                                        </td>
                                        <td class=" button">
-                                 <a href="cafe_info_detail"><button id="cafe_detail"
-                                       class="custom-btn btn-5"><span>카페 정보</span></button></a>
+                                 <a href="cafe_info_detail"><button id="cafe_detail" class="custom-btn btn-5"><span>카페 정보</span></button></a>
                         </td>
                         <td class="button">
                            <a href="cafe_info_review"><button id="cafe_review"
@@ -519,30 +518,29 @@ textarea {
                 <hr/>
          </div>
         	
-         
+         <form action="boardmodify" method="post">
+         <input type="hidden" name="cnum" value="${cnum }" />
          	<table class="table table-hover" >
          		<tr style="background-color: #d6d9dd; justify-content: baseline">
-         			<td style="font-size: 20px; ">&emsp;&emsp;${cafeboardview.ctitle }</td>
-         			<td style="font-size: 15px; padding: 12px 20px 0 0; text-align: right;">조회수 ${cafeboardview.chit }</td>
+         			<td style="font-size: 20px; ">&emsp;&emsp;<input type="text" value="123" name="mtitle"/></td>
+         			<td style="font-size: 15px; padding: 12px 20px 0 0; text-align: right;"></td>
          		</tr>
          		<tr>
-         			<td style="font-size: 15px; ">&emsp;&emsp;&emsp;${cafeboardview.user_id }</td>
-         			<td style="font-size: 15px; padding: 7px 20px 0 0; text-align: right;">${cafeboardeview.cdate }</td>
+         			<td style="font-size: 15px; ">&emsp;&emsp;&emsp;${user_id }</td>
+         			<td style="font-size: 15px; padding: 7px 20px 0 0; text-align: right;"></td>
          		</tr>
          		<tr>
-         			<td colspan="2" style="padding: 20px 53px 20px 53px;">${cafeboardview.ccontent }
-         			</td>
+         			<td colspan="2" style="padding: 20px 53px 20px 53px;"><textarea name="mcontent" id="" cols="100" rows="3">123</textarea></td>
          		</tr>
-         		<c:forEach items="${boardimg }" var="boardimg">
+         		
 	         		<tr>
-	         			<td colspan="2"><img src="../resources/upload/${boardimg.cafeboardimgdto.cborgfile }" width="150px" height="150px" alt="" />${boardimg.cafeboardimgdto.cborgfile }</td>
+	         			
 	         		</tr>
-         		</c:forEach>
          	</table>
+						<input type="submit" value="수정" />
+         	</form>
          		<div style="padding-left: 750px">
-         			<a href="./cafe_info_board"><input type="button" value="목록" style="padding:0 10px 0 10px"/></a>&ensp;
-         			<input type="button" value="수정" style="padding:0 10px 0 10px"/>
-         			<input type="button" value="삭제" style="padding:0 10px 0 10px">
+         			<a href="./cafe_info_board"><input type="button" value="취소" style="padding:0 10px 0 10px"/></a>&ensp;
          	   </div>
          	 <table>
 				<tr>

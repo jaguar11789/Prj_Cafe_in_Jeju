@@ -50,4 +50,6 @@ public interface ListDao {
 
 	public void boardimgdelete(String cnum);
 
+	public void boardmodify(String mtitle, String mcontent, String cnum);
+
 }

@@ -90,9 +90,12 @@ public class JoinController {
 		 String businesspnum = request.getParameter("businesspnum");
 		 String businessreginum = request.getParameter("businessreginum");
 		 String businessemail = request.getParameter("businessemail");
+		 String businessbirth = request.getParameter("businessbirth");
+	      String businesssex = request.getParameter("businesssex");
+	      
 		 
 		 JoinDao joindao = session.getMapper(JoinDao.class);
-		 joindao.sucessjoinbusiness(businessid, businesspwd, businessname, businessnickname, businesspnum, businessreginum, businessemail);
+		 joindao.sucessjoinbusiness(businessid, businesspwd, businessname, businessnickname, businesspnum, businessreginum, businessemail,businessbirth,businesssex);
 		 
 		 model.addAttribute("business_id",businessid);
 		 

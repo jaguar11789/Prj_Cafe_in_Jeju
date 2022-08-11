@@ -27,7 +27,7 @@
 	</insert>
 	
 	<insert id="sucessjoinbusiness">
-		INSERT INTO BUSINESS_INFO VALUES (#{param1},#{param2},1,#{param4},#{param6},#{param5},#{param3},#{param7},BUSINESS_NUM.NEXTVAL)
+		INSERT INTO BUSINESS_INFO VALUES (#{param1},#{param2},1,#{param4},#{param6},#{param5},#{param3},#{param7},#{param8},#{param9},BUSINESS_NUM.NEXTVAL)
 	</insert>
 	
 </mapper>
