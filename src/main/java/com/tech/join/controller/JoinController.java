@@ -98,7 +98,6 @@ public class JoinController {
 		// 비밀키 생성 (키에 사용할 byte형 배열과 알고리즘 이름을 지정한다.)
 		SecretKeySpec keySpec = new SecretKeySpec(keyBytes, "AES");
 		
-
 		// Cipher 객체 생성 및 초기화 (예외처리)
 		/*
 		 * 알고리즘/모드/패딩 (AES/CBC/PKCS5Padding) - CBC(Cipher Block Chaining Mode) : 동일한 평문
