@@ -37,10 +37,7 @@
 </head>
 
 <body>
-<br />
-<br />
-<br />
-<br />
+
 
     <div class="row justify-content-md-center">
         <!--카드 - 수평  -->
@@ -113,7 +110,7 @@
 								</td>
 								<td class="button">
                             <a href="cafe_info_board"><button id="cafe_board"
-                                  class="custom-btn btn-5"><span>자유게시판</span></button></a>
+                                  class="custom-btn btn-5"><span>Q&A</span></button></a>
                          </td>
 
 								<div class="right-button">

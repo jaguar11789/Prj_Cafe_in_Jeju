@@ -3,6 +3,7 @@ package com.tech.list.dao;
 import java.util.ArrayList;
 
 import com.tech.cafein.dto.Free_boarderDto;
+import com.tech.cafein.dto.CafeBoardDto;
 import com.tech.cafein.dto.ReviewDto;
 
 public interface ListDao {
@@ -28,13 +29,22 @@ public interface ListDao {
 	public float onestar();
 
 	public int selectBoardTotCount();
+	
+	public ArrayList<CafeBoardDto> cafeboard();
+
+
+	public void writeboard(String ctitle, String ccontent, String cfile);
+
+	public int selCnum();
+
+	public void imgwrite(int cnum, String originFile, String changeFile);
 
 	public ArrayList<Free_boarderDto> freeboarder();
 
 	public int selfnum();
 
-	public void free_write(String ftitle, String fcontent, String string);
+	public void free_write(String ftitle, String fcontent, String ffile);
 
-	public void imgwrite(int fnum, String originFile, String changeFile);
+	public void imgwrite1(int fnum, String originFile, String changeFile);
 
 }

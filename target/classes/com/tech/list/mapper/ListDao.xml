@@ -5,49 +5,69 @@
 <!-- 컨트롤 시프트 x는 소문자를 대문자로 바꿔준다 -->
 
 <mapper namespace="com.tech.list.dao.ListDao">
-	<insert id="writereview">
-		INSERT INTO REVIEW VALUES
-		(#{param1},'jaguar1178',#{param4},#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE,CAFE_NUM)
-	</insert>
+   <insert id="writereview">
+      INSERT INTO REVIEW VALUES
+      (#{param1},USER_NUM.NEXTVAL,#{param4},#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE,CAFE_NUM_SEQ.NEXTVAL)
+   </insert>
 
-	<select id="cafereview"
-		resultType="com.tech.cafein.dto.ReviewDto">
-		SELECT TITLE, CONTENT, IMG, SCORE, RDATE FROM (SELECT
-		ROWNUM NUM,N.* FROM(SELECT * FROM REVIEW
-		ORDER BY RDATE DESC) N) WHERE NUM BETWEEN #{param1} AND #{param2} ORDER BY
-		REVIEWNUM DESC
-	</select>
+   <select id="cafereview"
+      resultType="com.tech.cafein.dto.ReviewDto">
+      SELECT TITLE, CONTENT, IMG, SCORE, RDATE FROM (SELECT
+      ROWNUM NUM,N.* FROM(SELECT * FROM REVIEW
+      ORDER BY RDATE DESC) N) WHERE NUM BETWEEN #{param1} AND #{param2} ORDER BY
+      REVIEWNUM DESC
+   </select>
 
-	<select id="total" resultType="Float">
-		SELECT ROUND(AVG(SCORE),1) FROM
-		REVIEW
-	</select>
+   <select id="total" resultType="Float">
+      SELECT ROUND(AVG(SCORE),1) FROM
+      REVIEW
+   </select>
 
-	<select id="countreview" resultType="Integer">
-		SELECT COUNT(*) FROM REVIEW
-	</select>
+   <select id="countreview" resultType="Integer">
+      SELECT COUNT(*) FROM REVIEW
+   </select>
 
-	<select id="fivestar" resultType="Float">
-		SELECT COUNT(*) FROM REVIEW WHERE SCORE=5
-	</select>
-	<select id="fourstar" resultType="Float">
-		SELECT COUNT(*) FROM REVIEW WHERE SCORE=4
-	</select>
-	<select id="threestar" resultType="Float">
-		SELECT COUNT(*) FROM REVIEW WHERE SCORE=3
-	</select>
-	<select id="twostar" resultType="Float">
-		SELECT COUNT(*) FROM REVIEW WHERE SCORE=2
-	</select>
-	<select id="onestar" resultType="Float">
-		SELECT COUNT(*) FROM REVIEW WHERE SCORE=1
-	</select>
+   <select id="fivestar" resultType="Float">
+      SELECT COUNT(*) FROM REVIEW WHERE SCORE=5
+   </select>
+   <select id="fourstar" resultType="Float">
+      SELECT COUNT(*) FROM REVIEW WHERE SCORE=4
+   </select>
+   <select id="threestar" resultType="Float">
+      SELECT COUNT(*) FROM REVIEW WHERE SCORE=3
+   </select>
+   <select id="twostar" resultType="Float">
+      SELECT COUNT(*) FROM REVIEW WHERE SCORE=2
+   </select>
+   <select id="onestar" resultType="Float">
+      SELECT COUNT(*) FROM REVIEW WHERE SCORE=1
+   </select>
 
-	<select id="selectBoardTotCount" resultType="Integer">
-		SELECT COUNT(*) FROM
-		REVIEW
-	</select>
-	<select id="freeboarder" resultType="com.tech.cafein.dto.Free_boarderDto"> 
+   <select id="selectBoardTotCount" resultType="Integer">
+      SELECT COUNT(*) FROM
+      REVIEW
+   </select>
+   
+   <select id="cafe_info_board">
+      SELECT CNUM,CTITLE,USER_ID,CDATE,CHIT FROM CAFE_BOARD
+   </select>
+   
+   <insert id="writeboard">
+      INSERT INTO CAFE_BOARD VALUES (CNUM_SEQ.NEXTVAL,#{param1},#{param2},'58년개띠',SYSDATE,1,#{param3},1)
+   </insert>
+   
+   <select id="selCnum" resultType="Integer">
+      SELECT MAX(CNUM) FROM CAFE_BOARD
+   </select>
+   
+   <insert id="imgwrite" >
+      INSERT INTO CAFE_BOARD_IMG VALUES(CAFE_BOARD_IMG_SEQ.NEXTVAL,#{param1},#{param2},#{param3})
+   </insert>
+   
+   <select id="cafeboard" resultType="com.tech.cafein.dto.CafeBoardDto">
+      SELECT * FROM CAFE_BOARD ORDER BY CNUM DESC
+   </select>
+   	<select id="freeboarder" resultType="com.tech.cafein.dto.Free_boarderDto"> 
 		SELECT * FROM FREEBOARDER ORDER BY FNUM DESC
 	</select>
 	<insert id="free_write">
@@ -56,7 +76,7 @@
 	<select id="selfnum" resultType="Integer">
 		SELECT MAX(FNUM) FROM FREEBOARDER
 	</select>
-	<insert id="imgwrite">
+	<insert id="imgwrite1">
 		INSERT INTO FREEBOARDER_IMG VALUES(FREEIMG_SQC.NEXTVAL,#{param1},#{param2},#{param3})
 	</insert>
 </mapper>

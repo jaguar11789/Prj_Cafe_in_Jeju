@@ -36,11 +36,11 @@ public class ListController {
 
 		return "main";
 	}
-	/*@RequestMapping("/main")
-	public String main2() {
-		
-		return "list/main";
-	}*/
+	/*
+	 * @RequestMapping("/main") public String main2() {
+	 * 
+	 * return "list/main"; }
+	 */
 
 	@RequestMapping("/jeju_detail")
 	public String jeju_detail() {
@@ -132,10 +132,20 @@ public class ListController {
 		return "cafe_info_detail";
 	}
 
-	@RequestMapping("/cafe_info_board")
-	public String cafe_info_board() {
+	@RequestMapping("/cafe_info_writeboard")
+	public String cafe_info_writeboard() {
 
-		return "list/cafe_info_board";
+		return "cafe_info_writeboard";
+	}
+
+	@RequestMapping("/cafe_info_board")
+	public String cafe_info_board(HttpServletRequest request, SearchVO searchVO, Model model) {
+
+		ListDao listdao = session.getMapper(ListDao.class);
+
+		model.addAttribute("board", listdao.cafeboard());
+
+		return "cafe_info_board";
 	}
 
 	@RequestMapping("/cafe_info_review")
@@ -173,9 +183,8 @@ public class ListController {
 		model.addAttribute("twopercent", twopercent);
 		model.addAttribute("onepercent", onepercent);
 
-		
-		System.out.println(fivepercent+"2323");
-	
+		System.out.println(fivepercent + "2323");
+
 		/* paging */
 		// listservice에서 dtos로 받았지만 여기선 list로 받겠다
 
@@ -212,15 +221,6 @@ public class ListController {
 	@RequestMapping("/writereview")
 	public String wrtiereivew(MultipartHttpServletRequest request, Model model) throws Exception {
 
-//      String attachPath = "resources\\upload\\";
-//      String uploadPath = request.getSession().getServletContext().getRealPath("/");
-//      System.out.println("uploadPath :" + uploadPath);
-//      String path = uploadPath + attachPath;
-//      
-//      System.out.println("지나가유~!!!!");
-//      
-//      MultipartRequest req = // MultipartRequest이거로 write_view로 보내서 받을 때도 MultipartRequest로 받아야 된다
-//            new MultipartRequest(request, path, 1024 * 1024 * 20, "utf-8", new DefaultFileRenamePolicy());// 임포트확인
 
 		String star = request.getParameter("rating");
 		String title = request.getParameter("reviewtitle");
@@ -253,13 +253,18 @@ public class ListController {
 	@RequestMapping("/free_boarder")
 	public String free_boarder(HttpServletRequest request,SearchVO searchVO, Model model) {
 		ListDao listdao = session.getMapper(ListDao.class);
+		System.out.println("ssss");
 		  
 //		ArrayList<Free_boarderDto> dto = listdao.freeboarder();
 		model.addAttribute("free_boarder", listdao.freeboarder());
 	
-		System.out.println("ssss");
 		
-		return "free_boarder";	
+		return "free_boarder";
+	}
+	@RequestMapping("/free_boarder_write")
+	public String free_boarder_write1() {
+		
+		return "free_boarder_write";
 	}
 	@RequestMapping("/boarderwrite")
 	public String free_boarder_write(MultipartHttpServletRequest request, Model model) throws Exception {
@@ -275,7 +280,7 @@ public class ListController {
 	      
 	      int fnum = listdao.selfnum();
 	      String root = "C:\\javabigspring\\teamproject\\Prj_Cafe_in_Jeju\\src\\main\\webapp\\resources\\upload";
-	      List<MultipartFile> fileList = request.getFiles("nullfile");
+	      List<MultipartFile> fileList = request.getFiles("ffile");
 	      
 	      for (MultipartFile mf : fileList) {
 		         String originFile = mf.getOriginalFilename();
@@ -287,16 +292,13 @@ public class ListController {
 		            if (!originFile.equals("")) { // >>>>>>>>>>>>>>>>>>>아무런 파일을 선택하지 않았을때 예외처리
 		               mf.transferTo(new File(pathfile));// path장소 수정필요
 		               System.out.println("다중 업로드 성공!!!");
-		               listdao.imgwrite(fnum, originFile, changeFile);
+		               listdao.imgwrite1(fnum, originFile, changeFile);
 		               System.out.println("rebrdimgtb write 성공!!!");
-
 		            }
 		         } catch (Exception e) {
 		            e.printStackTrace();
 		         }
 		      }
-	      
-		
 		return "redirect:free_boarder";
 	}
 	@RequestMapping("/free_boarder_content")
@@ -305,15 +307,54 @@ public class ListController {
 		return "free_boarder_content";
 		
 	}
-	@RequestMapping("/free_boarder_write")
-	public String free_boarder_write1() {
-		
-		return "free_boarder_write";
-	}
+
 
 	@RequestMapping("/free_boarder_update")
 	public String free_boarder_update() {
 		return "free_boarder_update";
+	}
+
+	@RequestMapping("/writeboard")
+	public String writeboard(MultipartHttpServletRequest mtfRequest, Model model) throws Exception {
+
+		String ctitle = mtfRequest.getParameter("ctitle");
+		String ccontent = mtfRequest.getParameter("ccontent");
+
+		System.out.println("=============ctitle = " + ctitle + "==============");
+		System.out.println("=============ccontent = " + ccontent + "==============");
+
+		ListDao listdao = session.getMapper(ListDao.class);
+		listdao.writeboard(ctitle, ccontent, "nullfile");
+
+		int cnum = listdao.selCnum();
+
+		String root = "C:\\javabigspring\\springwork22\\Cafe_in_Jeju\\src\\main\\webapp\\resources\\upload";
+		List<MultipartFile> fileList = mtfRequest.getFiles("cfile");
+
+		for (MultipartFile mf : fileList) {
+			String originFile = mf.getOriginalFilename();
+			System.out.println("빈 오리진 파일 확인:" + originFile);
+			long longtime = System.currentTimeMillis();
+			String changeFile = longtime + "_" + mf.getOriginalFilename();
+			String pathfile = root + "\\" + changeFile;
+			try {
+				if (!originFile.equals("")) { // >>>>>>>>>>>>>>>>>>>아무런 파일을 선택하지 않았을때 예외처리
+					mf.transferTo(new File(pathfile));// path장소 수정필요
+					System.out.println("다중 업로드 성공!!!");
+					listdao.imgwrite(cnum, originFile, changeFile);
+					System.out.println("rebrdimgtb write 성공!!!");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return "redirect:cafe_info_board";
+	}
+	@RequestMapping("/cafe_info_boardview")
+	public String boardview() {
+		
+		return "cafe_info_boardview";
 	}
 
 }

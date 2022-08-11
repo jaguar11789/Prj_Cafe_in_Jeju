@@ -1,0 +1,35 @@
+body {
+  list-style: none;
+  justify-self: center;
+}
+.fb_view {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 20rem;
+}
+.fb_title {
+  width: 800px;
+  font-size: 24px;
+}
+.fb_addinfo {
+  color: #808080;
+  background-color: rgb(235, 235, 235);
+  display: flex;
+  width: 800px;
+  justify-content: space-between;
+}
+.fb_addinfo_id {
+  color: #000;
+  column-span: 2;
+}
+.fb_content {
+}
+.fb_photo {
+  width: 800px;
+}
+.fb_write {
+  width: 800px;
+  display: flex;
+  justify-content: flex-end;
+}

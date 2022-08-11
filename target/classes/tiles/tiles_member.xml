@@ -199,4 +199,5 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/list/free_boarder_content.jsp" />
 	</definition>
+
 </tiles-definitions>

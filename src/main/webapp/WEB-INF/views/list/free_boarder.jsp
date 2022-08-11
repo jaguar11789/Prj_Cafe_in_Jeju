@@ -12,37 +12,30 @@
 <link rel="stylesheet" href="../resources/css/list/free_boarder.css">
 </head>
 <body>
-	<br />
-	<br />
-	<br />
-	<div>
-
-			<h1 class="free_boarder_main_title">
-				자유게시판
-			</h1>
+	<div class="free_boarder_boarder">
+		<h1 class="free_boarder_main_title">자유게시판</h1>
 		<table class="free_boarder_table" border="1px solid #808080">
-			<tr>
+			<tr class="free_boarder_list">
 				<td class="table_no">
-					<p>NO</p>
+					<p><b>NO</b></p>
 				</td>
 				<td class="table_title">
-					<p>제목</p>
+					<p><b>제목</b></p>
 				</td>
 				<td class="table_user">
-					<p>작성자</p>
+					<p><b>작성자</b></p>
 				</td>
 				<td class="table_date">
-					<p>날짜</p>
+					<p><b>날짜</b></p>
 				</td>
 				<td class="table_hit">
-					<p>조회</p>
+					<p><b>조회</b></p>
 				</td>
 			</tr>
 			<c:forEach items="${free_boarder }" var="dto">
 				<tr>
 					<td>${dto.fnum}</td>
-					<td>
-					<a href="free_boarder_content?fid=${dto.fnum }">${dto.ftitle}</a>
+					<td><a href="free_boarder_content?fid=${dto.fnum }">${dto.ftitle}</a>
 					</td>
 					<td>${dto.fid}</td>
 					<td>${dto.fdate}</td>
@@ -50,6 +43,7 @@
 				</tr>
 			</c:forEach>
 		</table>
+		<br />
 		<div class="boarder_sherch">
 			<c:if test="${searchVo.totPage>1 }">
 				<c:if test="${searchVo.page>1 }">
@@ -99,17 +93,20 @@
 				</c:choose>
 				내용 <input type="text" name="sk" style="width: 150px;" maxlength="50"
 					value="" /> <input type="submit" value="검색" />
-			</div>
 
-		</div>
-		<form action="free_boarder_write" method="post" >
-			<div class="free_boarder_write">
-				<input type="submit" value="글쓰기">
 			</div>
-		</form>
-		
+			<form action="free_boarder_write" method="post">
+				<div class="free_boarder_write">
+					<input type="submit" value="글쓰기">
+				</div>
+			</form>
+		</div>
+		<br />
+
+
 	</div>
 
 
+	</div>
 </body>
 </html>
