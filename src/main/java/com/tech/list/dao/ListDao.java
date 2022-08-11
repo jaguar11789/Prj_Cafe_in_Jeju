@@ -46,4 +46,8 @@ public interface ListDao {
 
 	public int selectboardpage();
 
+	public void boarddelete(String cnum);
+
+	public void boardimgdelete(String cnum);
+
 }

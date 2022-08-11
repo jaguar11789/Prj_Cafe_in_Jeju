@@ -110,4 +110,11 @@
 		WHERE A.CNUM=B.CNUM ORDER BY CBCHGFILE
 	</select>
 	
+	<update id="boardimgdelete">
+		DELETE FROM CAFE_BOARD_IMG WHERE CNUM=#{param1}
+	</update>
+	<update id="boarddelete">
+		DELETE FROM CAFE_BOARD WHERE CNUM=#{param1}
+	</update>
+	
 </mapper>

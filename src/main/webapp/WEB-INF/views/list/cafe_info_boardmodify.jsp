@@ -542,7 +542,7 @@ textarea {
          		<div style="padding-left: 750px">
          			<a href="./cafe_info_board"><input type="button" value="목록" style="padding:0 10px 0 10px"/></a>&ensp;
          			<input type="button" value="수정" style="padding:0 10px 0 10px"/>
-         			<a href="boarddelete?cnum=${cafeboardview.cnum}"><input type="button" value="삭제" style="padding:0 10px 0 10px"/></a>
+         			<input type="button" value="삭제" style="padding:0 10px 0 10px">
          	   </div>
          	 <table>
 				<tr>

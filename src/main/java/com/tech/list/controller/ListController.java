@@ -154,7 +154,7 @@ public class ListController {
 		int total2 = listdao.selectboardpage();
 
 		System.out.println("전체 페이지 : " + total2);
-		
+
 		searchVO.pageCalculate(total2);
 
 		int rowStart = searchVO.getRowStart();
@@ -162,7 +162,7 @@ public class ListController {
 
 		System.out.println("첫 : " + rowStart);
 		System.out.println("끝 : " + rowEnd);
-		
+
 		model.addAttribute("board", listdao.cafeboard(rowStart, rowEnd));
 		model.addAttribute("searchVo", searchVO);
 
@@ -348,23 +348,36 @@ public class ListController {
 
 		return "redirect:cafe_info_board";
 	}
+
 	@RequestMapping("/cafe_info_boardview")
 	public String boardview(HttpServletRequest request, Model model) {
-		
+
 		String cnum = request.getParameter("cnum");
-		
+
 		ListDao listdao = session.getMapper(ListDao.class);
-		
+
 		listdao.uphit(cnum);
-		
+
 		CafeBoardDto cafeboarddto = listdao.cafeboardview(cnum);
 		model.addAttribute("cafeboardview", cafeboarddto);
-		
+
 		ArrayList<CafeBoardDto> boarddto = listdao.boardimg(cnum);
-		
-		
+
 		model.addAttribute("boardimg", boarddto);
-		
+
 		return "cafe_info_boardview";
+	}
+
+	@RequestMapping("/boarddelete")
+	public String boarddelete(HttpServletRequest request, Model model) {
+
+		String cnum = request.getParameter("cnum");
+
+		ListDao listdao = session.getMapper(ListDao.class);
+
+		listdao.boardimgdelete(cnum);
+		listdao.boarddelete(cnum);
+
+		return "redirect:cafe_info_board";
 	}
 }
