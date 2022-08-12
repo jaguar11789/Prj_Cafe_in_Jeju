@@ -30,43 +30,40 @@
                   /></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>제주</font></a>
+                  <a  href="./jeju_detail"><font>제주</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>애월</font></a>
+                  <a  href="./aewol_detail"><font>애월</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>한림</font></a>
+                  <a href="./hanlim_detail"><font>한림</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>한경</font></a>
+                  <a href="./hangyong_detail"><font>한경</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>대정</font></a>
+                  <a href="./daejung_detail"><font>대정</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>안덕</font></a>
+                  <a href="./anduck_detail"><font>안덕</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>중문</font></a>
+                  <a href="./seogipo_detail"><font>서귀포</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>서귀포</font></a>
+                  <a href="./namwon_detail"><font>남원</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>남원</font></a>
+                  <a href="./pyoseon_detail"><font>표선</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>표선</font></a>
+                  <a href="./sungsan_detail"><font>성산</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>성산</font></a>
+                  <a href="./gujwa_detail"><font>구좌</font></a>
                 </li>
                 <li class="menu_local">
-                  <a href="#"><font>구좌</font></a>
-                </li>
-                <li class="menu_local">
-                  <a href="#"><font>조천</font></a>
+                  <a href="./jocheon_detail"><font>조천</font></a>
                 </li>
               </ul>
             </div>
