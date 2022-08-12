@@ -199,12 +199,14 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/join/business_join.jsp" />
 	</definition>
-	<!-- business_join -->
-	<definition name="business_join" extends="baseLayout_index">
+	
+	<!-- business_login -->
+	<definition name="business_login" extends="baseLayout_index">
 		<put-attribute name="title" value="cafe_info" />
 		<put-attribute name="body"
-			value="/WEB-INF/views/join/business_join.jsp" />
+			value="/WEB-INF/views/login/business_login.jsp" />
 	</definition>
+	
 	<!-- joinsuccess_business -->
 	<definition name="joinsucess_business" extends="baseLayout_index">
 		<put-attribute name="title" value="cafe_info" />

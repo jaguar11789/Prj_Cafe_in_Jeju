@@ -80,43 +80,48 @@
           <li class="login_logout_join">
             <!-- login이 되었을때 logout으로 표시 전환 -> logout 되었을대 login표시 전환 -->
             <!-- id가 null이 아닐때 -> login상태 -->
-            <c:choose>
-              <c:when test="${id ne null }">
-                <button class="login">
-                  <a class="main_logout" href="../main/logout">logout</a>
-                </button>
-              </c:when>
-              <c:otherwise>
-                <button class="logout">
-                  <a class="login_login" href="../login/login">login</a>
-                </button>
-              </c:otherwise>
-            </c:choose>
-            <!-- id가 null이 아닐때 -> login 상태 join창은 사라지도록 함 -->
-            <c:choose>
-              <c:when test="${id ne null }"> </c:when>
-              <c:otherwise>
-                <button class="join">
-                  <a class="join_join" href="../join/join">join</a>
-                </button>
-              </c:otherwise>
-            </c:choose>
-          </li>
-
-          <ul class="user">
-            <!-- login전에 유저 사진 x -->
-            <li class="user_photo">
-              <c:choose>
-                <c:when test="${id ne null }">
-                  <a class="mypage_user_mypage" href="../mypage/user_mypage"
-                    ><img class="img" src="../resources/img/user.png" alt=""
-                  /></a>
+             <c:choose>
+                <c:when test="${id ne null || busi_num ne null}">
+                  <button class="login">
+                    <a href="../main/logout">logout</a>
+                  </button>
                 </c:when>
-                <c:otherwise> </c:otherwise>
-              </c:choose>
-            </li>
-          </ul>
+                <c:otherwise>
+                   <button class="logout">
+                    <a href="../login/login">login</a>
+                  </button>
+                </c:otherwise>
+          </c:choose>
+          <!-- id가 null이 아닐때 -> login 상태 join창은 사라지도록 함 -->
+          <c:choose>
+                <c:when test="${id ne null || busi_num ne null }">
+                   
+                </c:when>
+                <c:otherwise>
+                   <button class="join">
+                    <a href="../join/join">join</a>
+                  </button>
+                </c:otherwise>
+          </c:choose>
+             
+          </li>
+        <ul class="user">
+        
+        <!-- login전에 유저 사진 x -->
+          <li class="user_img">
+   
+             <c:choose>
+                <c:when test="${id ne null || busi_num ne null }">
+                   <a href="../mypage/user_mypage"><img class="img" src="../resources/img/user.png" alt="" /></a>
+                </c:when>
+                <c:otherwise>
+                    <!-- 유저 로그인 전에는 걍 아무것도 안보여주기 -->
+                </c:otherwise>
+          </c:choose>            
+          </li>         
         </ul>
+        </ul>
+
       </div>
     </header>
     <br /><br /><br /><br />
