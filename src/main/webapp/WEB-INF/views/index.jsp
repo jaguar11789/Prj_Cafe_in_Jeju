@@ -14,8 +14,7 @@
     <!-- fullpage cdn -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
     <link rel="stylesheet" href="./resources/css/index.css" />
     <script src="./resources/js/index.js"></script>
@@ -83,7 +82,7 @@
 		    <area alt="서귀포" title="서귀포" href="./list/seogipo_detail" coords="978,714,983,728,1009,736,1032,752,1026,802,1053,884,1032,877,1002,886,941,880,880,904,849,908,836,886,761,875,732,889,724,802,759,779,788,689,802,682,829,691,854,691,876,708" shape="poly">
 		    <area alt="안덕면" title="안덕면" href="./list/anduck_detail" coords="776,691,737,689,698,708,642,719,642,758,622,772,598,796,610,852,632,894,644,886,702,901,727,887,713,799,751,775" shape="poly">
 		    <area alt="대정" title="대정" href="./list/daejung_detail" coords="413,807,437,797,520,759,566,766,600,776,589,797,596,832,601,854,623,900,608,915,596,946,557,964,532,929,508,888,484,888,437,841" shape="poly">
-		</map>ㄴ
+		</map>
         </div>
 
         <!-- !링크에 이미지 넣기! -->
@@ -91,29 +90,6 @@
       
       
       <script>
-      
-      //반응형 소스 넣으면 스크립트랑 연결 안됨;;;; 왜그런지 모르겠음 그래서 인덱스 아래쪽에 스크립트 둠
-  		// *풀페이지 기능 스크립트
-      $(document).ready(function () {
-        $(".fullpage").fullpage({
-          //options here
-          // licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-          autoScrolling: true,
-          scrollHorizontally: true,
-          navigation: true,
-          navigationPosition: "right",
-          sectionsColor: ["#ffcccc", "#90cdce", "#ffeeaa"],
-          navigationTooltips: ["first", "second", "footer"],
-        });
-      });
-
-      //*마우스 호버 이벤트 처리
-      $(document).ready(function () {
-      	  $(".dropdown bi").hover(function () {
-      	    $("div.logo").slidToggle(1000);
-      	    $(".bi").css("color", "rgba(255, 255, 255, 0.5)");
-      	  });
-      	});
 
       $(document).ready(function() {
       	   $('img[usemap]').rwdImageMaps();

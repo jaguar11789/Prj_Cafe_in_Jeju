@@ -27,16 +27,9 @@ header.header {
   margin: none;
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
-}
-div.logo {
   display: none;
 }
-span.logo {
-  position: fixed;
-  right: 0px;
-  top: 0;
-  background: none;
-}
+
 
 /* !fullpage */
 h1 {
