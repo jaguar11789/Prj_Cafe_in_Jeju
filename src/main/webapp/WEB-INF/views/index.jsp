@@ -69,18 +69,106 @@
       <!-- page2 -->
       <div class="section s2">
          <div>
-            <img src="resources/img/jeju3.jpg" name="mainimg"
+            <img src="resources/indeximg/jeju_map.png" name="mainimg"
                usemap="#image-map" id="img_map"
                style="width: 100vw; height: 100vh">
-            <map name="image-map">
-               <area target="_self" alt="notebook" title="home" href="./home"
-                  coords="860,688,843,746,819,768,824,776,836,782,826,799,818,824,819,838,841,824,877,829,889,831,894,841,913,844,945,827,984,832,1001,824,1011,829,1013,819,1002,763,1001,731,974,700,916,702,899,687,879,682"
-                  shape="poly"
-                  onmouseover="if(document.images) mainimg.src='resources/img/jeju2.jpg'"
-                  onmouseout="if(document.images) mainimg.src='resources/img/jeju3.jpg'">
-            </map>
-         </div>
-
+				<map name="image-map">
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="1138,351,1177,453,1164,562,1178,568,1196,558,1277,516,1391,490,1503,428,1470,391,1405,390,1381,357,1379,343,1355,330,1315,336,1296,319,1271,322,1255,334,1265,340,1201,346,1164,357,1173,364"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						<!--조천  -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="1136,353,1174,456,1162,576,1110,580,1078,606,1029,569,1028,543,990,444,987,423,952,405,1028,390,1066,374,1067,345,1096,348,1104,364,1122,356"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+						<!--제주시 -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="951,406,985,424,989,449,1026,546,1026,558,991,551,952,566,915,564,867,605,840,554,837,506,815,464,803,433,838,419,908,407"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+						<!--애월읍  -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="800,436,836,510,838,557,869,609,810,678,785,685,749,657,736,623,673,586,659,546,689,505,677,490,726,465"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+						<!--한림읍  -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="544,605,558,639,625,684,628,719,696,705,730,683,782,685,744,658,734,625,662,584,655,547,682,504,674,490,591,527,565,538,549,565"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+						<!--한경면  -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="418,800,521,749,583,764,625,720,622,685,555,640,539,609,480,649,413,717"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+						<!--대정읍  -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="416,803,517,751,589,767,623,769,594,794,603,852,635,900,612,909,595,940,563,959,525,924,511,888,486,883,424,826"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+						<!--안덕면  -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="783,689,757,776,718,803,733,894,704,903,643,888,636,898,609,853,597,795,627,773,631,723,705,707,732,686"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+						<!--서귀포  -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="788,688,845,686,874,699,882,709,937,709,980,709,990,725,1037,752,1032,804,1056,890,1032,873,999,885,935,877,876,904,848,902,834,880,760,876,735,892,721,806,760,777,782,704"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+						<!--남원읍  -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="1130,660,1216,687,1254,767,1305,784,1278,805,1217,827,1121,843,1095,871,1057,887,1035,803,1040,748,993,723,981,707,1029,696,1078,690,1106,667"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+						<!--표선면  -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="1084,607,1126,656,1223,685,1284,668,1287,621,1305,590,1295,545,1270,527,1183,572,1162,583,1113,584"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+						<!--성산읍  -->
+					<area target="_self" alt="notebook" title="home" href="./home"
+						coords="1504,621,1466,643,1411,735,1349,777,1307,782,1257,765,1221,690,1284,672,1289,665,1290,621,1307,590,1297,543,1272,525,1294,516,1396,494,1503,432,1486,465,1537,503"
+						shape="poly"
+						onmouseover="if(document.images) mainimg.src='resources/indeximg/gujwa.png'"
+						onmouseout="if(document.images) mainimg.src='resources/indeximg/jeju_map.png'">
+						
+				</map>
+			</div>
+<!--조천 : 1136,353,1174,456,1162,576,1110,580,1078,606,1029,569,1028,543,990,444,987,423,952,405,1028,390,1066,374,1067,345,1096,348,1104,364,1122,356 
+제주시 : 951,406,985,424,989,449,1026,546,1026,558,991,551,952,566,915,564,867,605,840,554,837,506,815,464,803,433,838,419,908,407
+애월읍 : 800,436,836,510,838,557,869,609,810,678,785,685,749,657,736,623,673,586,659,546,689,505,677,490,726,465
+한림읍 : 544,605,558,639,625,684,628,719,696,705,730,683,782,685,744,658,734,625,662,584,655,547,682,504,674,490,591,527,565,538,549,565
+한경면 : 418,800,521,749,583,764,625,720,622,685,555,640,539,609,480,649,413,717
+대정읍 : 416,803,517,751,589,767,623,769,594,794,603,852,635,900,612,909,595,940,563,959,525,924,511,888,486,883,424,826
+안덕면 : 783,689,757,776,718,803,733,894,704,903,643,888,636,898,609,853,597,795,627,773,631,723,705,707,732,686
+서귀포 : 788,688,845,686,874,699,882,709,937,709,980,709,990,725,1037,752,1032,804,1056,890,1032,873,999,885,935,877,876,904,848,902,834,880,760,876,735,892,721,806,760,777,782,704
+남원읍 : 1130,660,1216,687,1254,767,1305,784,1278,805,1217,827,1121,843,1095,871,1057,887,1035,803,1040,748,993,723,981,707,1029,696,1078,690,1106,667
+표선면 : 1084,607,1126,656,1223,685,1284,668,1287,621,1305,590,1295,545,1270,527,1183,572,1162,583,1113,584
+성산읍 : 1504,621,1466,643,1411,735,1349,777,1307,782,1257,765,1221,690,1284,672,1289,665,1290,621,1307,590,1297,543,1272,525,1294,516,1396,494,1503,432,1486,465,1537,503
+-->
          <!-- !링크에 이미지 넣기! -->
       </div>
 
