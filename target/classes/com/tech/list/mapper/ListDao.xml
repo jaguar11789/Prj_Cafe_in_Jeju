@@ -131,11 +131,7 @@
 	<select id="cafereplyview" resultType="com.tech.cafein.dto.CafeReplyDto">
 		SELECT * FROM CAFE_BOARD_REPLY WHERE CNUM=#{param1}
 	</select>
-	
-	
-	
-	
-	
+
 	<!-- <resultMap type="com.tech.cafein.dto.CafeBoardDto" id="boardreply">
 		<result property="cnum" column="CNUM"/>
 		<result property="ctitle" column="CTITLE"/>
@@ -159,16 +155,5 @@
 		FROM CAFE_BOARD A, (SELECT * FROM CAFE_BOARD_REPLY WHERE CNUM=#{param1}) B
 		WHERE A.CNUM=B.CNUM ORDER BY RNUM
 	</select> -->
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 </mapper>

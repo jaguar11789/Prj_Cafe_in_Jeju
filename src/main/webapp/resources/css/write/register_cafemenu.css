@@ -144,77 +144,107 @@ body {
 	-webkit-overflow-scrolling: touch;
 }
 
-  /*희원이 추가부분*/
+ /*희원이 추가부분*/
+  #content_header h5 ,#content_header h6{
+   font-weight: bold;
+  /*헤더글에 볼드효과*/
+  }
+  #content_form span{
+  /*각 div에 들어있는 제목 span을 위로 정렬*/
+  vertical-align: top;
+  }
+  #content_form{
+   display: flex;
+  }
+  #content_form div{
+   align-items: center;
+   vertical-align: top;
+   font-size:12px;
+  }
+  #content_form input[type='text'],textarea,.upload-name,.upload-name1,.upload-name2{ 
+   /*텍스트 입력창드들 위치와 색 조정*/
+   border: 1px solid #eee;
+   border-radius:3px;
+   position: relative;
+   left: 10px;
+  }
 
-  #content_form div {
-	align-items: center;
-	font-size:12px;
+  #content_form input[type='button'],#content_form input[type='submit'],.file-find-v,.cafeinfo label,.end button{
+   /* 버튼타입에 스타일 주기*/
+   border: none;
+   border-radius: 4px;
+   background-color: #e39339;
+   color: white;
+   font-size: 5px;
+   padding: 4px 20px; 
   }
-  #content_form input[type='text'],textarea {
-	border: 1px solid #eee;
-	 border-radius:3px;
-	position: relative;
-	left: 10px;
+
+  #content_form input[type='button']:hover,#content_form input[type='submit']:hover,.cafeinfo label:hover,.file-find-v:hover,.end button:hover{
+   /*버튼타입에 호버효과*/
+   background: #f2b482;
   }
-  #content_form input[type='button'],.cafemenu1 label,.cafemenu2 label{
-	border: none;
-	border-radius: 4px;
-	background-color: #e39339;
-	color: white;
-	font-size: 5px;
-	padding: 4px 20px; 
+  #hsub{
+   /*설명글에 효과*/
+   font-size: 1px;
+   color: silver;
+   position: relative;
+   left: 20px;
   }
-  #content_form input[type='button']:hover,.cafemenu1 label:hover,.cafemenu2 label:hover {
-	background: #f2b482;
+  .container{ /*아래정렬 br지우면 터짐*/
+   display: flex;
+   flex-flow: column nowrap;
   }
-  .container{
-	display: flex;
-	flex-flow: column nowrap;
+  .cafelab /*스판(제목)과 내용을 정렬하는 거*/
+  {
+   display: block;
   }
-  input[id="end"]{ /*등록완료버튼 위치조정*/
-	margin-top: 40px;
-	position: relative;
-	left: 325px;
+  .cafelab span{ /*스판(제목)과 내용을 정렬하는 거2*/
+   display: inline-block;
+   text-align: left;
+   width: 80px;
   }
-  .cafemenu1{/*메뉴등록 블록*/
- 	display: block;
-	position: relative;
-	top: 60px;
+  .square {
+     /*개인정보수집칸 효과*/
+     margin-top: 40px;
+   margin-bottom: 40px;
+     padding: 20px 60px 20px 60px;
+     position: relative;
+     width: 400px;
+     height: 250px;
+     text-align: center;
+     background-color: #dde1e5;
   }
-  .cafemenu2{/*메뉴판사진등록 블록*/
- 	display: block;
+  #bus{ /*완료 버튼에 패딩*/
+     padding-bottom: 20px;
   }
-  .cafemenu span{
-	display: inline-block;
-	text-align: left;
-	width: 80px;
-  }
-.cafemenu1 input[type="file"],.cafemenu2 input[type="file"]  {
-	/*input type file일 때 버튼 스타일을 주기 위해 기본으로 잡혀있는 버튼 스타일을 해제해준다 */
+  .cafelab input[type="file"] {
+    /*input type file일 때 버튼 스타일을 주기 위해 기본으로 잡혀있는 버튼 스타일을 해제해준다 */
     position: absolute;
     width: 0;
     height: 0;
     padding: 0;
     overflow: hidden;
     border: 0;
-}
-.plus{ /* 메뉴추가버튼 가운데정렬*/
-	text-align: center;
-}
-#content_form a{ /*a태그 줄 없애고 색추가*/
-	color: #e39339;
-	text-decoration: none;
-}
-#content_form a:hover{ /*a태그 호버효과*/
-	color:gray;
-}
-#content_form input[type='text'],#content_form input[type='image'],span{
-	/*cafemenu1에서 이미지때문에 내려가는 메뉴사진행을 올려준다*/
-	vertical-align: top;
-}
-.cafemenu1 input[type="image"]{
-	position: relative;
-	bottom: 80px;
-	left: 100px;
-
-}
+  }
+  #content_form i{ /*별모양 사이즈,색깔, 위치 조정*/
+     font-size: 1px;
+     color: #e39339;
+     vertical-align: top;
+  }
+  .cafeche{ /*체크박스 div 오른쪽으로 이동*/
+     margin-left:113px;
+  }
+  .cafeche label{ /*체크박스 간격조정*/
+   margin-right: 40px;
+  }
+  .u_agree{ 
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+  
+  }
+  .end{ /*완료버튼 위치조정*/
+     display: flex;
+     align-items: center;
+     flex-direction: column;   
+  }

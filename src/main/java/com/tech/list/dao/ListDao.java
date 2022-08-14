@@ -55,4 +55,5 @@ public interface ListDao {
 
 	public ArrayList<CafeReplyDto> cafereplyview(String cnum);
 
+
 }

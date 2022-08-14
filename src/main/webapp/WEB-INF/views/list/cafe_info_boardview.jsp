@@ -585,7 +585,7 @@ textarea {
 
 							</c:forEach>
 						
-						</table>
+						</table>6
 					</td>
 				</tr>
 			</table>

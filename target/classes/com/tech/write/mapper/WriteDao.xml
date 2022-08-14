@@ -5,13 +5,45 @@
 <!-- 컨트롤 시프트 x는 소문자를 대문자로 바꿔준다 -->
 
 <mapper namespace="com.tech.write.dao.WriteDao">
-
-
-	<insert id="registercafeinfo">
-		INSERT INTO CAFE_INFO VALUES(#{param1},
-		#{param2},#{param3},#{param4},#{param5},
-		#{param6},#{param7},#{param8},#{param9},
-		#{param10},#{param11},#{param12},#{param13},#{param14})
+	
+	<insert id="caferegister">
+		INSERT INTO CAFE_INFO VALUES(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8},#{param9},#{param10},#{param11},#{param12},#{param13},#{param14},CAFE_NUM_SEQ.NEXTVAL,BUSINESS_NUM_SEQ.NEXTVAL)
 	</insert>
+
+	
+	<select id="selNum" resultType="Integer">
+		SELECT MAX(CAFE_NUM) FROM CAFE_INFO
+	</select>
+	
+	<!-- <insert id="cafeaddr">
+		INSERT INTO CAFE_ADDRESS VALUES(CAFE_ADDR_SEQ.NEXTVAL,CAFE_NUM_SEQ.CURRVAL,#{param1},#{param2},#{param3})
+	</insert> -->
+	
+	<insert id="cafeaddr">
+		INSERT INTO CAFE_ADDRESS VALUES(CAFE_ADDR_SEQ.NEXTVAL,#{param4},#{param1},#{param2},#{param3})
+	</insert>
+	
+	
+
+	<insert id="cafeconvenience">
+		INSERT INTO CAFECONVENIENT VALUES(CONVEN_NUM_SEQ.NEXTVAL,#{param2},#{param1})
+	</insert>
+	
+
+	
+	<insert id="imgwrite" >
+		INSERT INTO CAFE_IMG VALUES(CIMG_NUM_SEQ.NEXTVAL,#{param2},#{param3},#{param1})
+	</insert>
+	
+	<insert id="cafetag">
+		INSERT INTO CAFE_TAG VALUES(TAG_NUM_SEQ.NEXTVAL,#{param2},#{param1})
+	</insert>
+	
+	<insert id="menuimgwrite" >
+		INSERT INTO CAFE_MENU VALUES(MENU_NUM_SEQ.NEXTVAL,#{param2},#{param3},#{param4},#{param1})
+	</insert>
+	
+	
+	
 	
 </mapper>

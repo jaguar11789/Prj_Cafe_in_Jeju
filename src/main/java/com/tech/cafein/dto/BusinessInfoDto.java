@@ -1,8 +1,5 @@
 package com.tech.cafein.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class BusinessInfoDto {
 
 	private String business_id;

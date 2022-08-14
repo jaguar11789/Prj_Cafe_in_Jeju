@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>제주도 1등 카페추천, Cafe:in_Jeju</title>
+    <title>fullpage js</title>
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- fullpage cdn -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"
     />
+       <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
     <link rel="stylesheet" href="./resources/css/index.css" />
     <script src="./resources/js/index.js"></script>
@@ -58,27 +60,41 @@
     </header>
 
     <!-- *fullpage 부분 -->
-    <div class="fullpage container">
+   <div class="fullpage container">
       <!-- page1 -->
       <div class="section s1">
-        <div></div>
+         <div></div>
       </div>
 
       <!-- page2 -->
       <div class="section s2">
-        <div>
-          <img
-            src="./resources/indeximg/jeju_map.png"
-            usemap="#image-map"
-            id="img_map"
-            style="width: 100vw; height: 100vh"
-          />
-        </div>
+         <div>
+            <img src="resources/img/jeju3.jpg" name="mainimg"
+               usemap="#image-map" id="img_map"
+               style="width: 100vw; height: 100vh">
+            <map name="image-map">
+               <area target="_self" alt="notebook" title="home" href="./home"
+                  coords="860,688,843,746,819,768,824,776,836,782,826,799,818,824,819,838,841,824,877,829,889,831,894,841,913,844,945,827,984,832,1001,824,1011,829,1013,819,1002,763,1001,731,974,700,916,702,899,687,879,682"
+                  shape="poly"
+                  onmouseover="if(document.images) mainimg.src='resources/img/jeju2.jpg'"
+                  onmouseout="if(document.images) mainimg.src='resources/img/jeju3.jpg'">
+            </map>
+         </div>
 
-        <!-- !링크에 이미지 넣기! -->
+         <!-- !링크에 이미지 넣기! -->
       </div>
 
-      <footer class="section fp-auto-height"><h1>Footer</h1></footer>
-    </div>
-  </body>
+      <footer class="section fp-auto-height">
+         <h1>Footer</h1>
+      </footer>
+   </div>
+   <script src="jquery.rwdImageMaps.min.js"></script>
+   <script
+      src="http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js"></script>
+   <script>
+      $(function() {
+         $('img[usemap]').rwdImageMaps();
+      });
+   </script>
+</body>
 </html>
