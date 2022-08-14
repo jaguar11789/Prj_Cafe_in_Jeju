@@ -5,5 +5,32 @@
 <!-- 컨트롤 시프트 x는 소문자를 대문자로 바꿔준다 -->
 
 <mapper namespace="com.tech.modify.dao.ModifyDao">
+
+	<select id="getUserPwd" resultType="com.tech.cafein.dto.UserInfoDto">
+		SELECT USER_PWD, USER_SHAPWD FROM USER_INFO WHERE USER_ID=#{param1}
+	</select>
+	
+	<select id="userModifyView" resultType="com.tech.cafein.dto.UserInfoDto">
+	SELECT * FROM USER_INFO WHERE USER_ID=#{param1}
+	</select>
+
+
+	<!--마이바티스에서 $붙여주면 문자열로 인식하지 않음!  -->
+	<update id="userinfoUpdate">
+	 	UPDATE  USER_INFO SET ${param2}=#{param3} WHERE USER_ID = #{param1}
+	</update>
+	
+	<update id="userImgUpdate">
+	 	UPDATE  USER_INFO SET USER_IMGFILE=#{param2} WHERE USER_ID = #{param1}
+	</update>
+	
+	<!-- 유저 비밀번호 변경 -->
+	<update id="userPwdUpdate">
+	 	UPDATE  USER_INFO SET USER_PWD=#{param2},USER_SHAPWD=#{param3}  WHERE USER_ID = #{param1}
+	</update>
+	
+	<delete id="userDelete">
+		DELETE USER_INFO WHERE USER_ID = #{param1}
+	</delete>
 	
 </mapper>

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<% String path = request.getContextPath(); %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,53 +10,92 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="" />
 <meta name="author"
-   content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+	content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
 <meta name="generator" content="Hugo 0.98.0" />
-<title>사용자 정보 변경</title>
+<title>vscode수정</title>
+
+<!-- *jquery -->
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- *user_modify 공통 css -->
+<link rel="stylesheet" href="../resources/css/modify/user_modify.css">
 <!-- CDN -->
-<link rel="stylesheet" href="./css.css" />
-<link
-   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-   rel="stylesheet"
-   integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-   crossorigin="anonymous" />
-   <link rel="stylesheet" href="../resources/css/modify/usersec_modify.css" />
+
 </head>
 
-<body>
 
 <body>
-<br />
-<br />
-<br />
-<br />
-<br />
-    <div id="grid">
-        <ul>
-            <h4><b style="color: #444444;">내 정보관리</b></h4>
-            <hr>
-            <li>
-               <a href="./userinfo_modify" style="color: #444444;">개인정보 변경</a><br>
-            </li>
-            <li>
-               <a href="./userpwd_modify" style="color: #444444;">비밀번호 변경</a><br>
-            </li>
-            <li>
-               <a href="./usersec_modify" style="color: #444444;"><b>회원탈퇴</b></a>
-            </li> 
-         </ul>
-        <div class="gridinfo">
-            <h3><b style="color: #444444;">회원탈퇴</b></h3>
-            <hr>
-            <div align="center">고객님의 개인정보 보호를 위해 본인확인을 진행합니다.<div class="br"></div>
-            비밀번호를 입력하세요.</div><br><br>
-            <span id="userpwd_modify" style="color: #444444;">비밀번호 확인</span> 
-            <input type="password" placeholder="비밀번호를 입력해주세요." size="30"> 
-            <hr>
+	<div id="grid">
+		<ul>
+			<h2>
+				<b style="color: #444444;">내 정보관리</b>
+			</h2> <br />
+			
+			<li><a href="user_modify_info" style="color: #444444;">개인정보 변경</a><br></li>
+			<li><a href="user_modify_pwd" style="color: #444444;">비밀번호 변경</a><br></li>
+			<li><a href="user_modify_sec" style="color: #444444;"><b>회원탈퇴</b></a></li>
+		</ul>
 
-            <a href="./usersec_modify_seccess"><button class="modify_confirm">회원탈퇴</button></a>
-        </div>
-    </div>
+    
+		<div class="gridinfo">
 
-    </body>
+			<div class=" border_underline">
+				<h3>회원탈퇴</h3>
+			</div>
+			<div div class="modify_form text">
+				<ul>
+					<li>
+						비밀번호를 입력하시면 회원탈퇴가 진행됩니다.
+					</li>
+				</ul>
+			</div>
+
+			<div>
+				<form action="./useeDelete" method="post" onsubmit="return checkPassword()">
+					<div class="modify_form">
+						<ul>
+							
+							<li><b>비밀번호 입력</b></li>
+							<li><input type="password" name="pwd" placeholder="비밀번호를 입력해 주세요" size="30"></li>
+							<!-- <li><b>비밀번호 확인</b></li>
+							<li><input type="password" name="pwd2" placeholder="비밀번호를 확인해 주세요" size="30"></li> -->
+							<li>
+								<input type="submit" class="modify_confirm" value="회원탈퇴">
+							</li>
+						</ul>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<script>
+	function checkPassword() {
+		var pwd=$('input[name=pwd]').val();
+		var checkbool = false;
+		alert("신호신호신호");
+			
+		$.ajax({
+			type:"post",
+			url:"<%=path%>/modify/pwdCheck",
+			data : {pwd:pwd},
+			dataType:"text",
+			async: false,
+			success: function(result){
+				console.log(result);
+				
+				if(result == "pass"){
+					checkbool = true;
+				}
+				else{
+					alert('비밀번호를 확인하세요.');
+				}
+			}
+			
+		});
+		return checkbool;
+	}
+	
+</script>
+
+</body>
 </html>
