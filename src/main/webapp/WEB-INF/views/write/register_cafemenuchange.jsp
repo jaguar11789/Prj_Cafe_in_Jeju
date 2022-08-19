@@ -33,9 +33,9 @@
       <div class="container">
          <div class="middle">
       <header id="content_header">
-        <h5>내 카페 등록하기</h5>
+        <h5>내 카페 수정하기</h5>
         <br><br>
-        <h6>내 카페 메뉴 등록</h6>
+        <h6>내 카페 메뉴 수정</h6>
       </header>     
       
       <hr width="800px">
@@ -64,7 +64,7 @@
 
    <div id="content_header">
       <br><br>
-      <h6>내 카페 메뉴판사진 등록</h6>
+      <h6>내 카페 메뉴판사진 수정</h6>
       <hr width="800px">
    </div>
    <div>
@@ -78,7 +78,7 @@
          </div>
       </div> -->
       <div>
-         <input type="submit" value="카페 등록 완료 !" id="end"> 
+         <input type="submit" value="카페 수정 완료 !" id="end"> 
       </div>
       </div>
     </div>

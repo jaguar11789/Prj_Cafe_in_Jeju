@@ -171,7 +171,7 @@ body {
    left: 10px;
   }
 
-  #content_form input[type='button'],#content_form input[type='submit'],.file-find-v,.cafeinfo label,.end button{
+  #content_form input[type='button'],#content_form input[type='submit'],.cafeinfo label,.end button{
    /* 버튼타입에 스타일 주기*/
    border: none;
    border-radius: 4px;
@@ -181,7 +181,7 @@ body {
    padding: 4px 20px; 
   }
 
-  #content_form input[type='button']:hover,#content_form input[type='submit']:hover,.cafeinfo label:hover,.file-find-v:hover,.end button:hover{
+  #content_form input[type='button']:hover,#content_form input[type='submit']:hover,.cafeinfo label:hover,.end button:hover{
    /*버튼타입에 호버효과*/
    background: #f2b482;
   }
