@@ -28,112 +28,7 @@ public class ListController {
 	@Autowired
 	private SqlSession session;
 
-	@RequestMapping("/main")
-	public String main() {
-
-		return "main";
-	}
-	/*
-	 * @RequestMapping("/main") public String main2() {
-	 * 
-	 * return "list/main"; }
-	 */
-
-	@RequestMapping("/jeju_detail")
-	public String jeju_detail() {
-
-		return "jeju_detail";
-	}
-
-	@RequestMapping("/jocheon_detail")
-	public String jocheon_detail() {
-
-		return "jocheon_detail";
-	}
-
-	@RequestMapping("/joongmoon_detail")
-	public String joongmoon_detail() {
-
-		return "joongmoon_detail";
-	}
-
-	@RequestMapping("/namwon_detail")
-	public String namwon_detail() {
-
-		return "namwon_detail";
-	}
-
-	@RequestMapping("/sungsan_detail")
-	public String sungsan_detail() {
-
-		return "sungsan_detail";
-	}
-
-	@RequestMapping("/gujwa_detail")
-	public String gujwa_detail() {
-
-		return "gujwa_detail";
-	}
-
-	@RequestMapping("/aewol_detail")
-	public String aewol_detail() {
-
-		return "aewol_detail";
-	}
-
-	@RequestMapping("/hanlim_detail")
-	public String hanlim_detail() {
-
-		return "hanlim_detail";
-	}
-
-	@RequestMapping("/hangyong_detail")
-	public String hangyong_detail() {
-
-		return "hangyong_detail";
-	}
-
-	@RequestMapping("/daejung_detail")
-	public String daejung_detail() {
-
-		return "daejung_detail";
-	}
-
-	@RequestMapping("/anduck_detail")
-	public String anduck_detail() {
-
-		return "anduck_detail";
-	}
-
-	@RequestMapping("/seogipo_detail")
-	public String seogipo_detail() {
-
-		return "seogipo_detail";
-	}
-
-	@RequestMapping("/pyoseon_detail")
-	public String pyoseon_detail() {
-
-		return "pyoseon_detail";
-	}
-
-	@RequestMapping("/cafe_info_menu")
-	public String cafe_info_menu() {
-
-		return "cafe_info_menu";
-	}
-
-	@RequestMapping("/cafe_info_detail")
-	public String cafe_info_detail() {
-
-		return "cafe_info_detail";
-	}
-
-	@RequestMapping("/cafe_info_writeboard")
-	public String cafe_info_writeboard() {
-
-		return "cafe_info_writeboard";
-	}
+	
 
 	@RequestMapping("/cafe_info_board")
 	public String cafe_info_board(HttpServletRequest request, SearchVO searchVO, Model model) {
@@ -413,5 +308,112 @@ public class ListController {
 
 //		return "redirect:cafe_info_board";
 		return "redirect:cafe_info_boardview?cnum=" + cnum;
+	}
+	
+	@RequestMapping("/main")
+	public String main() {
+
+		return "main";
+	}
+	/*
+	 * @RequestMapping("/main") public String main2() {
+	 * 
+	 * return "list/main"; }
+	 */
+
+	@RequestMapping("/jeju_detail")
+	public String jeju_detail() {
+
+		return "jeju_detail";
+	}
+
+	@RequestMapping("/jocheon_detail")
+	public String jocheon_detail() {
+
+		return "jocheon_detail";
+	}
+
+	@RequestMapping("/joongmoon_detail")
+	public String joongmoon_detail() {
+
+		return "joongmoon_detail";
+	}
+
+	@RequestMapping("/namwon_detail")
+	public String namwon_detail() {
+
+		return "namwon_detail";
+	}
+
+	@RequestMapping("/sungsan_detail")
+	public String sungsan_detail() {
+
+		return "sungsan_detail";
+	}
+
+	@RequestMapping("/gujwa_detail")
+	public String gujwa_detail() {
+
+		return "gujwa_detail";
+	}
+
+	@RequestMapping("/aewol_detail")
+	public String aewol_detail() {
+
+		return "aewol_detail";
+	}
+
+	@RequestMapping("/hanlim_detail")
+	public String hanlim_detail() {
+
+		return "hanlim_detail";
+	}
+
+	@RequestMapping("/hangyong_detail")
+	public String hangyong_detail() {
+
+		return "hangyong_detail";
+	}
+
+	@RequestMapping("/daejung_detail")
+	public String daejung_detail() {
+
+		return "daejung_detail";
+	}
+
+	@RequestMapping("/anduck_detail")
+	public String anduck_detail() {
+
+		return "anduck_detail";
+	}
+
+	@RequestMapping("/seogipo_detail")
+	public String seogipo_detail() {
+
+		return "seogipo_detail";
+	}
+
+	@RequestMapping("/pyoseon_detail")
+	public String pyoseon_detail() {
+
+		return "pyoseon_detail";
+	}
+
+	@RequestMapping("/cafe_info_menu")
+	public String cafe_info_menu() {
+
+		return "cafe_info_menu";
+	}
+
+	@RequestMapping("/cafe_info_detail")
+	public String cafe_info_detail() {
+
+		return "cafe_info_detail";
+	}
+
+	@RequestMapping("/cafe_info_writeboard")
+	public String cafe_info_writeboard() {
+
+		return "cafe_info_writeboard";
 	}
 }

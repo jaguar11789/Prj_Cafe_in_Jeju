@@ -18,6 +18,7 @@
 			value="/WEB-INF/views/common/footer.jsp" />
 	</definition>
 	
+	
 	<!-- index에 사용되는 Layout -->
 	<definition name="baseLayout_index"
 		template="/WEB-INF/views/common/layout.jsp">
@@ -198,12 +199,14 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/join/business_join.jsp" />
 	</definition>
-	<!-- business_join -->
-	<definition name="business_join" extends="baseLayout_index">
+	
+	<!-- business_login -->
+	<definition name="business_login" extends="baseLayout_index">
 		<put-attribute name="title" value="cafe_info" />
 		<put-attribute name="body"
-			value="/WEB-INF/views/join/business_join.jsp" />
+			value="/WEB-INF/views/login/business_login.jsp" />
 	</definition>
+	
 	<!-- joinsuccess_business -->
 	<definition name="joinsucess_business" extends="baseLayout_index">
 		<put-attribute name="title" value="cafe_info" />
@@ -240,4 +243,84 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/list/cafe_info_boardmodify.jsp" />
 	</definition>
+	
+	
+	<!-- 지역별 디테일 뷰단 타일즈 연결 -->
+	<!-- hangyong_detail -->
+	<definition name="hangyong_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/hangyong_detail.jsp" />
+	</definition> 
+	
+	<definition name="aewol_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/aewol_detail.jsp" />
+			
+	</definition> 
+	
+	<definition name="anduck_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/anduck_detail.jsp" />
+	</definition> 
+	
+	<definition name="daejung_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/daejung_detail.jsp" />
+	</definition> 
+	<definition name="gujwa_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/gujwa_detail.jsp" />
+	</definition> 
+	
+	<definition name="hanlim_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/hanlim_detail.jsp" />
+	</definition> 
+	
+	<definition name="jeju_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/jeju_detail.jsp" />
+	</definition> 
+	
+	<definition name="jocheon_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/jocheon_detail.jsp" />
+	</definition> 
+	
+	<definition name="namwon_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/namwon_detail.jsp" />
+	</definition> 
+	
+	<definition name="pyoseon_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/pyoseon_detail.jsp" />
+	</definition> 
+	
+	<definition name="seogipo_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/seogipo_detail.jsp" />
+	</definition> 
+	
+	<definition name="sungsan_detail" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/sungsan_detail.jsp" />
+	</definition> 
+
+	
+
+	
+	
 </tiles-definitions>

@@ -18,87 +18,7 @@
     </head>
 
     <body>
-        <header>
-            <link
-                href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap"
-                rel="stylesheet"
-            />
-            <!-- Custom styles for this template -->
-            <!-- /      <link href="blog.css" rel="stylesheet" /> -->
-            <link rel="stylesheet" href="../resources/css/header.css" />
-            <div class="container">
-                <div class="menu">
-                    <input type="checkbox" id="menuicon" />
-                    <label for="menuicon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </label>
-                    <div class="sidebar">
-                        <div class="category">
-                            <ul>
-                                <li class="menu_logo">
-                                    <a href="./main"
-                                        ><img src="../resources/img/logo2.png" alt=""
-                                    /></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>제주</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>애월</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>한림</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>한경</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>대정</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>안덕</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>중문</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>서귀포</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>남원</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>표선</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>성산</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>구좌</font></a>
-                                </li>
-                                <li class="menu_local">
-                                    <a href="#"><font>조천</font></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <ul class="navar_logo">
-                    <li><img class="logo" src="../resources/img/logo2.png" alt="" /></li>
-                </ul>
 
-                <ul class="user">
-                    <li class="">
-                        <a href="login"
-                            ><img class="img" src="../resources/img/user.png" alt=""
-                        /></a>
-                    </li>
-                </ul>
-            </div>
-            <hr />
-        </header>
     
     <!-- 슬라이드 사진 -->
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -113,30 +33,7 @@
             <div class="carousel-item">
                 <img src="../resources/listimg/coffee4.jpg" style="width: 100%; height: auto;" alt="">
             </div>
-            <!-- 지역별 버튼 -->
-            <!-- <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn1 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
-                </button>
-                <button type="button" class="btn1 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
-                </button>
-                <button type="button" class="btn1 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
-                </button>
-                <button type="button" class="btn1 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
-                </button>
-                <button type="button" class="btn1 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
-                </button>
-                <button type="button" class="btn1 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
-                </button>
-                <button type="button" class="btn1 btn-primary">
-                    <font style="color: orange; font-size: 25px; font-weight: bold;" >제주</font>
-                </button>
-            </div> -->
+
         </div>
         <!-- 사진을 좌우로 넘길 수 있게 -->
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
