@@ -18,7 +18,7 @@
 			value="/WEB-INF/views/common/footer.jsp" />
 	</definition>
 
-	<!-- index에 사용되는 Layout -->
+	<!-- header 없이 사용하는 Layout -->
 	<definition name="baseLayout_index"
 		template="/WEB-INF/views/common/layout.jsp">
 		<put-attribute name="title" value="" />
@@ -27,12 +27,6 @@
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer"
 			value="/WEB-INF/views/common/footer.jsp" />
-	</definition>
-	<!-- login -->
-	<definition name="login" extends="baseLayout_index">
-		<put-attribute name="title" value="index_title" />
-		<put-attribute name="body"
-			value="/WEB-INF/views/login/login.jsp" />
 	</definition>
 	<!-- cafe_detail에 사용되는 Layout -->
 	<definition name="baseLayout_side"
@@ -51,6 +45,12 @@
 		<put-attribute name="title" value="index_title" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/index.jsp" />
+	</definition>
+	<!-- login -->
+	<definition name="login" extends="baseLayout_index">
+		<put-attribute name="title" value="index_title" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/login/login.jsp" />
 	</definition>
 	<!-- main -->
 	<definition name="main" extends="baseLayout">
@@ -180,7 +180,62 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/list/cafe_info_write_review.jsp" />
 	</definition>
-
+	<!-- join -->
+	<definition name="join" extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/join.jsp" />
+	</definition>
+	<!-- user_join -->
+	<definition name="user_join" extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/user_join.jsp" />
+	</definition>
+	<!-- business_join -->
+	<definition name="business_join" extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/business_join.jsp" />
+	</definition>
+	<!-- business_join -->
+	<definition name="business_join" extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/business_join.jsp" />
+	</definition>
+	<!-- joinsuccess_business -->
+	<definition name="joinsucess_business"
+		extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/joinsucess_business.jsp" />
+	</definition>
+	<!-- joinsuccess_user -->
+	<definition name="joinsucess_user"
+		extends="baseLayout_index">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/join/joinsucess_user.jsp" />
+	</definition>
+	<!-- cafe_info_board -->
+	<definition name="cafe_info_board" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_board.jsp" />
+	</definition>
+	<!-- cafe_info_writeboard -->
+	<definition name="cafe_info_writeboard" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_writeboard.jsp" />
+	</definition>
+	<!-- cafe_info_boardview -->
+	<definition name="cafe_info_boardview" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/cafe_info_boardview.jsp" />
+	</definition>
 	<!-- free_boarder -->
 	<definition name="free_boarder" extends="baseLayout">
 		<put-attribute name="title" value="cafe_info" />
@@ -188,7 +243,7 @@
 			value="/WEB-INF/views/list/free_boarder.jsp" />
 	</definition>
 	<!-- free_boarder_write -->
-		<definition name="free_boarder_write" extends="baseLayout">
+	<definition name="free_boarder_write" extends="baseLayout">
 		<put-attribute name="title" value="cafe_info" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/list/free_boarder_write.jsp" />
@@ -199,5 +254,10 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/list/free_boarder_content.jsp" />
 	</definition>
-
+	<!-- free_boarder_modify -->
+	<definition name="free_boarder_modify" extends="baseLayout">
+		<put-attribute name="title" value="cafe_info" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/list/free_boarder_modify.jsp" />
+	</definition>
 </tiles-definitions>

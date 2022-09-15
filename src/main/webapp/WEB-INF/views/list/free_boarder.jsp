@@ -9,14 +9,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>free_boarder</title>
-<link rel="stylesheet" href="../resources/css/list/free_boarder.css">
+<link rel="stylesheet" href="../resources/css/list/free_boarder/free_boarder.css">
 </head>
 <body>
 	<div class="free_boarder_boarder">
 		<h1 class="free_boarder_main_title">자유게시판</h1>
 		<table class="free_boarder_table" border="1px solid #808080">
 			<tr class="free_boarder_list">
-				<td class="table_no">
+				<td class="table_no" height="10">
 					<p><b>NO</b></p>
 				</td>
 				<td class="table_title">
@@ -34,12 +34,12 @@
 			</tr>
 			<c:forEach items="${free_boarder }" var="dto">
 				<tr>
-					<td>${dto.fnum}</td>
-					<td><a href="free_boarder_content?fid=${dto.fnum }">${dto.ftitle}</a>
+					<td style="text-align: center;">${dto.fnum}</td>
+					<td><a href="free_boarder_content?fnum=${dto.fnum }">${dto.ftitle}</a>
 					</td>
-					<td>${dto.fid}</td>
-					<td>${dto.fdate}</td>
-					<td>${dto.fhit}</td>
+					<td style="text-align: center;">${dto.user_num}</td>
+					<td style="text-align: center;">${dto.fdate}</td>
+					<td style="text-align: center;">${dto.fhit}</td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -59,7 +59,7 @@
 						<c:otherwise>
 
 							<a
-								href="list?page=${i }&sk=${resk}&ftitle=${ftitle==true?'ftitle':''}&fcontent=${fcontent==true?'fcontent':''}"
+								href="list?page=${i }&sk=${resk}&ftitle=${ftitle=true?'ftitle':''}&fcontent=${fcontent==true?'fcontent':''}"
 								style="text-decoration: none">${i }</a>&nbsp;				
 					</c:otherwise>
 					</c:choose>
@@ -97,16 +97,16 @@
 			</div>
 			<form action="free_boarder_write" method="post">
 				<div class="free_boarder_write">
-					<input type="submit" value="글쓰기">
+					<input class="free_boarder-write2" type="submit" value="글쓰기">
 				</div>
 			</form>
 		</div>
 		<br />
-
-
-	</div>
-
+	
 
 	</div>
+
+
+	
 </body>
 </html>

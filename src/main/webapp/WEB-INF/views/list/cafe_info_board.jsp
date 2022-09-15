@@ -496,7 +496,7 @@ a{
                      <c:forEach items="${board}" var="board">
                      <tr>
                      	<td>${board.cnum }</td>                     	
-                     	<td><a href="./cafe_info_boardview?=${board.cnum }">${board.ctitle }</a></td>                     	
+                     	<td><a href="./cafe_info_boardview?cnum=${board.cnum }">${board.ctitle }</a></td>                     	
                      	<td>${board.user_id }</td>                     	
                      	<td>${board.cdate }</td>                     	
                      	<td>${board.chit }</td>                     	
@@ -509,45 +509,34 @@ a{
                      	<td></td>
                      	<td><a href="./cafe_info_writeboard">글쓰기</a></td>
                      </tr>
-                    
-                  
-           
-           		</table>
-            
-            
-            
-            
-            
-            <div style="text-align: center;">
-	            <c:if test="${searchVo.totPage>1 }">
 
-					<c:if test="${searchVo.page>1 }">
-						<a href="cafe_info_board?page=1"><<</a>
-						<a href="cafe_info_board?page=${searchVo.page-1 }"><</a>
-					</c:if>
-		
-		
-					<c:forEach begin="${searchVo.pageStart }" end="${searchVo.pageEnd }" var="i">
-						<c:choose>		
-							<c:when test="${i eq searchVo.page }">
-								<span style="color: red; font-weight: bold;">${i }&nbsp;</span>
-							</c:when>
-							<c:otherwise>
-								<a href="cafe_info_board?page=${i }" style="text-decoration: none">${i }</a>&nbsp;
+           		</table>
+           		<div style="text-align: center;">
+					<c:if test="${searchVo.totPage>1 }">
+
+						<c:if test="${searchVo.page>1 }">
+							<a href="cafe_info_board?page=1"><<</a>
+							<a href="cafe_info_board?page=${searchVo.page-1 }"><</a>
+						</c:if>
+						<c:forEach begin="${searchVo.pageStart }"
+							end="${searchVo.pageEnd }" var="i">
+							<c:choose>
+								<c:when test="${i eq searchVo.page }">
+									<span style="color: red; font-weight: bold;">${i }&nbsp;</span>
+								</c:when>
+								<c:otherwise>
+									<a href="cafe_info_board?page=${i }"
+										style="text-decoration: none">${i }</a>&nbsp;
 							</c:otherwise>
-						</c:choose>
-					</c:forEach>
-		
-		
-				<c:if test="${searchVo.totPage>searchVo.page }">
-						<a href="cafe_info_board?page=${searchVo.page+1 }">[다음]</a>
-						<a href="cafe_info_board?page=${searchVo.totPage }">[마지막]</a>
-				</c:if>
-			</c:if>
-		</div>
-		
-		
-		
+							</c:choose>
+						</c:forEach>
+						<c:if test="${searchVo.totPage>searchVo.page }">
+							<a href="cafe_info_board?page=${searchVo.page+1 }">[다음]</a>
+							<a href="cafe_info_board?page=${searchVo.totPage }">[마지막]</a>
+						</c:if>
+					</c:if>
+				</div>
+
       </form>
       </div>
       <!-- 사이드 컨테이너 -->

@@ -7,12 +7,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-
-    <!-- 폰트 -->
+    <title>main</title>
 
     <!-- 불러오는 css/js  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
     <link rel="stylesheet" href="../resources/css/main.css" />
    <script src="../resources/js/main.js"></script>
     <style></style>
@@ -24,11 +21,11 @@
       <!-- 슬라이드 사진 -->
       <div class="slideshow-container">
         <div class="mySlides fade">
-          <img src="../resources/mainimg/coffee4.jpg" style="width: 100%" />
+          <img src="../resources/mainimg/main2.jpg" style="width: 100%" />
         </div>
 
         <div class="mySlides fade">
-          <img src="../resources/mainimg/coffee4.jpg" style="width: 100%" />
+          <img src="../resources/mainimg/main1.jpg" style="width: 100%" />
         </div>
 
         <div class="mySlides fade">
@@ -47,6 +44,19 @@
       <div class="Kategorie">
         <div id="grid">
           <div class="user_commend">주인님을 위한 카페</div>
+      <div class="search">
+      <form action="search-form" autocomplete="off">
+      	<select name="type">
+      		<option selected value="">검색 내용 선택</option>
+      		<option value="title">제목</option>
+      		<option value="content">내용</option>
+      		<option value="writer">작성자</option>
+      	</select>
+      	<input type="text" name="keyword" value="" />
+      	<input type="button" on/>
+      
+      </form>
+      </div>
           <div>
             <a class="teg" href="">teg</a>
           </div>

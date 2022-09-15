@@ -76,9 +76,9 @@
         </div>
 
         <!-- !링크에 이미지 넣기! -->
-      </div>
+ <!--      </div>
 
       <footer class="section fp-auto-height"><h1>Footer</h1></footer>
-    </div>
+    </div> -->
   </body>
 </html>

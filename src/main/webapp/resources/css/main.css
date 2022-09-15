@@ -15,8 +15,7 @@ img {
 }
 
 /* Slideshow container */
-.slideshow-container {
-	width100%;
+.slideshow-container {width100 %;
 	min-width: 1300px;
 	min-height: 300px;
 	position: relative;
@@ -29,6 +28,7 @@ img {
 	background-color: #bbb;
 	border-radius: 50%;
 	display: inline-block;
+	/* 사진이 바뀔 때 변화를 0.6초동안 준다 */
 	transition: background-color 0.6s ease;
 }
 
@@ -71,14 +71,23 @@ to {
 		font-size: 11px;
 	}
 }
-
+/* 검색창 관련 */
+.search {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 17.8rem;
+	flex-direction: row;
+	align-items: stretch;
+}
+.searchtext{
+	margin-right: 10px;
+}
 .user_commend {
 	display: inline;
 	justify-content: center;
 	font: bold;
 	font-size: 2rem;
 	margin: 0 0 0 13vw;
-	font-family: 'Jua', cursive;
 }
 
 .cafe_commend {
@@ -90,7 +99,6 @@ to {
 	display: inline;
 	justify-content: center;
 	margin: 0 0 0 13vw;
-	font-family: 'Jua', cursive;
 	font: bold;
 	font-size: 2rem;
 }

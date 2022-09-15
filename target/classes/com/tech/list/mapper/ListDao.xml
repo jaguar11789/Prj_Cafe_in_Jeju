@@ -5,78 +5,212 @@
 <!-- 컨트롤 시프트 x는 소문자를 대문자로 바꿔준다 -->
 
 <mapper namespace="com.tech.list.dao.ListDao">
-   <insert id="writereview">
-      INSERT INTO REVIEW VALUES
-      (#{param1},USER_NUM.NEXTVAL,#{param4},#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE,CAFE_NUM_SEQ.NEXTVAL)
-   </insert>
+	<insert id="writereview">
+		INSERT INTO REVIEW VALUES
+		(#{param1},USER_NUM.NEXTVAL,#{param4},#{param2},#{param3},REVIEWNUM.NEXTVAL,SYSDATE,CAFE_NUM_SEQ.NEXTVAL)
+	</insert>
 
-   <select id="cafereview"
-      resultType="com.tech.cafein.dto.ReviewDto">
-      SELECT TITLE, CONTENT, IMG, SCORE, RDATE FROM (SELECT
-      ROWNUM NUM,N.* FROM(SELECT * FROM REVIEW
-      ORDER BY RDATE DESC) N) WHERE NUM BETWEEN #{param1} AND #{param2} ORDER BY
-      REVIEWNUM DESC
-   </select>
+	<select id="cafereview"
+		resultType="com.tech.cafein.dto.ReviewDto">
+		SELECT TITLE, CONTENT, IMG, SCORE, RDATE FROM (SELECT
+		ROWNUM NUM,N.* FROM(SELECT * FROM REVIEW
+		ORDER BY RDATE DESC) N) WHERE
+		NUM BETWEEN #{param1} AND #{param2} ORDER BY
+		REVIEWNUM DESC
+	</select>
 
-   <select id="total" resultType="Float">
-      SELECT ROUND(AVG(SCORE),1) FROM
-      REVIEW
-   </select>
+	<select id="total" resultType="Float">
+		SELECT ROUND(AVG(SCORE),1) FROM
+		REVIEW
+	</select>
 
-   <select id="countreview" resultType="Integer">
-      SELECT COUNT(*) FROM REVIEW
-   </select>
+	<select id="countreview" resultType="Integer">
+		SELECT COUNT(*) FROM REVIEW
+	</select>
 
-   <select id="fivestar" resultType="Float">
-      SELECT COUNT(*) FROM REVIEW WHERE SCORE=5
-   </select>
-   <select id="fourstar" resultType="Float">
-      SELECT COUNT(*) FROM REVIEW WHERE SCORE=4
-   </select>
-   <select id="threestar" resultType="Float">
-      SELECT COUNT(*) FROM REVIEW WHERE SCORE=3
-   </select>
-   <select id="twostar" resultType="Float">
-      SELECT COUNT(*) FROM REVIEW WHERE SCORE=2
-   </select>
-   <select id="onestar" resultType="Float">
-      SELECT COUNT(*) FROM REVIEW WHERE SCORE=1
-   </select>
+	<select id="fivestar" resultType="Float">
+		SELECT COUNT(*) FROM REVIEW
+		WHERE SCORE=5
+	</select>
+	<select id="fourstar" resultType="Float">
+		SELECT COUNT(*) FROM REVIEW
+		WHERE SCORE=4
+	</select>
+	<select id="threestar" resultType="Float">
+		SELECT COUNT(*) FROM REVIEW
+		WHERE SCORE=3
+	</select>
+	<select id="twostar" resultType="Float">
+		SELECT COUNT(*) FROM REVIEW
+		WHERE SCORE=2
+	</select>
+	<select id="onestar" resultType="Float">
+		SELECT COUNT(*) FROM REVIEW
+		WHERE SCORE=1
+	</select>
 
-   <select id="selectBoardTotCount" resultType="Integer">
-      SELECT COUNT(*) FROM
-      REVIEW
-   </select>
-   
-   <select id="cafe_info_board">
-      SELECT CNUM,CTITLE,USER_ID,CDATE,CHIT FROM CAFE_BOARD
-   </select>
-   
-   <insert id="writeboard">
-      INSERT INTO CAFE_BOARD VALUES (CNUM_SEQ.NEXTVAL,#{param1},#{param2},'58년개띠',SYSDATE,1,#{param3},1)
-   </insert>
-   
-   <select id="selCnum" resultType="Integer">
-      SELECT MAX(CNUM) FROM CAFE_BOARD
-   </select>
-   
-   <insert id="imgwrite" >
-      INSERT INTO CAFE_BOARD_IMG VALUES(CAFE_BOARD_IMG_SEQ.NEXTVAL,#{param1},#{param2},#{param3})
-   </insert>
-   
-   <select id="cafeboard" resultType="com.tech.cafein.dto.CafeBoardDto">
-      SELECT * FROM CAFE_BOARD ORDER BY CNUM DESC
-   </select>
-   	<select id="freeboarder" resultType="com.tech.cafein.dto.Free_boarderDto"> 
+	<select id="selectBoardTotCount" resultType="Integer">
+		SELECT COUNT(*) FROM
+		REVIEW
+	</select>
+	<select id="selectboardpage" resultType="Integer">
+		SELECT COUNT(*) FROM
+		CAFE_BOARD
+	</select>
+
+	<!-- <select id="cafe_info_board"> SELECT * FROM (SELECT ROWNUM NUM,N.* 
+		FROM(SELECT * FROM CAFE_BOARD ORDER BY CDATE DESC) N) WHERE NUM BETWEEN #{param1} 
+		AND #{param2} ORDER BY CNUM DESC </select> -->
+
+	<insert id="writeboard">
+		INSERT INTO CAFE_BOARD VALUES
+		(CNUM_SEQ.NEXTVAL,#{param1},#{param2},'58년개띠',SYSDATE,1,#{param3},1)
+	</insert>
+
+	<select id="selCnum" resultType="Integer">
+		SELECT MAX(CNUM) FROM CAFE_BOARD
+	</select>
+
+	<insert id="imgwrite">
+		INSERT INTO CAFE_BOARD_IMG
+		VALUES(CAFE_BOARD_IMG_SEQ.NEXTVAL,#{param1},#{param2},#{param3})
+	</insert>
+
+	<select id="cafeboard"
+		resultType="com.tech.cafein.dto.CafeBoardDto">
+		SELECT * FROM (SELECT
+		ROWNUM NUM,N.* FROM(SELECT * FROM
+		CAFE_BOARD
+		ORDER BY CDATE DESC) N) WHERE NUM BETWEEN #{param1} AND
+		#{param2} ORDER BY
+		CNUM DESC
+	</select>
+
+	<update id="uphit">
+		UPDATE CAFE_BOARD SET CHIT=CHIT+1 WHERE
+		CNUM=#{param1}
+	</update>
+
+	<select id="cafeboardview"
+		resultType="com.tech.cafein.dto.CafeBoardDto">
+		SELECT * FROM CAFE_BOARD WHERE CNUM=#{param1}
+	</select>
+
+	<resultMap type="com.tech.cafein.dto.CafeBoardDto" id="board">
+		<result property="cnum" column="CNUM" />
+		<result property="ctitle" column="CTITLE" />
+		<result property="ccontent" column="CCONTENT" />
+		<result property="user_id" column="USER_ID" />
+		<result property="cdate" column="CDATE" />
+		<result property="chit" column="CHIT" />
+		<result property="cfile" column="CFILE" />
+		<result property="cafe_num" column="CAFE_NUM" />
+		<collection property="cafeboardimgdto"
+			resultMap="cafeboardimgdto" />
+	</resultMap>
+
+	<resultMap type="com.tech.cafein.dto.CafeBoardImgDto"
+		id="cafeboardimgdto">
+		<result property="cbino" column="CBINO" />
+		<result property="cborgfile" column="CBORGFILE" />
+		<result property="cbchgfile" column="CBCHGFILE" />
+	</resultMap>
+
+	<select id="boardimg"
+		resultType="com.tech.cafein.dto.CafeBoardDto" resultMap="board">
+		SELECT *
+		FROM
+		CAFE_BOARD A, (SELECT * FROM CAFE_BOARD_IMG WHERE CNUM=#{param1}) B
+		WHERE A.CNUM=B.CNUM ORDER BY CBCHGFILE
+	</select>
+
+	<update id="boardimgdelete">
+		DELETE FROM CAFE_BOARD_IMG WHERE CNUM=#{param1}
+	</update>
+	<update id="boarddelete">
+		DELETE FROM CAFE_BOARD WHERE CNUM=#{param1}
+	</update>
+
+
+
+
+
+
+
+	<!-- 자유게시판 부분 -->
+	<select id="freeboarder"
+		resultType="com.tech.cafein.dto.Free_boarderDto">
 		SELECT * FROM FREEBOARDER ORDER BY FNUM DESC
 	</select>
-	<insert id="free_write">
-		INSERT INTO FREEBOARDER VALUES(FREE_SQC.NEXTVAL,'58년개띠',#{param1},#{param2},SYSDATE,1,#{param3})
-	</insert>
-	<select id="selfnum" resultType="Integer">
-		SELECT MAX(FNUM) FROM FREEBOARDER
+	<!-- 자유게시판 작성 -->
+	<select id="getUserPwd"
+		resultType="com.tech.cafein.dto.UserInfoDto">
+		SELECT USER_PWD, USER_SHAPWD FROM USER_INFO WHERE USER_ID=#{param1}
 	</select>
-	<insert id="imgwrite1">
-		INSERT INTO FREEBOARDER_IMG VALUES(FREEIMG_SQC.NEXTVAL,#{param1},#{param2},#{param3})
+
+	<select id="userModifyView"
+		resultType="com.tech.cafein.dto.UserInfoDto">
+		SELECT * FROM USER_INFO WHERE USER_ID=#{param1}
+	</select>
+	
+	<insert id="free_write">
+		INSERT INTO FREEBOARDER
+		VALUES(FREE_SQC.NEXTVAL,'백승연',#{param2},#{param3},SYSDATE,1,#{param4})
 	</insert>
+	<!-- 두 테이블 간의 관계설정을 위해 사용 -->
+	<select id="selfnum" resultType="Integer">
+		SELECT MAX(FNUM) FROM
+		FREEBOARDER
+	</select>
+
+	<insert id="imgwrite1">
+		INSERT INTO FREEBOARDER_IMG
+		VALUES(FREEIMG_SQC.NEXTVAL,#{param1},#{param2},#{param3})
+	</insert>
+
+	<!-- 자유게시판 컨텐츠 뷰 불러오기 -->
+	<update id="fuphit">
+		UPDATE FREEBOARDER SET FHIT=FHIT+1 WHERE
+		FNUM=#{param1}
+	</update>
+
+	<select id="freeboardercontent"
+		resultType="com.tech.cafein.dto.Free_boarderDto">
+		SELECT * FROM FREEBOARDER WHERE FNUM=#{param1}
+	</select>
+
+	<!-- 자유게시판 글 수정 -->
+
+	<update id="freemodify">
+		UPDATE FREEBOARDER SET FTITLE=#{param1},
+		FCONTENT=#{param2}
+		WHERE FNUM=#{param3}
+	</update>
+
+	<!-- 자유게시판 글 삭제기능 -->
+	<update id="freeboarderimgdelete">
+		DELETE FROM FREEBOARDER_IMG WHERE FNUM=#{param1}
+	</update>
+
+	<update id="freeboarderdelete">
+		DELETE FROM FREEBOARDER WHERE FNUM=#{param1}
+	</update>
+
+	<!-- 자유게시판에 사진 불러오기 -->
+	<select id="getFreeImg"
+		resultType="com.tech.cafein.dto.Free_Boarder_Img_Dto">
+		SELECT * FROM FREEBOARDER_IMG WHERE FNUM=#{param1}
+	</select>
+
+	<!-- 자유게시판 댓글 -->
+	<select id="f_reply"
+		resultType="com.tech.cafein.dto.Free_boarderDto">
+		SELECT * FROM F_REPLY WHERE FNUM=#{param1}
+	</select>
+	
+	<select id="free_userinfo" resultType="com.tech.cafein.dto.UserInfoDto">
+		SELECT * FROM USER_INFO
+	</select>
+
+
 </mapper>

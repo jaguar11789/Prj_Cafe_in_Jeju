@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.fr_write {
+  display: flex;
+  justify-content: center;
+}
+.fr_title {
+  width: 500px;
+}
+.fr_content {
+}
+input#file-upload-button {
+  background-color: orange;
+}
+.boarder_write {
+}

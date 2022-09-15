@@ -127,7 +127,6 @@ font {
 }
 a{
   text-decoration: none;
-
 }
 .container{
   display: flex;
@@ -391,6 +390,46 @@ a{
 
 
 
+/* /* /* /* /* /*  */ 
+
+
+/* element.style {
+}
+.comment .comtWrite {
+    position: relative;
+    border: 1px solid #cfd2d4;
+    height: 80px;
+    padding: 0 90px 0 78px;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, form, fieldset, p, button {
+    margin: 0;
+    padding: 0;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+body {
+    background-color: #ccc;
+    word-break: break-all;
+    -ms-word-break: break-all;
+    letter-spacing: -0.050em;
+}
+body, h1, h2, h3, h4, input, button, textarea {
+    font-family: Malgun Gothic, Dotum, Helvetica, droid sans fallback, AppleSDGothicNeo, sans-serif;
+    color: black;
+} */
+textarea:focus {
+outline: none;
+}
+textarea {
+	resize: none;
+	box-sizing: border-box;
+}
+
+
+/* /* /* /* /* /*  */ 
+
 </style>
 
 
@@ -454,7 +493,7 @@ a{
                   <table>
                      <tr>
                         <td class="button">
-                           <a href="cafe_info_menu"><button id="menu" class="custom-btn btn-5" "><span>메뉴</span></button></a>
+                           <a href="cafe_info_menu"><button id="menu" class="custom-btn btn-5"><span>메뉴</span></button></a>
                                        </td>
                                        <td class=" button">
                                  <a href="cafe_info_detail"><button id="cafe_detail"
@@ -483,28 +522,38 @@ a{
          
          	<table class="table table-hover" >
          		<tr style="background-color: #d6d9dd; justify-content: baseline">
-         			<td style="font-size: 20px; ">&emsp;&emsp;안녕하세요</td>
-         			<td style="font-size: 15px; padding: 12px 20px 0 0; text-align: right;">조회수 5432</td>
+         			<td style="font-size: 20px; ">&emsp;&emsp;${cafeboardview.ctitle }</td>
+         			<td style="font-size: 15px; padding: 12px 20px 0 0; text-align: right;">조회수 ${cafeboardview.chit }</td>
          		</tr>
          		<tr>
-         			<td style="font-size: 15px; ">&emsp;&emsp;&emsp;58년개띠</td>
-         			<td style="font-size: 15px; padding: 7px 20px 0 0; text-align: right;">2022-08-09</td>
+         			<td style="font-size: 15px; ">&emsp;&emsp;&emsp;${cafeboardview.user_id }</td>
+         			<td style="font-size: 15px; padding: 7px 20px 0 0; text-align: right;">${cafeboardeview.cdate }</td>
          		</tr>
          		<tr>
-         			<td colspan="2" style="padding: 20px 53px 20px 53px;">
-	         			뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬
-	         			뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬
-	         			뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜
-	         			쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬뚜쉬
+         			<td colspan="2" style="padding: 20px 53px 20px 53px;">${cafeboardview.ccontent }
          			</td>
          		</tr>
-         		
-         		
+         		<c:forEach items="${boardimg }" var="boardimg">
+	         		<tr>
+	         			<td colspan="2"><img src="../resources/upload/${boardimg.cafeboardimgdto.cborgfile }" width="150px" height="150px" alt="" />${boardimg.cafeboardimgdto.cborgfile }</td>
+	         		</tr>
+         		</c:forEach>
          	</table>
          		<div style="padding-left: 750px">
-         			<input type="button" value="목록" style="padding-right: 10px"/>
-         			<input type="button" value="수정"/>
+         			<a href="./cafe_info_board"><input type="button" value="목록" style="padding:0 10px 0 10px"/></a>&ensp;
+         			<input type="button" value="수정" style="padding:0 10px 0 10px"/>
+         			<a href="boarddelete?cnum=${cafeboardview.cnum}"><input type="button" value="삭제" style="padding:0 10px 0 10px"/></a>
          	   </div>
+         	 <table>
+				<tr>
+					<td style="width: 80%;"><textarea cols="80" rows="3" style="height: 100%; width:100%;"></textarea></td>
+					<td style="background-color: #e39339; border: 100%;"><a href="" style="width: 100%; height: 100%;">입력</a></td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+			</table>
+
 	      </div>
       <!-- 사이드 컨테이너 -->
       <div id="side-container" class="card mb-1" >
